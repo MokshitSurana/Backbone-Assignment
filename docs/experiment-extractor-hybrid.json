@@ -1,0 +1,1466 @@
+{
+ "rules": {
+  "extractor": "rules",
+  "ingest_s": 0.15,
+  "reconcile_s": 0.007,
+  "claims": 99,
+  "unverified_quotes": 0,
+  "model": null,
+  "events": {
+   "2026-01-05|HG-E101": {
+    "service_type": "individual_therapy",
+    "occurred": "yes",
+    "patient_present": "yes",
+    "min": 50,
+    "max": 50,
+    "therapy": 1,
+    "disputed": 0
+   },
+   "2026-01-06|HG-E102": {
+    "service_type": "group_therapy",
+    "occurred": "yes",
+    "patient_present": "yes",
+    "min": 45,
+    "max": 45,
+    "therapy": 1,
+    "disputed": 0
+   },
+   "2026-01-08|HG-E103": {
+    "service_type": "individual_therapy",
+    "occurred": "no",
+    "patient_present": "no",
+    "min": 0,
+    "max": 0,
+    "therapy": 0,
+    "disputed": 0
+   },
+   "2026-01-09|HG-E104": {
+    "service_type": "family_therapy",
+    "occurred": "yes",
+    "patient_present": "yes",
+    "min": 45,
+    "max": 45,
+    "therapy": 1,
+    "disputed": 0
+   },
+   "2026-01-12|HG-E105": {
+    "service_type": "group_therapy",
+    "occurred": "yes",
+    "patient_present": "yes",
+    "min": 75,
+    "max": 75,
+    "therapy": 1,
+    "disputed": 0
+   },
+   "2026-01-13|HG-E106": {
+    "service_type": "medication_management",
+    "occurred": "yes",
+    "patient_present": "yes",
+    "min": 25,
+    "max": 25,
+    "therapy": 0,
+    "disputed": 0
+   },
+   "2026-01-14|HG-E107": {
+    "service_type": "individual_therapy",
+    "occurred": "yes",
+    "patient_present": "yes",
+    "min": 45,
+    "max": 45,
+    "therapy": 1,
+    "disputed": 0
+   },
+   "2026-01-15|HG-E108": {
+    "service_type": "group_therapy",
+    "occurred": "no",
+    "patient_present": "no",
+    "min": 0,
+    "max": 0,
+    "therapy": 0,
+    "disputed": 0
+   },
+   "2026-01-16|HG-E109": {
+    "service_type": "collateral_contact",
+    "occurred": "yes",
+    "patient_present": "no",
+    "min": 0,
+    "max": 0,
+    "therapy": 0,
+    "disputed": 0
+   },
+   "2026-01-19|HG-E110": {
+    "service_type": "group_therapy",
+    "occurred": "yes",
+    "patient_present": "yes",
+    "min": 60,
+    "max": 60,
+    "therapy": 1,
+    "disputed": 0
+   },
+   "2026-01-19|HG-E111": {
+    "service_type": "individual_therapy",
+    "occurred": "yes",
+    "patient_present": "yes",
+    "min": 30,
+    "max": 30,
+    "therapy": 1,
+    "disputed": 0
+   },
+   "2026-01-21|HG-E112": {
+    "service_type": "individual_therapy",
+    "occurred": "yes",
+    "patient_present": "yes",
+    "min": 45,
+    "max": 45,
+    "therapy": 1,
+    "disputed": 0
+   },
+   "2026-01-22|HG-E113": {
+    "service_type": "group_therapy",
+    "occurred": "yes",
+    "patient_present": "yes",
+    "min": 45,
+    "max": 45,
+    "therapy": 1,
+    "disputed": 0
+   },
+   "2026-01-23|HG-E114": {
+    "service_type": "care_coordination",
+    "occurred": "yes",
+    "patient_present": "no",
+    "min": 0,
+    "max": 0,
+    "therapy": 0,
+    "disputed": 0
+   },
+   "2026-01-26|HG-E115": {
+    "service_type": "individual_therapy",
+    "occurred": "yes",
+    "patient_present": "yes",
+    "min": 40,
+    "max": 50,
+    "therapy": 1,
+    "disputed": 1
+   },
+   "2026-01-27|HG-E116": {
+    "service_type": "group_therapy",
+    "occurred": "no",
+    "patient_present": "no",
+    "min": 0,
+    "max": 0,
+    "therapy": 0,
+    "disputed": 0
+   },
+   "2026-01-28|HG-E117": {
+    "service_type": "individual_therapy",
+    "occurred": "no",
+    "patient_present": "no",
+    "min": 0,
+    "max": 0,
+    "therapy": 0,
+    "disputed": 0
+   },
+   "2026-01-29|HG-E118": {
+    "service_type": "group_therapy",
+    "occurred": "yes",
+    "patient_present": "yes",
+    "min": 75,
+    "max": 75,
+    "therapy": 1,
+    "disputed": 0
+   },
+   "2026-01-30|HG-E119": {
+    "service_type": "family_therapy",
+    "occurred": "yes",
+    "patient_present": "yes",
+    "min": 30,
+    "max": 30,
+    "therapy": 1,
+    "disputed": 0
+   },
+   "2026-01-30|HG-E120": {
+    "service_type": "medication_management",
+    "occurred": "yes",
+    "patient_present": "yes",
+    "min": 20,
+    "max": 20,
+    "therapy": 0,
+    "disputed": 0
+   }
+  },
+  "weeks": {
+   "2026-01-05": {
+    "minutes": [
+     140,
+     140
+    ],
+    "days": [
+     3,
+     3
+    ],
+    "status": "NOT_MET"
+   },
+   "2026-01-12": {
+    "minutes": [
+     120,
+     120
+    ],
+    "days": [
+     2,
+     2
+    ],
+    "status": "NOT_MET"
+   },
+   "2026-01-19": {
+    "minutes": [
+     180,
+     180
+    ],
+    "days": [
+     3,
+     3
+    ],
+    "status": "MET"
+   },
+   "2026-01-26": {
+    "minutes": [
+     145,
+     155
+    ],
+    "days": [
+     3,
+     3
+    ],
+    "status": "CANNOT_DETERMINE"
+   }
+  },
+  "measures": [
+   {
+    "instrument": "PHQ-9",
+    "completed": "2026-01-05",
+    "total": 18.0,
+    "form": null,
+    "sources": 1
+   },
+   {
+    "instrument": "PHQ-9",
+    "completed": "2026-01-16",
+    "total": 14.0,
+    "form": "HG-Q116",
+    "sources": 2
+   },
+   {
+    "instrument": "PHQ-9",
+    "completed": "2026-01-30",
+    "total": 10.0,
+    "form": null,
+    "sources": 1
+   }
+  ],
+  "requirements": [
+   {
+    "metric": "therapy_days",
+    "threshold": 3.0,
+    "period": "week_mon_sun",
+    "types": [
+     "family_therapy",
+     "group_therapy",
+     "individual_therapy"
+    ]
+   },
+   {
+    "metric": "therapy_minutes",
+    "threshold": 150.0,
+    "period": "week_mon_sun",
+    "types": [
+     "family_therapy",
+     "group_therapy",
+     "individual_therapy"
+    ]
+   }
+  ],
+  "observations": 54,
+  "patients": [
+   "HG-M042"
+  ],
+  "total_minutes": [
+   585,
+   595
+  ],
+  "obs_spans": [
+   [
+    "BH-D002",
+    378,
+    534
+   ],
+   [
+    "BH-D007",
+    1171,
+    1227
+   ],
+   [
+    "BH-D007",
+    1228,
+    1355
+   ],
+   [
+    "BH-D009",
+    973,
+    1071
+   ],
+   [
+    "BH-D009",
+    1072,
+    1200
+   ],
+   [
+    "BH-D010",
+    575,
+    698
+   ],
+   [
+    "BH-D011",
+    509,
+    615
+   ],
+   [
+    "BH-D011",
+    616,
+    733
+   ],
+   [
+    "BH-D011",
+    734,
+    824
+   ],
+   [
+    "BH-D011",
+    1067,
+    1156
+   ],
+   [
+    "BH-D011",
+    1157,
+    1269
+   ],
+   [
+    "BH-D011",
+    1519,
+    1612
+   ],
+   [
+    "BH-D012",
+    683,
+    797
+   ],
+   [
+    "BH-D012",
+    798,
+    902
+   ],
+   [
+    "BH-D013",
+    435,
+    611
+   ],
+   [
+    "BH-D013",
+    612,
+    655
+   ],
+   [
+    "BH-D013",
+    946,
+    1057
+   ],
+   [
+    "BH-D015",
+    840,
+    997
+   ],
+   [
+    "BH-D101",
+    968,
+    1108
+   ],
+   [
+    "BH-D105",
+    423,
+    584
+   ],
+   [
+    "BH-D105",
+    793,
+    935
+   ],
+   [
+    "BH-D105",
+    1180,
+    1283
+   ],
+   [
+    "BH-D106",
+    1011,
+    1100
+   ],
+   [
+    "BH-D110",
+    419,
+    551
+   ],
+   [
+    "BH-D110",
+    552,
+    617
+   ],
+   [
+    "BH-D110",
+    618,
+    721
+   ],
+   [
+    "BH-D110",
+    1154,
+    1267
+   ],
+   [
+    "BH-D111",
+    678,
+    766
+   ],
+   [
+    "BH-D111",
+    1138,
+    1254
+   ],
+   [
+    "BH-D113",
+    1238,
+    1331
+   ],
+   [
+    "BH-D114",
+    420,
+    552
+   ],
+   [
+    "BH-D115",
+    282,
+    435
+   ],
+   [
+    "BH-D115",
+    540,
+    687
+   ],
+   [
+    "BH-D115",
+    688,
+    878
+   ],
+   [
+    "BH-D115",
+    879,
+    971
+   ]
+  ],
+  "obs_domains": [
+   "activity",
+   "anxiety",
+   "avoidance_work",
+   "mood",
+   "participation",
+   "safety",
+   "sleep",
+   "social_support"
+  ],
+  "obs_reporters": [
+   "clinician",
+   "informant",
+   "patient"
+  ],
+  "obs_polarities": [
+   "improvement",
+   "mixed",
+   "persistence",
+   "worsening"
+  ],
+  "integrity_ok": true,
+  "counts": {
+   "sessions": 12,
+   "by_service_type": {
+    "family_therapy": 2,
+    "group_therapy": 5,
+    "individual_therapy": 5
+   },
+   "distinct_days": 11,
+   "days": [
+    "2026-01-05",
+    "2026-01-06",
+    "2026-01-09",
+    "2026-01-12",
+    "2026-01-14",
+    "2026-01-19",
+    "2026-01-21",
+    "2026-01-22",
+    "2026-01-26",
+    "2026-01-29",
+    "2026-01-30"
+   ]
+  },
+  "db_bytes": 290816
+ },
+ "llm": {
+  "extractor": "llm",
+  "ingest_s": 394.97,
+  "reconcile_s": 0.014,
+  "claims": 184,
+  "unverified_quotes": 0,
+  "model": {
+   "calls": 25,
+   "cached": 0,
+   "in_tokens": 19692,
+   "out_tokens": 28195,
+   "usd": 0.024102000000000002,
+   "latency_ms": 71920.79999999999,
+   "dropped_quotes": 0,
+   "parse_failures": 0,
+   "call_failures": 0,
+   "documents": 31,
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "prompt_version": "v3",
+   "temperature": 0.0,
+   "cached_responses": 25
+  },
+  "events": {
+   "2026-01-05|HG-E101": {
+    "service_type": "individual_therapy",
+    "occurred": "yes",
+    "patient_present": "yes",
+    "min": 50,
+    "max": 50,
+    "therapy": 1,
+    "disputed": 0
+   },
+   "2026-01-06|HG-E102": {
+    "service_type": "group_therapy",
+    "occurred": "yes",
+    "patient_present": "yes",
+    "min": 45,
+    "max": 45,
+    "therapy": 1,
+    "disputed": 0
+   },
+   "2026-01-08|HG-E103": {
+    "service_type": "individual_therapy",
+    "occurred": "no",
+    "patient_present": "no",
+    "min": 0,
+    "max": 0,
+    "therapy": 0,
+    "disputed": 0
+   },
+   "2026-01-09|HG-E104": {
+    "service_type": "family_therapy",
+    "occurred": "yes",
+    "patient_present": "yes",
+    "min": 45,
+    "max": 45,
+    "therapy": 1,
+    "disputed": 0
+   },
+   "2026-01-12|HG-E105": {
+    "service_type": "group_therapy",
+    "occurred": "yes",
+    "patient_present": "yes",
+    "min": 75,
+    "max": 75,
+    "therapy": 1,
+    "disputed": 0
+   },
+   "2026-01-13|HG-E106": {
+    "service_type": "medication_management",
+    "occurred": "yes",
+    "patient_present": "yes",
+    "min": 25,
+    "max": 25,
+    "therapy": 0,
+    "disputed": 0
+   },
+   "2026-01-14|HG-E107": {
+    "service_type": "individual_therapy",
+    "occurred": "yes",
+    "patient_present": "yes",
+    "min": 45,
+    "max": 45,
+    "therapy": 1,
+    "disputed": 0
+   },
+   "2026-01-15|HG-E108": {
+    "service_type": "group_therapy",
+    "occurred": "no",
+    "patient_present": "no",
+    "min": 0,
+    "max": 0,
+    "therapy": 0,
+    "disputed": 0
+   },
+   "2026-01-16|HG-E109": {
+    "service_type": "collateral_contact",
+    "occurred": "yes",
+    "patient_present": "no",
+    "min": 0,
+    "max": 0,
+    "therapy": 0,
+    "disputed": 0
+   },
+   "2026-01-19|HG-E110": {
+    "service_type": "group_therapy",
+    "occurred": "yes",
+    "patient_present": "yes",
+    "min": 60,
+    "max": 60,
+    "therapy": 1,
+    "disputed": 0
+   },
+   "2026-01-19|HG-E111": {
+    "service_type": "individual_therapy",
+    "occurred": "yes",
+    "patient_present": "yes",
+    "min": 30,
+    "max": 30,
+    "therapy": 1,
+    "disputed": 0
+   },
+   "2026-01-21|HG-E112": {
+    "service_type": "individual_therapy",
+    "occurred": "yes",
+    "patient_present": "yes",
+    "min": 45,
+    "max": 45,
+    "therapy": 1,
+    "disputed": 0
+   },
+   "2026-01-22|HG-E113": {
+    "service_type": "group_therapy",
+    "occurred": "yes",
+    "patient_present": "yes",
+    "min": 45,
+    "max": 45,
+    "therapy": 1,
+    "disputed": 0
+   },
+   "2026-01-23|HG-E114": {
+    "service_type": "care_coordination",
+    "occurred": "yes",
+    "patient_present": "no",
+    "min": 0,
+    "max": 0,
+    "therapy": 0,
+    "disputed": 0
+   },
+   "2026-01-26|HG-E115": {
+    "service_type": "individual_therapy",
+    "occurred": "yes",
+    "patient_present": "yes",
+    "min": 40,
+    "max": 50,
+    "therapy": 1,
+    "disputed": 1
+   },
+   "2026-01-27|HG-E116": {
+    "service_type": "group_therapy",
+    "occurred": "no",
+    "patient_present": "no",
+    "min": 0,
+    "max": 0,
+    "therapy": 0,
+    "disputed": 0
+   },
+   "2026-01-28|HG-E117": {
+    "service_type": "individual_therapy",
+    "occurred": "no",
+    "patient_present": "no",
+    "min": 0,
+    "max": 0,
+    "therapy": 0,
+    "disputed": 0
+   },
+   "2026-01-29|HG-E118": {
+    "service_type": "group_therapy",
+    "occurred": "yes",
+    "patient_present": "yes",
+    "min": 75,
+    "max": 75,
+    "therapy": 1,
+    "disputed": 0
+   },
+   "2026-01-30|HG-E119": {
+    "service_type": "family_therapy",
+    "occurred": "yes",
+    "patient_present": "yes",
+    "min": 30,
+    "max": 30,
+    "therapy": 1,
+    "disputed": 0
+   },
+   "2026-01-30|HG-E120": {
+    "service_type": "medication_management",
+    "occurred": "yes",
+    "patient_present": "yes",
+    "min": 20,
+    "max": 20,
+    "therapy": 0,
+    "disputed": 0
+   }
+  },
+  "weeks": {
+   "2026-01-05": {
+    "minutes": [
+     140,
+     140
+    ],
+    "days": [
+     3,
+     3
+    ],
+    "status": "NOT_MET"
+   },
+   "2026-01-12": {
+    "minutes": [
+     120,
+     120
+    ],
+    "days": [
+     2,
+     2
+    ],
+    "status": "NOT_MET"
+   },
+   "2026-01-19": {
+    "minutes": [
+     180,
+     180
+    ],
+    "days": [
+     3,
+     3
+    ],
+    "status": "MET"
+   },
+   "2026-01-26": {
+    "minutes": [
+     145,
+     155
+    ],
+    "days": [
+     3,
+     3
+    ],
+    "status": "CANNOT_DETERMINE"
+   }
+  },
+  "measures": [
+   {
+    "instrument": "PHQ-9",
+    "completed": "2026-01-05",
+    "total": 18.0,
+    "form": null,
+    "sources": 1
+   },
+   {
+    "instrument": "PHQ-9",
+    "completed": "2026-01-16",
+    "total": 14.0,
+    "form": "HG-Q116",
+    "sources": 2
+   },
+   {
+    "instrument": "PHQ-9",
+    "completed": "2026-01-30",
+    "total": 10.0,
+    "form": null,
+    "sources": 1
+   }
+  ],
+  "requirements": [
+   {
+    "metric": "therapy_days",
+    "threshold": 3.0,
+    "period": "week_mon_sun",
+    "types": [
+     "family_therapy",
+     "group_therapy",
+     "individual_therapy"
+    ]
+   },
+   {
+    "metric": "therapy_minutes",
+    "threshold": 150.0,
+    "period": "week_mon_sun",
+    "types": [
+     "family_therapy",
+     "group_therapy",
+     "individual_therapy"
+    ]
+   }
+  ],
+  "observations": 154,
+  "patients": [
+   "HG-M042"
+  ],
+  "total_minutes": [
+   585,
+   595
+  ],
+  "obs_spans": [
+   [
+    "BH-D002",
+    378,
+    534
+   ],
+   [
+    "BH-D002",
+    535,
+    610
+   ],
+   [
+    "BH-D002",
+    611,
+    735
+   ],
+   [
+    "BH-D002",
+    918,
+    990
+   ],
+   [
+    "BH-D002",
+    1023,
+    1109
+   ],
+   [
+    "BH-D002",
+    1110,
+    1184
+   ],
+   [
+    "BH-D002",
+    1185,
+    1239
+   ],
+   [
+    "BH-D002",
+    1240,
+    1392
+   ],
+   [
+    "BH-D002",
+    1394,
+    1449
+   ],
+   [
+    "BH-D002",
+    1503,
+    1586
+   ],
+   [
+    "BH-D002",
+    1867,
+    1961
+   ],
+   [
+    "BH-D003",
+    355,
+    494
+   ],
+   [
+    "BH-D003",
+    576,
+    655
+   ],
+   [
+    "BH-D004",
+    989,
+    1086
+   ],
+   [
+    "BH-D004",
+    1087,
+    1192
+   ],
+   [
+    "BH-D004",
+    1193,
+    1318
+   ],
+   [
+    "BH-D004",
+    1319,
+    1414
+   ],
+   [
+    "BH-D007",
+    532,
+    618
+   ],
+   [
+    "BH-D007",
+    619,
+    691
+   ],
+   [
+    "BH-D007",
+    1028,
+    1169
+   ],
+   [
+    "BH-D007",
+    1171,
+    1227
+   ],
+   [
+    "BH-D007",
+    1228,
+    1355
+   ],
+   [
+    "BH-D008",
+    626,
+    712
+   ],
+   [
+    "BH-D008",
+    713,
+    836
+   ],
+   [
+    "BH-D008",
+    930,
+    1020
+   ],
+   [
+    "BH-D008",
+    1021,
+    1098
+   ],
+   [
+    "BH-D008",
+    1099,
+    1151
+   ],
+   [
+    "BH-D008",
+    1152,
+    1222
+   ],
+   [
+    "BH-D008",
+    1224,
+    1338
+   ],
+   [
+    "BH-D008",
+    1339,
+    1418
+   ],
+   [
+    "BH-D009",
+    906,
+    972
+   ],
+   [
+    "BH-D009",
+    973,
+    1071
+   ],
+   [
+    "BH-D009",
+    1072,
+    1200
+   ],
+   [
+    "BH-D009",
+    1424,
+    1499
+   ],
+   [
+    "BH-D010",
+    507,
+    574
+   ],
+   [
+    "BH-D010",
+    575,
+    698
+   ],
+   [
+    "BH-D010",
+    1175,
+    1249
+   ],
+   [
+    "BH-D011",
+    357,
+    508
+   ],
+   [
+    "BH-D011",
+    509,
+    615
+   ],
+   [
+    "BH-D011",
+    616,
+    733
+   ],
+   [
+    "BH-D011",
+    734,
+    824
+   ],
+   [
+    "BH-D011",
+    1067,
+    1156
+   ],
+   [
+    "BH-D011",
+    1157,
+    1269
+   ],
+   [
+    "BH-D011",
+    1519,
+    1612
+   ],
+   [
+    "BH-D012",
+    683,
+    797
+   ],
+   [
+    "BH-D012",
+    798,
+    902
+   ],
+   [
+    "BH-D012",
+    903,
+    966
+   ],
+   [
+    "BH-D012",
+    967,
+    1104
+   ],
+   [
+    "BH-D012",
+    1451,
+    1507
+   ],
+   [
+    "BH-D012",
+    1508,
+    1570
+   ],
+   [
+    "BH-D013",
+    355,
+    434
+   ],
+   [
+    "BH-D013",
+    465,
+    611
+   ],
+   [
+    "BH-D013",
+    612,
+    655
+   ],
+   [
+    "BH-D013",
+    735,
+    832
+   ],
+   [
+    "BH-D013",
+    833,
+    945
+   ],
+   [
+    "BH-D013",
+    946,
+    1057
+   ],
+   [
+    "BH-D014",
+    657,
+    761
+   ],
+   [
+    "BH-D015",
+    840,
+    997
+   ],
+   [
+    "BH-D016",
+    284,
+    405
+   ],
+   [
+    "BH-D016",
+    406,
+    469
+   ],
+   [
+    "BH-D016",
+    470,
+    600
+   ],
+   [
+    "BH-D016",
+    602,
+    786
+   ],
+   [
+    "BH-D016",
+    788,
+    855
+   ],
+   [
+    "BH-D016",
+    856,
+    1012
+   ],
+   [
+    "BH-D016",
+    1013,
+    1091
+   ],
+   [
+    "BH-D016",
+    1093,
+    1188
+   ],
+   [
+    "BH-D016",
+    1189,
+    1247
+   ],
+   [
+    "BH-D016",
+    1248,
+    1350
+   ],
+   [
+    "BH-D101",
+    855,
+    967
+   ],
+   [
+    "BH-D101",
+    968,
+    1108
+   ],
+   [
+    "BH-D105",
+    254,
+    381
+   ],
+   [
+    "BH-D105",
+    382,
+    422
+   ],
+   [
+    "BH-D105",
+    423,
+    584
+   ],
+   [
+    "BH-D105",
+    585,
+    695
+   ],
+   [
+    "BH-D105",
+    793,
+    935
+   ],
+   [
+    "BH-D105",
+    1180,
+    1283
+   ],
+   [
+    "BH-D105",
+    1284,
+    1343
+   ],
+   [
+    "BH-D105",
+    1344,
+    1442
+   ],
+   [
+    "BH-D106",
+    509,
+    620
+   ],
+   [
+    "BH-D106",
+    1011,
+    1100
+   ],
+   [
+    "BH-D106",
+    1163,
+    1217
+   ],
+   [
+    "BH-D106",
+    1218,
+    1256
+   ],
+   [
+    "BH-D107",
+    506,
+    613
+   ],
+   [
+    "BH-D107",
+    614,
+    741
+   ],
+   [
+    "BH-D107",
+    820,
+    889
+   ],
+   [
+    "BH-D107",
+    1222,
+    1301
+   ],
+   [
+    "BH-D107",
+    1418,
+    1515
+   ],
+   [
+    "BH-D109",
+    238,
+    295
+   ],
+   [
+    "BH-D109",
+    417,
+    544
+   ],
+   [
+    "BH-D109",
+    1207,
+    1315
+   ],
+   [
+    "BH-D110",
+    305,
+    418
+   ],
+   [
+    "BH-D110",
+    419,
+    551
+   ],
+   [
+    "BH-D110",
+    552,
+    617
+   ],
+   [
+    "BH-D110",
+    618,
+    721
+   ],
+   [
+    "BH-D110",
+    966,
+    1026
+   ],
+   [
+    "BH-D110",
+    1154,
+    1267
+   ],
+   [
+    "BH-D110",
+    1268,
+    1310
+   ],
+   [
+    "BH-D111",
+    582,
+    677
+   ],
+   [
+    "BH-D111",
+    678,
+    766
+   ],
+   [
+    "BH-D111",
+    899,
+    997
+   ],
+   [
+    "BH-D111",
+    1138,
+    1254
+   ],
+   [
+    "BH-D111",
+    1255,
+    1346
+   ],
+   [
+    "BH-D111",
+    1348,
+    1468
+   ],
+   [
+    "BH-D111",
+    1469,
+    1561
+   ],
+   [
+    "BH-D112",
+    437,
+    513
+   ],
+   [
+    "BH-D113",
+    378,
+    522
+   ],
+   [
+    "BH-D113",
+    669,
+    739
+   ],
+   [
+    "BH-D113",
+    740,
+    901
+   ],
+   [
+    "BH-D113",
+    1020,
+    1116
+   ],
+   [
+    "BH-D113",
+    1238,
+    1331
+   ],
+   [
+    "BH-D113",
+    1332,
+    1401
+   ],
+   [
+    "BH-D114",
+    420,
+    552
+   ],
+   [
+    "BH-D114",
+    553,
+    578
+   ],
+   [
+    "BH-D114",
+    755,
+    800
+   ],
+   [
+    "BH-D114",
+    801,
+    849
+   ],
+   [
+    "BH-D115",
+    214,
+    281
+   ],
+   [
+    "BH-D115",
+    282,
+    435
+   ],
+   [
+    "BH-D115",
+    540,
+    687
+   ],
+   [
+    "BH-D115",
+    688,
+    878
+   ],
+   [
+    "BH-D115",
+    879,
+    971
+   ]
+  ],
+  "obs_domains": [
+   "activity",
+   "anxiety",
+   "avoidance_work",
+   "mood",
+   "participation",
+   "safety",
+   "sleep",
+   "social_support"
+  ],
+  "obs_reporters": [
+   "clinician",
+   "informant",
+   "patient"
+  ],
+  "obs_polarities": [
+   "improvement",
+   "mixed",
+   "persistence",
+   "worsening"
+  ],
+  "integrity_ok": true,
+  "counts": {
+   "sessions": 12,
+   "by_service_type": {
+    "family_therapy": 2,
+    "group_therapy": 5,
+    "individual_therapy": 5
+   },
+   "distinct_days": 11,
+   "days": [
+    "2026-01-05",
+    "2026-01-06",
+    "2026-01-09",
+    "2026-01-12",
+    "2026-01-14",
+    "2026-01-19",
+    "2026-01-21",
+    "2026-01-22",
+    "2026-01-26",
+    "2026-01-29",
+    "2026-01-30"
+   ]
+  },
+  "db_bytes": 421888
+ },
+ "event_diffs": []
+}

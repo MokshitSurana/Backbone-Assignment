@@ -1,0 +1,112 @@
+{
+ "corpus": {
+  "path": "documents",
+  "documents": 31,
+  "bytes": 50106
+ },
+ "cold": {
+  "ingest_s": 0.16,
+  "reconcile_s": 0.008,
+  "total_s": 0.168,
+  "ms_per_document": 5.16,
+  "claims": 99,
+  "documents_ingested": 31,
+  "events": 20,
+  "therapy_events": 12,
+  "disputed_events": 1
+ },
+ "warm": {
+  "ingest_s": 0.009,
+  "documents_reextracted": 0,
+  "documents_unchanged": 31,
+  "one_document_update_s": 0.015
+ },
+ "queries": {
+  "session_counts (one patient)": {
+   "ms_median": 0.85,
+   "ms_min": 0.82,
+   "ms_max": 1.66,
+   "runs": 5
+  },
+  "minutes by week (one patient)": {
+   "ms_median": 0.66,
+   "ms_min": 0.62,
+   "ms_max": 0.74,
+   "runs": 5
+  },
+  "compliance (one patient)": {
+   "ms_median": 0.81,
+   "ms_min": 0.79,
+   "ms_max": 0.93,
+   "runs": 5
+  },
+  "day_detail (two dates)": {
+   "ms_median": 0.18,
+   "ms_min": 0.17,
+   "ms_max": 0.23,
+   "runs": 5
+  },
+  "progress (one patient)": {
+   "ms_median": 1.05,
+   "ms_min": 1.04,
+   "ms_max": 1.25,
+   "runs": 5
+  },
+  "consecutive_below (all patients)": {
+   "ms_median": 0.9,
+   "ms_min": 0.86,
+   "ms_max": 1.3,
+   "runs": 5
+  },
+  "trace (one event)": {
+   "ms_median": 0.06,
+   "ms_min": 0.06,
+   "ms_max": 0.11,
+   "runs": 5
+  },
+  "integrity (all patients)": {
+   "ms_median": 1.74,
+   "ms_min": 1.58,
+   "ms_max": 2.49,
+   "runs": 5
+  },
+  "end_to_end_nl_question": {
+   "ms_median": 1.2,
+   "ms_min": 0.2,
+   "ms_max": 2.81,
+   "runs": 6
+  }
+ },
+ "storage": {
+  "sqlite_bytes": 290816,
+  "sqlite_kib": 284.0,
+  "bytes_per_document": 9381,
+  "rows": {
+   "documents": 31,
+   "claims": 99,
+   "events": 20,
+   "event_claims": 48,
+   "decisions": 156,
+   "observations": 54,
+   "measures": 3,
+   "plan_requirements": 2,
+   "llm_cache": 0
+  },
+  "source_bytes": 50106,
+  "abstraction_to_source_ratio": 5.8
+ },
+ "model": {
+  "default_extractor": "rules",
+  "default_path_model_calls": 0,
+  "default_path_usd": 0.0,
+  "llm_extractor_available": true,
+  "llm_extractor_note": "provider=groq model=openai/gpt-oss-120b, temperature 0.0, prompt v3",
+  "cached_extraction_usage": {
+   "responses": 0,
+   "in_tokens": 0,
+   "out_tokens": 0,
+   "usd": 0.0
+  },
+  "comment": "the measured build makes no model calls: the rules extractor is the default and is deterministic. `cached_extraction_usage` is what the optional model path cost when it was run (see docs/experiment-extractor-comparison.md)."
+ }
+}

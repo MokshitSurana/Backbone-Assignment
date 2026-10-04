@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+.env
+out/*.db-wal
+out/*.db-shm
+out/test*.db
+out/cmp-*.db
+out/exp-*.db
+out/bench.db
+out/scale/
+out/dup/
+out/tmpdup/

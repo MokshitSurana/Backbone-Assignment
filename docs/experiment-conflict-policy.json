@@ -1,0 +1,1457 @@
+{
+ "explicit_correction": {
+  "policy": "explicit_correction",
+  "patients": {
+   "HG-M042": {
+    "sessions": 12,
+    "total_minutes": [
+     585,
+     595
+    ],
+    "weeks": [
+     {
+      "week": "2026-01-05",
+      "minutes": [
+       140,
+       140
+      ],
+      "days": [
+       3,
+       3
+      ],
+      "status": "NOT_MET"
+     },
+     {
+      "week": "2026-01-12",
+      "minutes": [
+       120,
+       120
+      ],
+      "days": [
+       2,
+       2
+      ],
+      "status": "NOT_MET"
+     },
+     {
+      "week": "2026-01-19",
+      "minutes": [
+       180,
+       180
+      ],
+      "days": [
+       3,
+       3
+      ],
+      "status": "MET"
+     },
+     {
+      "week": "2026-01-26",
+      "minutes": [
+       145,
+       155
+      ],
+      "days": [
+       3,
+       3
+      ],
+      "status": "CANNOT_DETERMINE"
+     }
+    ],
+    "integrity_ok": true,
+    "integrity_issues": [],
+    "events": {
+     "HG-E101": {
+      "date": "2026-01-05",
+      "service_type": "individual_therapy",
+      "occurred": "yes",
+      "patient_present": "yes",
+      "minutes": [
+       50,
+       50
+      ],
+      "therapy": 1,
+      "disputed": 0,
+      "decisions": [
+       {
+        "rule": "RULE-PRES-02",
+        "field": "rejected_presence",
+        "chosen": "present",
+        "why": "schedule_export cannot establish that care was delivered (BH-D006)"
+       },
+       {
+        "rule": "RULE-PRES-02",
+        "field": "occurred",
+        "chosen": "yes",
+        "why": "attested or clinically documented patient contact: BH-D002"
+       },
+       {
+        "rule": "RULE-DUR-02",
+        "field": "minutes",
+        "chosen": "50",
+        "why": "clinical_note BH-D002 is the authority for duration on a individual_therapy event; intervals"
+       }
+      ]
+     },
+     "HG-E102": {
+      "date": "2026-01-06",
+      "service_type": "group_therapy",
+      "occurred": "yes",
+      "patient_present": "yes",
+      "minutes": [
+       45,
+       45
+      ],
+      "therapy": 1,
+      "disputed": 0,
+      "decisions": [
+       {
+        "rule": "RULE-PRES-02",
+        "field": "rejected_presence",
+        "chosen": "partial",
+        "why": "schedule_export cannot establish that care was delivered (BH-D006)"
+       },
+       {
+        "rule": "RULE-PRES-02",
+        "field": "occurred",
+        "chosen": "yes",
+        "why": "attested or clinically documented patient contact: BH-D005"
+       },
+       {
+        "rule": "RULE-DUR-01",
+        "field": "minutes",
+        "chosen": "45",
+        "why": "attendance_register BH-D005 is the authority for duration on a group_therapy event; intervals"
+       }
+      ]
+     },
+     "HG-E103": {
+      "date": "2026-01-08",
+      "service_type": "individual_therapy",
+      "occurred": "no",
+      "patient_present": "no",
+      "minutes": [
+       0,
+       0
+      ],
+      "therapy": 0,
+      "disputed": 0,
+      "decisions": [
+       {
+        "rule": "RULE-PRES-03",
+        "field": "occurred",
+        "chosen": "no",
+        "why": "final disposition records cancelled (BH-D015: cancellation)"
+       }
+      ]
+     },
+     "HG-E104": {
+      "date": "2026-01-09",
+      "service_type": "family_therapy",
+      "occurred": "yes",
+      "patient_present": "yes",
+      "minutes": [
+       45,
+       45
+      ],
+      "therapy": 1,
+      "disputed": 0,
+      "decisions": [
+       {
+        "rule": "RULE-PRES-02",
+        "field": "rejected_presence",
+        "chosen": "present",
+        "why": "schedule_export cannot establish that care was delivered (BH-D006)"
+       },
+       {
+        "rule": "RULE-PRES-02",
+        "field": "occurred",
+        "chosen": "yes",
+        "why": "attested or clinically documented patient contact: BH-D007, BH-D008"
+       },
+       {
+        "rule": "RULE-DUR-02",
+        "field": "minutes",
+        "chosen": "45",
+        "why": "clinical_note BH-D007 is the authority for duration on a family_therapy event; intervals"
+       }
+      ]
+     },
+     "HG-E105": {
+      "date": "2026-01-12",
+      "service_type": "group_therapy",
+      "occurred": "yes",
+      "patient_present": "yes",
+      "minutes": [
+       75,
+       75
+      ],
+      "therapy": 1,
+      "disputed": 0,
+      "decisions": [
+       {
+        "rule": "RULE-PRES-02",
+        "field": "rejected_presence",
+        "chosen": "present",
+        "why": "schedule_export cannot establish that care was delivered (BH-D006)"
+       },
+       {
+        "rule": "RULE-PRES-02",
+        "field": "occurred",
+        "chosen": "yes",
+        "why": "attested or clinically documented patient contact: BH-D005"
+       },
+       {
+        "rule": "RULE-DUR-01",
+        "field": "minutes",
+        "chosen": "75",
+        "why": "attendance_register BH-D005 is the authority for duration on a group_therapy event; intervals"
+       }
+      ]
+     },
+     "HG-E106": {
+      "date": "2026-01-13",
+      "service_type": "medication_management",
+      "occurred": "yes",
+      "patient_present": "yes",
+      "minutes": [
+       25,
+       25
+      ],
+      "therapy": 0,
+      "disputed": 0,
+      "decisions": [
+       {
+        "rule": "RULE-PRES-02",
+        "field": "rejected_presence",
+        "chosen": "present",
+        "why": "schedule_export cannot establish that care was delivered (BH-D006)"
+       },
+       {
+        "rule": "RULE-PRES-02",
+        "field": "occurred",
+        "chosen": "yes",
+        "why": "attested or clinically documented patient contact: BH-D010"
+       },
+       {
+        "rule": "RULE-DUR-02",
+        "field": "minutes",
+        "chosen": "25",
+        "why": "clinical_note BH-D010 is the authority for duration on a medication_management event; intervals"
+       }
+      ]
+     },
+     "HG-E107": {
+      "date": "2026-01-14",
+      "service_type": "individual_therapy",
+      "occurred": "yes",
+      "patient_present": "yes",
+      "minutes": [
+       45,
+       45
+      ],
+      "therapy": 1,
+      "disputed": 0,
+      "decisions": [
+       {
+        "rule": "RULE-PRES-02",
+        "field": "rejected_presence",
+        "chosen": "present",
+        "why": "schedule_export cannot establish that care was delivered (BH-D006)"
+       },
+       {
+        "rule": "RULE-PRES-02",
+        "field": "occurred",
+        "chosen": "yes",
+        "why": "attested or clinically documented patient contact: BH-D011"
+       },
+       {
+        "rule": "RULE-DUR-02",
+        "field": "minutes",
+        "chosen": "45",
+        "why": "clinical_note BH-D011 is the authority for duration on a individual_therapy event; intervals"
+       }
+      ]
+     },
+     "HG-E108": {
+      "date": "2026-01-15",
+      "service_type": "group_therapy",
+      "occurred": "no",
+      "patient_present": "no",
+      "minutes": [
+       0,
+       0
+      ],
+      "therapy": 0,
+      "disputed": 0,
+      "decisions": [
+       {
+        "rule": "RULE-PRES-03",
+        "field": "occurred",
+        "chosen": "no",
+        "why": "final disposition records cancelled (BH-D016: cancelled by the clinic)"
+       }
+      ]
+     },
+     "HG-E109": {
+      "date": "2026-01-16",
+      "service_type": "collateral_contact",
+      "occurred": "yes",
+      "patient_present": "no",
+      "minutes": [
+       0,
+       0
+      ],
+      "therapy": 0,
+      "disputed": 0,
+      "decisions": [
+       {
+        "rule": "RULE-PRES-02",
+        "field": "rejected_presence",
+        "chosen": "present",
+        "why": "schedule_export cannot establish that care was delivered (BH-D006)"
+       },
+       {
+        "rule": "RULE-PRES-03",
+        "field": "occurred",
+        "chosen": "yes",
+        "why": "contact is documented but the patient was not present (BH-D012: absent for the entire)"
+       }
+      ]
+     },
+     "HG-E110": {
+      "date": "2026-01-19",
+      "service_type": "group_therapy",
+      "occurred": "yes",
+      "patient_present": "yes",
+      "minutes": [
+       60,
+       60
+      ],
+      "therapy": 1,
+      "disputed": 0,
+      "decisions": [
+       {
+        "rule": "RULE-PRES-02",
+        "field": "rejected_presence",
+        "chosen": "present",
+        "why": "retransmission cannot establish that care was delivered (BH-D104)"
+       },
+       {
+        "rule": "RULE-PRES-02",
+        "field": "occurred",
+        "chosen": "yes",
+        "why": "attested or clinically documented patient contact: BH-D102"
+       },
+       {
+        "rule": "RULE-DUR-05",
+        "field": "rejected_duration",
+        "chosen": "[['10:00', '11:30']]",
+        "why": "retransmission contributes no duration (BH-D104)"
+       },
+       {
+        "rule": "RULE-DUR-01",
+        "field": "minutes",
+        "chosen": "60",
+        "why": "attendance_register BH-D102 is the authority for duration on a group_therapy event; intervals+correction; correction 6853e674a5cd-C01 applied"
+       }
+      ]
+     },
+     "HG-E111": {
+      "date": "2026-01-19",
+      "service_type": "individual_therapy",
+      "occurred": "yes",
+      "patient_present": "yes",
+      "minutes": [
+       30,
+       30
+      ],
+      "therapy": 1,
+      "disputed": 0,
+      "decisions": [
+       {
+        "rule": "RULE-PRES-02",
+        "field": "occurred",
+        "chosen": "yes",
+        "why": "attested or clinically documented patient contact: BH-D105"
+       },
+       {
+        "rule": "RULE-DUR-02",
+        "field": "minutes",
+        "chosen": "30",
+        "why": "clinical_note BH-D105 is the authority for duration on a individual_therapy event; intervals"
+       }
+      ]
+     },
+     "HG-E112": {
+      "date": "2026-01-21",
+      "service_type": "individual_therapy",
+      "occurred": "yes",
+      "patient_present": "yes",
+      "minutes": [
+       45,
+       45
+      ],
+      "therapy": 1,
+      "disputed": 0,
+      "decisions": [
+       {
+        "rule": "RULE-PRES-02",
+        "field": "rejected_presence",
+        "chosen": "present",
+        "why": "platform_log cannot establish that care was delivered (BH-D106)"
+       },
+       {
+        "rule": "RULE-PRES-02",
+        "field": "rejected_presence",
+        "chosen": "present",
+        "why": "platform_log cannot establish that care was delivered (BH-D106)"
+       },
+       {
+        "rule": "RULE-PRES-02",
+        "field": "occurred",
+        "chosen": "yes",
+        "why": "attested or clinically documented patient contact: BH-D106"
+       },
+       {
+        "rule": "RULE-DUR-05",
+        "field": "rejected_duration",
+        "chosen": "[['13:00', '13:20']]",
+        "why": "platform_log contributes no duration (BH-D106)"
+       },
+       {
+        "rule": "RULE-DUR-05",
+        "field": "rejected_duration",
+        "chosen": "[['13:30', '13:55']]",
+        "why": "platform_log contributes no duration (BH-D106)"
+       },
+       {
+        "rule": "RULE-DUR-02",
+        "field": "minutes",
+        "chosen": "45",
+        "why": "clinical_note BH-D106 is the authority for duration on a individual_therapy event; intervals"
+       }
+      ]
+     },
+     "HG-E113": {
+      "date": "2026-01-22",
+      "service_type": "group_therapy",
+      "occurred": "yes",
+      "patient_present": "yes",
+      "minutes": [
+       45,
+       45
+      ],
+      "therapy": 1,
+      "disputed": 0,
+      "decisions": [
+       {
+        "rule": "RULE-PRES-02",
+        "field": "occurred",
+        "chosen": "yes",
+        "why": "attested or clinically documented patient contact: BH-D107, BH-D108"
+       },
+       {
+        "rule": "RULE-DUR-01",
+        "field": "minutes",
+        "chosen": "45",
+        "why": "attendance_register BH-D108 is the authority for duration on a group_therapy event; intervals"
+       }
+      ]
+     },
+     "HG-E114": {
+      "date": "2026-01-23",
+      "service_type": "care_coordination",
+      "occurred": "yes",
+      "patient_present": "no",
+      "minutes": [
+       0,
+       0
+      ],
+      "therapy": 0,
+      "disputed": 0,
+      "decisions": [
+       {
+        "rule": "RULE-PRES-03",
+        "field": "occurred",
+        "chosen": "yes",
+        "why": "contact is documented but the patient was not present (BH-D109: patient participation: none)"
+       }
+      ]
+     },
+     "HG-E115": {
+      "date": "2026-01-26",
+      "service_type": "individual_therapy",
+      "occurred": "yes",
+      "patient_present": "yes",
+      "minutes": [
+       40,
+       50
+      ],
+      "therapy": 1,
+      "disputed": 1,
+      "decisions": [
+       {
+        "rule": "RULE-PRES-02",
+        "field": "occurred",
+        "chosen": "yes",
+        "why": "attested or clinically documented patient contact: BH-D110, BH-D111"
+       },
+       {
+        "rule": "RULE-DUR-03",
+        "field": "minutes",
+        "chosen": "40-50",
+        "why": "records of equal authority disagree and neither is a correction: kept as bounds (BH-D111=40min; BH-D110=50min)"
+       }
+      ]
+     },
+     "HG-E116": {
+      "date": "2026-01-27",
+      "service_type": "group_therapy",
+      "occurred": "no",
+      "patient_present": "no",
+      "minutes": [
+       0,
+       0
+      ],
+      "therapy": 0,
+      "disputed": 0,
+      "decisions": [
+       {
+        "rule": "RULE-PRES-02",
+        "field": "rejected_presence",
+        "chosen": "present",
+        "why": "draft_note cannot establish that care was delivered (BH-D112)"
+       },
+       {
+        "rule": "RULE-PRES-03",
+        "field": "occurred",
+        "chosen": "no",
+        "why": "final disposition records absent (BH-D108: no show)"
+       }
+      ]
+     },
+     "HG-E117": {
+      "date": "2026-01-28",
+      "service_type": "individual_therapy",
+      "occurred": "no",
+      "patient_present": "no",
+      "minutes": [
+       0,
+       0
+      ],
+      "therapy": 0,
+      "disputed": 0,
+      "decisions": [
+       {
+        "rule": "RULE-PRES-03",
+        "field": "occurred",
+        "chosen": "no",
+        "why": "final disposition records cancelled (BH-D108: patient cancelled)"
+       }
+      ]
+     },
+     "HG-E118": {
+      "date": "2026-01-29",
+      "service_type": "group_therapy",
+      "occurred": "yes",
+      "patient_present": "yes",
+      "minutes": [
+       75,
+       75
+      ],
+      "therapy": 1,
+      "disputed": 0,
+      "decisions": [
+       {
+        "rule": "RULE-PRES-02",
+        "field": "occurred",
+        "chosen": "yes",
+        "why": "attested or clinically documented patient contact: BH-D108"
+       },
+       {
+        "rule": "RULE-DUR-01",
+        "field": "minutes",
+        "chosen": "75",
+        "why": "attendance_register BH-D108 is the authority for duration on a group_therapy event; intervals"
+       }
+      ]
+     },
+     "HG-E119": {
+      "date": "2026-01-30",
+      "service_type": "family_therapy",
+      "occurred": "yes",
+      "patient_present": "yes",
+      "minutes": [
+       30,
+       30
+      ],
+      "therapy": 1,
+      "disputed": 0,
+      "decisions": [
+       {
+        "rule": "RULE-PRES-02",
+        "field": "occurred",
+        "chosen": "yes",
+        "why": "attested or clinically documented patient contact: BH-D113"
+       },
+       {
+        "rule": "RULE-DUR-02",
+        "field": "minutes",
+        "chosen": "30",
+        "why": "clinical_note BH-D113 is the authority for duration on a family_therapy event; intervals"
+       }
+      ]
+     },
+     "HG-E120": {
+      "date": "2026-01-30",
+      "service_type": "medication_management",
+      "occurred": "yes",
+      "patient_present": "yes",
+      "minutes": [
+       20,
+       20
+      ],
+      "therapy": 0,
+      "disputed": 0,
+      "decisions": [
+       {
+        "rule": "RULE-PRES-02",
+        "field": "occurred",
+        "chosen": "yes",
+        "why": "attested or clinically documented patient contact: BH-D114"
+       },
+       {
+        "rule": "RULE-DUR-02",
+        "field": "minutes",
+        "chosen": "20",
+        "why": "clinical_note BH-D114 is the authority for duration on a medication_management event; intervals"
+       }
+      ]
+     }
+    },
+    "days": [
+     "2026-01-05",
+     "2026-01-06",
+     "2026-01-08",
+     "2026-01-09",
+     "2026-01-12",
+     "2026-01-13",
+     "2026-01-14",
+     "2026-01-15",
+     "2026-01-16",
+     "2026-01-19",
+     "2026-01-21",
+     "2026-01-22",
+     "2026-01-23",
+     "2026-01-26",
+     "2026-01-27",
+     "2026-01-28",
+     "2026-01-29",
+     "2026-01-30"
+    ]
+   }
+  }
+ },
+ "latest_document": {
+  "policy": "latest_document",
+  "patients": {
+   "HG-M042": {
+    "sessions": 12,
+    "total_minutes": [
+     600,
+     600
+    ],
+    "weeks": [
+     {
+      "week": "2026-01-05",
+      "minutes": [
+       140,
+       140
+      ],
+      "days": [
+       3,
+       3
+      ],
+      "status": "NOT_MET"
+     },
+     {
+      "week": "2026-01-12",
+      "minutes": [
+       120,
+       120
+      ],
+      "days": [
+       2,
+       2
+      ],
+      "status": "NOT_MET"
+     },
+     {
+      "week": "2026-01-19",
+      "minutes": [
+       195,
+       195
+      ],
+      "days": [
+       3,
+       3
+      ],
+      "status": "MET"
+     },
+     {
+      "week": "2026-01-26",
+      "minutes": [
+       145,
+       145
+      ],
+      "days": [
+       3,
+       3
+      ],
+      "status": "NOT_MET"
+     }
+    ],
+    "integrity_ok": false,
+    "integrity_issues": [
+     {
+      "check": "wall_clock",
+      "patient": "HG-M042",
+      "date": "2026-01-19",
+      "detail": [
+       {
+        "a": "HG-E110",
+        "b": "HG-E111",
+        "overlap_minutes": 15
+       }
+      ]
+     }
+    ],
+    "events": {
+     "HG-E101": {
+      "date": "2026-01-05",
+      "service_type": "individual_therapy",
+      "occurred": "yes",
+      "patient_present": "yes",
+      "minutes": [
+       50,
+       50
+      ],
+      "therapy": 1,
+      "disputed": 0,
+      "decisions": [
+       {
+        "rule": "POLICY-LATEST",
+        "field": "occurred",
+        "chosen": "yes",
+        "why": "latest-document policy: BH-D002 (2026-01-05) states present"
+       },
+       {
+        "rule": "POLICY-LATEST",
+        "field": "minutes",
+        "chosen": "50",
+        "why": "latest-document policy: BH-D002 (2026-01-05) -> 50 min"
+       }
+      ]
+     },
+     "HG-E102": {
+      "date": "2026-01-06",
+      "service_type": "group_therapy",
+      "occurred": "yes",
+      "patient_present": "yes",
+      "minutes": [
+       45,
+       45
+      ],
+      "therapy": 1,
+      "disputed": 0,
+      "decisions": [
+       {
+        "rule": "POLICY-LATEST",
+        "field": "occurred",
+        "chosen": "yes",
+        "why": "latest-document policy: BH-D005 (2026-01-06) states partial"
+       },
+       {
+        "rule": "POLICY-LATEST",
+        "field": "minutes",
+        "chosen": "45",
+        "why": "latest-document policy: BH-D005 (2026-01-06) -> 45 min"
+       }
+      ]
+     },
+     "HG-E103": {
+      "date": "2026-01-08",
+      "service_type": "individual_therapy",
+      "occurred": "no",
+      "patient_present": "no",
+      "minutes": [
+       0,
+       0
+      ],
+      "therapy": 0,
+      "disputed": 0,
+      "decisions": [
+       {
+        "rule": "POLICY-LATEST",
+        "field": "occurred",
+        "chosen": "no",
+        "why": "latest-document policy: BH-D015 (2026-01-08) states cancelled"
+       }
+      ]
+     },
+     "HG-E104": {
+      "date": "2026-01-09",
+      "service_type": "family_therapy",
+      "occurred": "yes",
+      "patient_present": "yes",
+      "minutes": [
+       45,
+       45
+      ],
+      "therapy": 1,
+      "disputed": 0,
+      "decisions": [
+       {
+        "rule": "POLICY-LATEST",
+        "field": "occurred",
+        "chosen": "yes",
+        "why": "latest-document policy: BH-D008 (2026-01-10) states present"
+       },
+       {
+        "rule": "POLICY-LATEST",
+        "field": "minutes",
+        "chosen": "45",
+        "why": "latest-document policy: BH-D008 (2026-01-10) -> 45 min"
+       }
+      ]
+     },
+     "HG-E105": {
+      "date": "2026-01-12",
+      "service_type": "group_therapy",
+      "occurred": "yes",
+      "patient_present": "yes",
+      "minutes": [
+       75,
+       75
+      ],
+      "therapy": 1,
+      "disputed": 0,
+      "decisions": [
+       {
+        "rule": "POLICY-LATEST",
+        "field": "occurred",
+        "chosen": "yes",
+        "why": "latest-document policy: BH-D005 (2026-01-12) states present"
+       },
+       {
+        "rule": "POLICY-LATEST",
+        "field": "minutes",
+        "chosen": "75",
+        "why": "latest-document policy: BH-D005 (2026-01-12) -> 75 min"
+       }
+      ]
+     },
+     "HG-E106": {
+      "date": "2026-01-13",
+      "service_type": "medication_management",
+      "occurred": "yes",
+      "patient_present": "yes",
+      "minutes": [
+       25,
+       25
+      ],
+      "therapy": 0,
+      "disputed": 0,
+      "decisions": [
+       {
+        "rule": "POLICY-LATEST",
+        "field": "occurred",
+        "chosen": "yes",
+        "why": "latest-document policy: BH-D006 (2026-01-13) states present"
+       },
+       {
+        "rule": "POLICY-LATEST",
+        "field": "minutes",
+        "chosen": "25",
+        "why": "latest-document policy: BH-D010 (2026-01-13) -> 25 min"
+       }
+      ]
+     },
+     "HG-E107": {
+      "date": "2026-01-14",
+      "service_type": "individual_therapy",
+      "occurred": "yes",
+      "patient_present": "yes",
+      "minutes": [
+       45,
+       45
+      ],
+      "therapy": 1,
+      "disputed": 0,
+      "decisions": [
+       {
+        "rule": "POLICY-LATEST",
+        "field": "occurred",
+        "chosen": "yes",
+        "why": "latest-document policy: BH-D006 (2026-01-14) states present"
+       },
+       {
+        "rule": "POLICY-LATEST",
+        "field": "minutes",
+        "chosen": "45",
+        "why": "latest-document policy: BH-D011 (2026-01-14) -> 45 min"
+       }
+      ]
+     },
+     "HG-E108": {
+      "date": "2026-01-15",
+      "service_type": "group_therapy",
+      "occurred": "no",
+      "patient_present": "no",
+      "minutes": [
+       0,
+       0
+      ],
+      "therapy": 0,
+      "disputed": 0,
+      "decisions": [
+       {
+        "rule": "POLICY-LATEST",
+        "field": "occurred",
+        "chosen": "no",
+        "why": "latest-document policy: BH-D016 (2026-01-15) states cancelled"
+       }
+      ]
+     },
+     "HG-E109": {
+      "date": "2026-01-16",
+      "service_type": "collateral_contact",
+      "occurred": "no",
+      "patient_present": "no",
+      "minutes": [
+       0,
+       0
+      ],
+      "therapy": 0,
+      "disputed": 0,
+      "decisions": [
+       {
+        "rule": "POLICY-LATEST",
+        "field": "occurred",
+        "chosen": "no",
+        "why": "latest-document policy: BH-D012 (2026-01-16) states absent"
+       }
+      ]
+     },
+     "HG-E110": {
+      "date": "2026-01-19",
+      "service_type": "group_therapy",
+      "occurred": "yes",
+      "patient_present": "yes",
+      "minutes": [
+       75,
+       75
+      ],
+      "therapy": 1,
+      "disputed": 0,
+      "decisions": [
+       {
+        "rule": "POLICY-LATEST",
+        "field": "occurred",
+        "chosen": "yes",
+        "why": "latest-document policy: BH-D104 (2026-01-26) states present"
+       },
+       {
+        "rule": "POLICY-LATEST",
+        "field": "minutes",
+        "chosen": "75",
+        "why": "latest-document policy: BH-D104 (2026-01-26) -> 75 min"
+       }
+      ]
+     },
+     "HG-E111": {
+      "date": "2026-01-19",
+      "service_type": "individual_therapy",
+      "occurred": "yes",
+      "patient_present": "yes",
+      "minutes": [
+       30,
+       30
+      ],
+      "therapy": 1,
+      "disputed": 0,
+      "decisions": [
+       {
+        "rule": "POLICY-LATEST",
+        "field": "occurred",
+        "chosen": "yes",
+        "why": "latest-document policy: BH-D105 (2026-01-19) states present"
+       },
+       {
+        "rule": "POLICY-LATEST",
+        "field": "minutes",
+        "chosen": "30",
+        "why": "latest-document policy: BH-D105 (2026-01-19) -> 30 min"
+       }
+      ]
+     },
+     "HG-E112": {
+      "date": "2026-01-21",
+      "service_type": "individual_therapy",
+      "occurred": "yes",
+      "patient_present": "yes",
+      "minutes": [
+       45,
+       45
+      ],
+      "therapy": 1,
+      "disputed": 0,
+      "decisions": [
+       {
+        "rule": "POLICY-LATEST",
+        "field": "occurred",
+        "chosen": "yes",
+        "why": "latest-document policy: BH-D106 (2026-01-21) states present"
+       },
+       {
+        "rule": "POLICY-LATEST",
+        "field": "minutes",
+        "chosen": "45",
+        "why": "latest-document policy: BH-D106 (2026-01-21) -> 45 min"
+       }
+      ]
+     },
+     "HG-E113": {
+      "date": "2026-01-22",
+      "service_type": "group_therapy",
+      "occurred": "yes",
+      "patient_present": "yes",
+      "minutes": [
+       45,
+       45
+      ],
+      "therapy": 1,
+      "disputed": 0,
+      "decisions": [
+       {
+        "rule": "POLICY-LATEST",
+        "field": "occurred",
+        "chosen": "yes",
+        "why": "latest-document policy: BH-D108 (2026-01-28) states present"
+       },
+       {
+        "rule": "POLICY-LATEST",
+        "field": "minutes",
+        "chosen": "45",
+        "why": "latest-document policy: BH-D108 (2026-01-28) -> 45 min"
+       }
+      ]
+     },
+     "HG-E114": {
+      "date": "2026-01-23",
+      "service_type": "care_coordination",
+      "occurred": "no",
+      "patient_present": "no",
+      "minutes": [
+       0,
+       0
+      ],
+      "therapy": 0,
+      "disputed": 0,
+      "decisions": [
+       {
+        "rule": "POLICY-LATEST",
+        "field": "occurred",
+        "chosen": "no",
+        "why": "latest-document policy: BH-D109 (2026-01-23) states absent"
+       }
+      ]
+     },
+     "HG-E115": {
+      "date": "2026-01-26",
+      "service_type": "individual_therapy",
+      "occurred": "yes",
+      "patient_present": "yes",
+      "minutes": [
+       40,
+       40
+      ],
+      "therapy": 1,
+      "disputed": 0,
+      "decisions": [
+       {
+        "rule": "POLICY-LATEST",
+        "field": "occurred",
+        "chosen": "yes",
+        "why": "latest-document policy: BH-D111 (2026-01-26) states present"
+       },
+       {
+        "rule": "POLICY-LATEST",
+        "field": "minutes",
+        "chosen": "40",
+        "why": "latest-document policy: BH-D111 (2026-01-26) -> 40 min"
+       }
+      ]
+     },
+     "HG-E116": {
+      "date": "2026-01-27",
+      "service_type": "group_therapy",
+      "occurred": "no",
+      "patient_present": "no",
+      "minutes": [
+       0,
+       0
+      ],
+      "therapy": 0,
+      "disputed": 0,
+      "decisions": [
+       {
+        "rule": "POLICY-LATEST",
+        "field": "occurred",
+        "chosen": "no",
+        "why": "latest-document policy: BH-D108 (2026-01-28) states absent"
+       }
+      ]
+     },
+     "HG-E117": {
+      "date": "2026-01-28",
+      "service_type": "individual_therapy",
+      "occurred": "no",
+      "patient_present": "no",
+      "minutes": [
+       0,
+       0
+      ],
+      "therapy": 0,
+      "disputed": 0,
+      "decisions": [
+       {
+        "rule": "POLICY-LATEST",
+        "field": "occurred",
+        "chosen": "no",
+        "why": "latest-document policy: BH-D108 (2026-01-28) states cancelled"
+       }
+      ]
+     },
+     "HG-E118": {
+      "date": "2026-01-29",
+      "service_type": "group_therapy",
+      "occurred": "yes",
+      "patient_present": "yes",
+      "minutes": [
+       75,
+       75
+      ],
+      "therapy": 1,
+      "disputed": 0,
+      "decisions": [
+       {
+        "rule": "POLICY-LATEST",
+        "field": "occurred",
+        "chosen": "yes",
+        "why": "latest-document policy: BH-D108 (2026-01-28) states present"
+       },
+       {
+        "rule": "POLICY-LATEST",
+        "field": "minutes",
+        "chosen": "75",
+        "why": "latest-document policy: BH-D108 (2026-01-28) -> 75 min"
+       }
+      ]
+     },
+     "HG-E119": {
+      "date": "2026-01-30",
+      "service_type": "family_therapy",
+      "occurred": "yes",
+      "patient_present": "yes",
+      "minutes": [
+       30,
+       30
+      ],
+      "therapy": 1,
+      "disputed": 0,
+      "decisions": [
+       {
+        "rule": "POLICY-LATEST",
+        "field": "occurred",
+        "chosen": "yes",
+        "why": "latest-document policy: BH-D113 (2026-01-30) states present"
+       },
+       {
+        "rule": "POLICY-LATEST",
+        "field": "minutes",
+        "chosen": "30",
+        "why": "latest-document policy: BH-D113 (2026-01-30) -> 30 min"
+       }
+      ]
+     },
+     "HG-E120": {
+      "date": "2026-01-30",
+      "service_type": "medication_management",
+      "occurred": "yes",
+      "patient_present": "yes",
+      "minutes": [
+       20,
+       20
+      ],
+      "therapy": 0,
+      "disputed": 0,
+      "decisions": [
+       {
+        "rule": "POLICY-LATEST",
+        "field": "occurred",
+        "chosen": "yes",
+        "why": "latest-document policy: BH-D114 (2026-01-30) states present"
+       },
+       {
+        "rule": "POLICY-LATEST",
+        "field": "minutes",
+        "chosen": "20",
+        "why": "latest-document policy: BH-D114 (2026-01-30) -> 20 min"
+       }
+      ]
+     }
+    },
+    "days": [
+     "2026-01-05",
+     "2026-01-06",
+     "2026-01-08",
+     "2026-01-09",
+     "2026-01-12",
+     "2026-01-13",
+     "2026-01-14",
+     "2026-01-15",
+     "2026-01-16",
+     "2026-01-19",
+     "2026-01-21",
+     "2026-01-22",
+     "2026-01-23",
+     "2026-01-26",
+     "2026-01-27",
+     "2026-01-28",
+     "2026-01-29",
+     "2026-01-30"
+    ]
+   }
+  }
+ },
+ "diverging_events": [
+  {
+   "patient": "HG-M042",
+   "event": "HG-E109",
+   "date": "2026-01-16",
+   "field": "occurred",
+   "a": "yes",
+   "b": "no",
+   "a_log": [
+    {
+     "rule": "RULE-PRES-02",
+     "field": "rejected_presence",
+     "chosen": "present",
+     "why": "schedule_export cannot establish that care was delivered (BH-D006)"
+    },
+    {
+     "rule": "RULE-PRES-03",
+     "field": "occurred",
+     "chosen": "yes",
+     "why": "contact is documented but the patient was not present (BH-D012: absent for the entire)"
+    }
+   ],
+   "b_log": [
+    {
+     "rule": "POLICY-LATEST",
+     "field": "occurred",
+     "chosen": "no",
+     "why": "latest-document policy: BH-D012 (2026-01-16) states absent"
+    }
+   ]
+  },
+  {
+   "patient": "HG-M042",
+   "event": "HG-E110",
+   "date": "2026-01-19",
+   "field": "minutes",
+   "a": [
+    60,
+    60
+   ],
+   "b": [
+    75,
+    75
+   ],
+   "a_log": [
+    {
+     "rule": "RULE-PRES-02",
+     "field": "rejected_presence",
+     "chosen": "present",
+     "why": "retransmission cannot establish that care was delivered (BH-D104)"
+    },
+    {
+     "rule": "RULE-PRES-02",
+     "field": "occurred",
+     "chosen": "yes",
+     "why": "attested or clinically documented patient contact: BH-D102"
+    },
+    {
+     "rule": "RULE-DUR-05",
+     "field": "rejected_duration",
+     "chosen": "[['10:00', '11:30']]",
+     "why": "retransmission contributes no duration (BH-D104)"
+    },
+    {
+     "rule": "RULE-DUR-01",
+     "field": "minutes",
+     "chosen": "60",
+     "why": "attendance_register BH-D102 is the authority for duration on a group_therapy event; intervals+correction; correction 6853e674a5cd-C01 applied"
+    }
+   ],
+   "b_log": [
+    {
+     "rule": "POLICY-LATEST",
+     "field": "occurred",
+     "chosen": "yes",
+     "why": "latest-document policy: BH-D104 (2026-01-26) states present"
+    },
+    {
+     "rule": "POLICY-LATEST",
+     "field": "minutes",
+     "chosen": "75",
+     "why": "latest-document policy: BH-D104 (2026-01-26) -> 75 min"
+    }
+   ]
+  },
+  {
+   "patient": "HG-M042",
+   "event": "HG-E114",
+   "date": "2026-01-23",
+   "field": "occurred",
+   "a": "yes",
+   "b": "no",
+   "a_log": [
+    {
+     "rule": "RULE-PRES-03",
+     "field": "occurred",
+     "chosen": "yes",
+     "why": "contact is documented but the patient was not present (BH-D109: patient participation: none)"
+    }
+   ],
+   "b_log": [
+    {
+     "rule": "POLICY-LATEST",
+     "field": "occurred",
+     "chosen": "no",
+     "why": "latest-document policy: BH-D109 (2026-01-23) states absent"
+    }
+   ]
+  },
+  {
+   "patient": "HG-M042",
+   "event": "HG-E115",
+   "date": "2026-01-26",
+   "field": "minutes",
+   "a": [
+    40,
+    50
+   ],
+   "b": [
+    40,
+    40
+   ],
+   "a_log": [
+    {
+     "rule": "RULE-PRES-02",
+     "field": "occurred",
+     "chosen": "yes",
+     "why": "attested or clinically documented patient contact: BH-D110, BH-D111"
+    },
+    {
+     "rule": "RULE-DUR-03",
+     "field": "minutes",
+     "chosen": "40-50",
+     "why": "records of equal authority disagree and neither is a correction: kept as bounds (BH-D111=40min; BH-D110=50min)"
+    }
+   ],
+   "b_log": [
+    {
+     "rule": "POLICY-LATEST",
+     "field": "occurred",
+     "chosen": "yes",
+     "why": "latest-document policy: BH-D111 (2026-01-26) states present"
+    },
+    {
+     "rule": "POLICY-LATEST",
+     "field": "minutes",
+     "chosen": "40",
+     "why": "latest-document policy: BH-D111 (2026-01-26) -> 40 min"
+    }
+   ]
+  },
+  {
+   "patient": "HG-M042",
+   "event": "HG-E115",
+   "date": "2026-01-26",
+   "field": "disputed",
+   "a": 1,
+   "b": 0,
+   "a_log": [
+    {
+     "rule": "RULE-PRES-02",
+     "field": "occurred",
+     "chosen": "yes",
+     "why": "attested or clinically documented patient contact: BH-D110, BH-D111"
+    },
+    {
+     "rule": "RULE-DUR-03",
+     "field": "minutes",
+     "chosen": "40-50",
+     "why": "records of equal authority disagree and neither is a correction: kept as bounds (BH-D111=40min; BH-D110=50min)"
+    }
+   ],
+   "b_log": [
+    {
+     "rule": "POLICY-LATEST",
+     "field": "occurred",
+     "chosen": "yes",
+     "why": "latest-document policy: BH-D111 (2026-01-26) states present"
+    },
+    {
+     "rule": "POLICY-LATEST",
+     "field": "minutes",
+     "chosen": "40",
+     "why": "latest-document policy: BH-D111 (2026-01-26) -> 40 min"
+    }
+   ]
+  }
+ ],
+ "diverging_weeks": [
+  {
+   "patient": "HG-M042",
+   "week": "2026-01-19",
+   "a_status": "MET",
+   "b_status": "MET",
+   "a_minutes": [
+    180,
+    180
+   ],
+   "b_minutes": [
+    195,
+    195
+   ]
+  },
+  {
+   "patient": "HG-M042",
+   "week": "2026-01-26",
+   "a_status": "CANNOT_DETERMINE",
+   "b_status": "NOT_MET",
+   "a_minutes": [
+    145,
+    155
+   ],
+   "b_minutes": [
+    145,
+    145
+   ]
+  }
+ ]
+}

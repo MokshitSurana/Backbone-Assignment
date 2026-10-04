@@ -1,0 +1,3845 @@
+{
+ "patients": [
+  {
+   "mrn": "HG-M042",
+   "name": "Rowan Mercer",
+   "given_name": "Rowan",
+   "dob": "1991-04-12",
+   "episode": {
+    "patient_mrn": "HG-M042",
+    "start_date": "2026-01-05",
+    "end_date": "2026-01-30",
+    "claim_id": "a069d81f9183-E03"
+   },
+   "requirements": [
+    {
+     "req_id": "HG-M042|therapy_days|2026-01-05",
+     "patient_mrn": "HG-M042",
+     "metric": "therapy_days",
+     "service_types": "[\"individual_therapy\", \"group_therapy\", \"family_therapy\"]",
+     "period": "week_mon_sun",
+     "comparator": ">=",
+     "threshold": 3.0,
+     "effective_start": "2026-01-05",
+     "effective_end": "2026-01-30",
+     "claim_id": "2583c396f1af-P02"
+    },
+    {
+     "req_id": "HG-M042|therapy_minutes|2026-01-05",
+     "patient_mrn": "HG-M042",
+     "metric": "therapy_minutes",
+     "service_types": "[\"individual_therapy\", \"group_therapy\", \"family_therapy\"]",
+     "period": "week_mon_sun",
+     "comparator": ">=",
+     "threshold": 150.0,
+     "effective_start": "2026-01-05",
+     "effective_end": "2026-01-30",
+     "claim_id": "2583c396f1af-P03"
+    }
+   ],
+   "measures": [
+    {
+     "measure_id": "HG-M042|PHQ-9|-|2026-01-05",
+     "patient_mrn": "HG-M042",
+     "instrument": "PHQ-9",
+     "form_ref": null,
+     "completed_at": "2026-01-05",
+     "total": 18.0,
+     "items": null,
+     "claim_ids": "[\"a069d81f9183-M02\"]",
+     "disputed": 0,
+     "total_conflicts": null
+    },
+    {
+     "measure_id": "HG-M042|PHQ-9|HG-Q116|2026-01-16",
+     "patient_mrn": "HG-M042",
+     "instrument": "PHQ-9",
+     "form_ref": "HG-Q116",
+     "completed_at": "2026-01-16",
+     "total": 14.0,
+     "items": null,
+     "claim_ids": "[\"e66277f1439e-M02\", \"f249c8ccad09-X00\"]",
+     "disputed": 0,
+     "total_conflicts": null
+    },
+    {
+     "measure_id": "HG-M042|PHQ-9|-|2026-01-30",
+     "patient_mrn": "HG-M042",
+     "instrument": "PHQ-9",
+     "form_ref": null,
+     "completed_at": "2026-01-30",
+     "total": 10.0,
+     "items": "{\"item9\": 0}",
+     "claim_ids": "[\"1f8b098b51c5-M02\"]",
+     "disputed": 0,
+     "total_conflicts": null
+    }
+   ],
+   "events": [
+    {
+     "event_id": "HG-M042|HG-E101",
+     "patient_mrn": "HG-M042",
+     "encounter_ref": "HG-E101",
+     "service_date": "2026-01-05",
+     "service_type": "individual_therapy",
+     "occurred": "yes",
+     "patient_present": "yes",
+     "min_minutes": 50,
+     "max_minutes": 50,
+     "counts_as_therapy": 1,
+     "exclusion_reason": null,
+     "disputed": 0,
+     "resolved": {
+      "breaks": [],
+      "duration_claims": [
+       "a069d81f9183-N01"
+      ],
+      "evidence_docs": [
+       "BH-D002",
+       "BH-D006"
+      ],
+      "max_minutes": 50,
+      "min_minutes": 50,
+      "occurred": "yes",
+      "patient_present": "yes",
+      "presence_intervals": [
+       [
+        "09:00",
+        "09:50"
+       ]
+      ],
+      "presence_note": "",
+      "service_date": "2026-01-05",
+      "service_type": "individual_therapy"
+     },
+     "match_rule": "RULE-MATCH-01",
+     "decisions": [
+      {
+       "field": "claim",
+       "rule": "RULE-MATCH-01",
+       "chosen": "a069d81f9183-N01",
+       "why": "document states encounter HG-E101"
+      },
+      {
+       "field": "claim",
+       "rule": "RULE-MATCH-01",
+       "chosen": "a70408cc02c7-R01",
+       "why": "document states encounter HG-E101"
+      },
+      {
+       "field": "service_type",
+       "rule": "RULE-SVC-01",
+       "chosen": "individual_therapy",
+       "why": "weighted vote over claims; therapy and clinical wording preferred over administrative wording"
+      },
+      {
+       "field": "rejected_presence",
+       "rule": "RULE-PRES-02",
+       "chosen": "present",
+       "why": "schedule_export cannot establish that care was delivered (BH-D006)"
+      },
+      {
+       "field": "occurred",
+       "rule": "RULE-PRES-02",
+       "chosen": "yes",
+       "why": "attested or clinically documented patient contact: BH-D002"
+      },
+      {
+       "field": "minutes",
+       "rule": "RULE-DUR-02",
+       "chosen": "50",
+       "why": "clinical_note BH-D002 is the authority for duration on a individual_therapy event; intervals"
+      },
+      {
+       "field": "counts_as_therapy",
+       "rule": "RULE-INC-02",
+       "chosen": "yes",
+       "why": "patient-present therapy of a type the plan counts"
+      }
+     ],
+     "evidence": [
+      {
+       "event_id": "HG-M042|HG-E101",
+       "role": "corroborating",
+       "claim_id": "a70408cc02c7-R01",
+       "document": "BH-D006",
+       "file": "early_appointment_status_export.txt",
+       "authority": "schedule_export",
+       "offsets": [
+        345,
+        416
+       ],
+       "quote": "HG-E101   | Jan05 | Individual therapy     | 09:00\u201309:50    | Completed",
+       "verified": true
+      },
+      {
+       "event_id": "HG-M042|HG-E101",
+       "role": "primary",
+       "claim_id": "a069d81f9183-N01",
+       "document": "BH-D002",
+       "file": "intake_and_individual_jan05.txt",
+       "authority": "clinical_note",
+       "offsets": [
+        323,
+        345
+       ],
+       "quote": "completed, 50 minutes.",
+       "verified": true
+      }
+     ]
+    },
+    {
+     "event_id": "HG-M042|HG-E102",
+     "patient_mrn": "HG-M042",
+     "encounter_ref": "HG-E102",
+     "service_date": "2026-01-06",
+     "service_type": "group_therapy",
+     "occurred": "yes",
+     "patient_present": "yes",
+     "min_minutes": 45,
+     "max_minutes": 45,
+     "counts_as_therapy": 1,
+     "exclusion_reason": null,
+     "disputed": 0,
+     "resolved": {
+      "breaks": [
+       [
+        "10:45",
+        "11:00"
+       ]
+      ],
+      "duration_claims": [
+       "9b99167da160-R01"
+      ],
+      "evidence_docs": [
+       "BH-D004",
+       "BH-D005",
+       "BH-D006"
+      ],
+      "max_minutes": 45,
+      "min_minutes": 45,
+      "occurred": "yes",
+      "patient_present": "yes",
+      "presence_intervals": [
+       [
+        "10:15",
+        "10:45"
+       ],
+       [
+        "11:00",
+        "11:15"
+       ]
+      ],
+      "presence_note": "",
+      "service_date": "2026-01-06",
+      "service_type": "group_therapy"
+     },
+     "match_rule": "RULE-MATCH-01",
+     "decisions": [
+      {
+       "field": "claim",
+       "rule": "RULE-MATCH-01",
+       "chosen": "727178535a04-N01",
+       "why": "document states encounter HG-E102"
+      },
+      {
+       "field": "claim",
+       "rule": "RULE-MATCH-01",
+       "chosen": "9b99167da160-R01",
+       "why": "document states encounter HG-E102"
+      },
+      {
+       "field": "claim",
+       "rule": "RULE-MATCH-01",
+       "chosen": "a70408cc02c7-R02",
+       "why": "document states encounter HG-E102"
+      },
+      {
+       "field": "claim",
+       "rule": "RULE-MATCH-04",
+       "chosen": "9b99167da160-T04",
+       "why": "no encounter id; matched on date 2026-01-06 and service group_therapy"
+      },
+      {
+       "field": "service_type",
+       "rule": "RULE-SVC-01",
+       "chosen": "group_therapy",
+       "why": "weighted vote over claims; therapy and clinical wording preferred over administrative wording"
+      },
+      {
+       "field": "rejected_presence",
+       "rule": "RULE-PRES-02",
+       "chosen": "partial",
+       "why": "schedule_export cannot establish that care was delivered (BH-D006)"
+      },
+      {
+       "field": "occurred",
+       "rule": "RULE-PRES-02",
+       "chosen": "yes",
+       "why": "attested or clinically documented patient contact: BH-D005"
+      },
+      {
+       "field": "breaks",
+       "rule": "RULE-DUR-04",
+       "chosen": "[[\"10:45\", \"11:00\"]]",
+       "why": "nontherapeutic intervals subtracted by overlap with the patient's own presence interval, not as a flat amount"
+      },
+      {
+       "field": "minutes",
+       "rule": "RULE-DUR-01",
+       "chosen": "45",
+       "why": "attendance_register BH-D005 is the authority for duration on a group_therapy event; intervals"
+      },
+      {
+       "field": "counts_as_therapy",
+       "rule": "RULE-INC-02",
+       "chosen": "yes",
+       "why": "patient-present therapy of a type the plan counts"
+      }
+     ],
+     "evidence": [
+      {
+       "event_id": "HG-M042|HG-E102",
+       "role": "corroborating",
+       "claim_id": "727178535a04-N01",
+       "document": "BH-D004",
+       "file": "group_facilitator_jan06.txt",
+       "authority": "clinical_note",
+       "offsets": [
+        208,
+        271
+       ],
+       "quote": "Rowan Mercer | DOB 1991-04-12 | MRN HG-M042 | Encounter HG-E102",
+       "verified": true
+      },
+      {
+       "event_id": "HG-M042|HG-E102",
+       "role": "corroborating",
+       "claim_id": "9b99167da160-T04",
+       "document": "BH-D005",
+       "file": "early_group_attendance_roster.txt",
+       "authority": "attendance_register",
+       "offsets": [
+        616,
+        1015
+       ],
+       "quote": "January 6 desk note: Rowan called from the building entrance to say they were running behind after difficulty finding parking. Reception directed them to the group room after check-in. Rowan advised the facilitator that they would need to leave early for a previously arranged ride. Departure was marked when Rowan returned their visitor badge. Rowan did not re-enter the group room after departing.",
+       "verified": true
+      },
+      {
+       "event_id": "HG-M042|HG-E102",
+       "role": "corroborating",
+       "claim_id": "a70408cc02c7-R02",
+       "document": "BH-D006",
+       "file": "early_appointment_status_export.txt",
+       "authority": "schedule_export",
+       "offsets": [
+        417,
+        492
+       ],
+       "quote": "HG-E102   | Jan06 | Coping skills group    | 10:00\u201311:30    | Attended part",
+       "verified": true
+      },
+      {
+       "event_id": "HG-M042|HG-E102",
+       "role": "primary",
+       "claim_id": "9b99167da160-R01",
+       "document": "BH-D005",
+       "file": "early_group_attendance_roster.txt",
+       "authority": "attendance_register",
+       "offsets": [
+        429,
+        521
+       ],
+       "quote": "2026-01-06 | HG-E102   | 10:00\u201311:30    | 10:15           | 11:15            | Attended part",
+       "verified": true
+      }
+     ]
+    },
+    {
+     "event_id": "HG-M042|HG-E103",
+     "patient_mrn": "HG-M042",
+     "encounter_ref": "HG-E103",
+     "service_date": "2026-01-08",
+     "service_type": "individual_therapy",
+     "occurred": "no",
+     "patient_present": "no",
+     "min_minutes": 0,
+     "max_minutes": 0,
+     "counts_as_therapy": 0,
+     "exclusion_reason": "contact did not occur (occurred=no)",
+     "disputed": 0,
+     "resolved": {
+      "breaks": [],
+      "duration_claims": [],
+      "evidence_docs": [
+       "BH-D006",
+       "BH-D015"
+      ],
+      "max_minutes": 0,
+      "min_minutes": 0,
+      "occurred": "no",
+      "patient_present": "no",
+      "presence_intervals": [],
+      "presence_note": "cancellation",
+      "service_date": "2026-01-08",
+      "service_type": "individual_therapy"
+     },
+     "match_rule": "RULE-MATCH-01",
+     "decisions": [
+      {
+       "field": "claim",
+       "rule": "RULE-MATCH-01",
+       "chosen": "8878c8a0423e-N01",
+       "why": "document states encounter HG-E103"
+      },
+      {
+       "field": "claim",
+       "rule": "RULE-MATCH-01",
+       "chosen": "a70408cc02c7-R03",
+       "why": "document states encounter HG-E103"
+      },
+      {
+       "field": "claim",
+       "rule": "RULE-MATCH-01",
+       "chosen": "a70408cc02c7-T10",
+       "why": "document states encounter HG-E103"
+      },
+      {
+       "field": "service_type",
+       "rule": "RULE-SVC-01",
+       "chosen": "individual_therapy",
+       "why": "weighted vote over claims; therapy and clinical wording preferred over administrative wording"
+      },
+      {
+       "field": "occurred",
+       "rule": "RULE-PRES-03",
+       "chosen": "no",
+       "why": "final disposition records cancelled (BH-D015: cancellation)"
+      },
+      {
+       "field": "counts_as_therapy",
+       "rule": "RULE-INC-02",
+       "chosen": "no",
+       "why": "contact did not occur (occurred=no)"
+      }
+     ],
+     "evidence": [
+      {
+       "event_id": "HG-M042|HG-E103",
+       "role": "corroborating",
+       "claim_id": "8878c8a0423e-N01",
+       "document": "BH-D015",
+       "file": "missed_visit_outreach_jan08.txt",
+       "authority": "admin_log",
+       "offsets": [
+        372,
+        445
+       ],
+       "quote": "There was no arrival call or cancellation message on the scheduling line.",
+       "verified": true
+      },
+      {
+       "event_id": "HG-M042|HG-E103",
+       "role": "corroborating",
+       "claim_id": "a70408cc02c7-R03",
+       "document": "BH-D006",
+       "file": "early_appointment_status_export.txt",
+       "authority": "schedule_export",
+       "offsets": [
+        493,
+        562
+       ],
+       "quote": "HG-E103   | Jan08 | Individual therapy     | 11:00\u201311:45    | No show",
+       "verified": true
+      },
+      {
+       "event_id": "HG-M042|HG-E103",
+       "role": "corroborating",
+       "claim_id": "a70408cc02c7-T10",
+       "document": "BH-D006",
+       "file": "early_appointment_status_export.txt",
+       "authority": "schedule_export",
+       "offsets": [
+        1003,
+        1400
+       ],
+       "quote": "Desk comments: HG-E103 remained unarrived at close of its appointment slot on January 8. Outreach was assigned to the individual therapist's support queue. HG-E108 was removed from the active room schedule after staff illness was reported. A cancellation message was released to all registered members. Appointment HG-E109 was retained as a partner collateral contact after Rowan could not attend.",
+       "verified": true
+      }
+     ]
+    },
+    {
+     "event_id": "HG-M042|HG-E104",
+     "patient_mrn": "HG-M042",
+     "encounter_ref": "HG-E104",
+     "service_date": "2026-01-09",
+     "service_type": "family_therapy",
+     "occurred": "yes",
+     "patient_present": "yes",
+     "min_minutes": 45,
+     "max_minutes": 45,
+     "counts_as_therapy": 1,
+     "exclusion_reason": null,
+     "disputed": 0,
+     "resolved": {
+      "breaks": [],
+      "duration_claims": [
+       "8971a83ecbe8-N01",
+       "942315bad46e-N01"
+      ],
+      "evidence_docs": [
+       "BH-D006",
+       "BH-D007",
+       "BH-D008"
+      ],
+      "max_minutes": 45,
+      "min_minutes": 45,
+      "occurred": "yes",
+      "patient_present": "yes",
+      "presence_intervals": [
+       [
+        "14:00",
+        "14:45"
+       ]
+      ],
+      "presence_note": "",
+      "service_date": "2026-01-09",
+      "service_type": "family_therapy"
+     },
+     "match_rule": "RULE-MATCH-01",
+     "decisions": [
+      {
+       "field": "claim",
+       "rule": "RULE-MATCH-01",
+       "chosen": "8971a83ecbe8-N01",
+       "why": "document states encounter HG-E104"
+      },
+      {
+       "field": "claim",
+       "rule": "RULE-MATCH-01",
+       "chosen": "942315bad46e-N01",
+       "why": "document states encounter HG-E104"
+      },
+      {
+       "field": "claim",
+       "rule": "RULE-MATCH-01",
+       "chosen": "a70408cc02c7-R04",
+       "why": "document states encounter HG-E104"
+      },
+      {
+       "field": "service_type",
+       "rule": "RULE-SVC-01",
+       "chosen": "family_therapy",
+       "why": "weighted vote over claims; therapy and clinical wording preferred over administrative wording"
+      },
+      {
+       "field": "rejected_presence",
+       "rule": "RULE-PRES-02",
+       "chosen": "present",
+       "why": "schedule_export cannot establish that care was delivered (BH-D006)"
+      },
+      {
+       "field": "occurred",
+       "rule": "RULE-PRES-02",
+       "chosen": "yes",
+       "why": "attested or clinically documented patient contact: BH-D007, BH-D008"
+      },
+      {
+       "field": "minutes",
+       "rule": "RULE-DUR-02",
+       "chosen": "45",
+       "why": "clinical_note BH-D007 is the authority for duration on a family_therapy event; intervals"
+      },
+      {
+       "field": "counts_as_therapy",
+       "rule": "RULE-INC-02",
+       "chosen": "yes",
+       "why": "patient-present therapy of a type the plan counts"
+      }
+     ],
+     "evidence": [
+      {
+       "event_id": "HG-M042|HG-E104",
+       "role": "corroborating",
+       "claim_id": "a70408cc02c7-R04",
+       "document": "BH-D006",
+       "file": "early_appointment_status_export.txt",
+       "authority": "schedule_export",
+       "offsets": [
+        563,
+        634
+       ],
+       "quote": "HG-E104   | Jan09 | Family therapy         | 14:00\u201314:45    | Completed",
+       "verified": true
+      },
+      {
+       "event_id": "HG-M042|HG-E104",
+       "role": "primary",
+       "claim_id": "8971a83ecbe8-N01",
+       "document": "BH-D007",
+       "file": "family_primary_jan09.txt",
+       "authority": "clinical_note",
+       "offsets": [
+        343,
+        394
+       ],
+       "quote": "Patient-present family therapy duration: 45 minutes",
+       "verified": true
+      },
+      {
+       "event_id": "HG-M042|HG-E104",
+       "role": "primary",
+       "claim_id": "942315bad46e-N01",
+       "document": "BH-D008",
+       "file": "family_cofacilitator_jan09.txt",
+       "authority": "clinical_note",
+       "offsets": [
+        348,
+        384
+       ],
+       "quote": "both present for the full 45 minutes",
+       "verified": true
+      }
+     ]
+    },
+    {
+     "event_id": "HG-M042|HG-E105",
+     "patient_mrn": "HG-M042",
+     "encounter_ref": "HG-E105",
+     "service_date": "2026-01-12",
+     "service_type": "group_therapy",
+     "occurred": "yes",
+     "patient_present": "yes",
+     "min_minutes": 75,
+     "max_minutes": 75,
+     "counts_as_therapy": 1,
+     "exclusion_reason": null,
+     "disputed": 0,
+     "resolved": {
+      "breaks": [
+       [
+        "10:40",
+        "10:55"
+       ]
+      ],
+      "duration_claims": [
+       "9b99167da160-R02"
+      ],
+      "evidence_docs": [
+       "BH-D005",
+       "BH-D006",
+       "BH-D009"
+      ],
+      "max_minutes": 75,
+      "min_minutes": 75,
+      "occurred": "yes",
+      "patient_present": "yes",
+      "presence_intervals": [
+       [
+        "10:00",
+        "10:40"
+       ],
+       [
+        "10:55",
+        "11:30"
+       ]
+      ],
+      "presence_note": "",
+      "service_date": "2026-01-12",
+      "service_type": "group_therapy"
+     },
+     "match_rule": "RULE-MATCH-01",
+     "decisions": [
+      {
+       "field": "claim",
+       "rule": "RULE-MATCH-01",
+       "chosen": "48543ce513a8-N01",
+       "why": "document states encounter HG-E105"
+      },
+      {
+       "field": "claim",
+       "rule": "RULE-MATCH-01",
+       "chosen": "9b99167da160-R02",
+       "why": "document states encounter HG-E105"
+      },
+      {
+       "field": "claim",
+       "rule": "RULE-MATCH-01",
+       "chosen": "a70408cc02c7-R05",
+       "why": "document states encounter HG-E105"
+      },
+      {
+       "field": "claim",
+       "rule": "RULE-MATCH-04",
+       "chosen": "9b99167da160-T05",
+       "why": "no encounter id; matched on date 2026-01-12 and service group_therapy"
+      },
+      {
+       "field": "service_type",
+       "rule": "RULE-SVC-01",
+       "chosen": "group_therapy",
+       "why": "weighted vote over claims; therapy and clinical wording preferred over administrative wording"
+      },
+      {
+       "field": "rejected_presence",
+       "rule": "RULE-PRES-02",
+       "chosen": "present",
+       "why": "schedule_export cannot establish that care was delivered (BH-D006)"
+      },
+      {
+       "field": "occurred",
+       "rule": "RULE-PRES-02",
+       "chosen": "yes",
+       "why": "attested or clinically documented patient contact: BH-D005"
+      },
+      {
+       "field": "breaks",
+       "rule": "RULE-DUR-04",
+       "chosen": "[[\"10:40\", \"10:55\"]]",
+       "why": "nontherapeutic intervals subtracted by overlap with the patient's own presence interval, not as a flat amount"
+      },
+      {
+       "field": "minutes",
+       "rule": "RULE-DUR-01",
+       "chosen": "75",
+       "why": "attendance_register BH-D005 is the authority for duration on a group_therapy event; intervals"
+      },
+      {
+       "field": "counts_as_therapy",
+       "rule": "RULE-INC-02",
+       "chosen": "yes",
+       "why": "patient-present therapy of a type the plan counts"
+      }
+     ],
+     "evidence": [
+      {
+       "event_id": "HG-M042|HG-E105",
+       "role": "corroborating",
+       "claim_id": "48543ce513a8-N01",
+       "document": "BH-D009",
+       "file": "group_facilitator_jan12.txt",
+       "authority": "clinical_note",
+       "offsets": [
+        148,
+        211
+       ],
+       "quote": "Rowan Mercer | DOB 1991-04-12 | MRN HG-M042 | Encounter HG-E105",
+       "verified": true
+      },
+      {
+       "event_id": "HG-M042|HG-E105",
+       "role": "corroborating",
+       "claim_id": "9b99167da160-T05",
+       "document": "BH-D005",
+       "file": "early_group_attendance_roster.txt",
+       "authority": "attendance_register",
+       "offsets": [
+        1017,
+        1231
+       ],
+       "quote": "January 12 desk note: Rowan checked in before the group began and remained until the group was released. Their next printed appointment list was provided at checkout. No transport concern was reported at that time.",
+       "verified": true
+      },
+      {
+       "event_id": "HG-M042|HG-E105",
+       "role": "corroborating",
+       "claim_id": "a70408cc02c7-R05",
+       "document": "BH-D006",
+       "file": "early_appointment_status_export.txt",
+       "authority": "schedule_export",
+       "offsets": [
+        635,
+        706
+       ],
+       "quote": "HG-E105   | Jan12 | Coping skills group    | 10:00\u201311:30    | Completed",
+       "verified": true
+      },
+      {
+       "event_id": "HG-M042|HG-E105",
+       "role": "primary",
+       "claim_id": "9b99167da160-R02",
+       "document": "BH-D005",
+       "file": "early_group_attendance_roster.txt",
+       "authority": "attendance_register",
+       "offsets": [
+        522,
+        614
+       ],
+       "quote": "2026-01-12 | HG-E105   | 10:00\u201311:30    | 10:00           | 11:30            | Attended full",
+       "verified": true
+      }
+     ]
+    },
+    {
+     "event_id": "HG-M042|HG-E106",
+     "patient_mrn": "HG-M042",
+     "encounter_ref": "HG-E106",
+     "service_date": "2026-01-13",
+     "service_type": "medication_management",
+     "occurred": "yes",
+     "patient_present": "yes",
+     "min_minutes": 25,
+     "max_minutes": 25,
+     "counts_as_therapy": 0,
+     "exclusion_reason": "medication_management is named in the plan as not contributing",
+     "disputed": 0,
+     "resolved": {
+      "breaks": [],
+      "duration_claims": [
+       "cb505fa332c6-N01"
+      ],
+      "evidence_docs": [
+       "BH-D006",
+       "BH-D010"
+      ],
+      "max_minutes": 25,
+      "min_minutes": 25,
+      "occurred": "yes",
+      "patient_present": "yes",
+      "presence_intervals": [
+       [
+        "09:00",
+        "09:25"
+       ]
+      ],
+      "presence_note": "",
+      "service_date": "2026-01-13",
+      "service_type": "medication_management"
+     },
+     "match_rule": "RULE-MATCH-01",
+     "decisions": [
+      {
+       "field": "claim",
+       "rule": "RULE-MATCH-01",
+       "chosen": "a70408cc02c7-R06",
+       "why": "document states encounter HG-E106"
+      },
+      {
+       "field": "claim",
+       "rule": "RULE-MATCH-01",
+       "chosen": "cb505fa332c6-N01",
+       "why": "document states encounter HG-E106"
+      },
+      {
+       "field": "service_type",
+       "rule": "RULE-SVC-01",
+       "chosen": "medication_management",
+       "why": "weighted vote over claims; therapy and clinical wording preferred over administrative wording"
+      },
+      {
+       "field": "rejected_presence",
+       "rule": "RULE-PRES-02",
+       "chosen": "present",
+       "why": "schedule_export cannot establish that care was delivered (BH-D006)"
+      },
+      {
+       "field": "occurred",
+       "rule": "RULE-PRES-02",
+       "chosen": "yes",
+       "why": "attested or clinically documented patient contact: BH-D010"
+      },
+      {
+       "field": "minutes",
+       "rule": "RULE-DUR-02",
+       "chosen": "25",
+       "why": "clinical_note BH-D010 is the authority for duration on a medication_management event; intervals"
+      },
+      {
+       "field": "counts_as_therapy",
+       "rule": "RULE-INC-01",
+       "chosen": "no",
+       "why": "medication_management is named in the plan as not contributing"
+      }
+     ],
+     "evidence": [
+      {
+       "event_id": "HG-M042|HG-E106",
+       "role": "corroborating",
+       "claim_id": "a70408cc02c7-R06",
+       "document": "BH-D006",
+       "file": "early_appointment_status_export.txt",
+       "authority": "schedule_export",
+       "offsets": [
+        707,
+        778
+       ],
+       "quote": "HG-E106   | Jan13 | Medication management  | 09:00\u201309:25    | Completed",
+       "verified": true
+      },
+      {
+       "event_id": "HG-M042|HG-E106",
+       "role": "primary",
+       "claim_id": "cb505fa332c6-N01",
+       "document": "BH-D010",
+       "file": "medication_review_jan13.txt",
+       "authority": "clinical_note",
+       "offsets": [
+        257,
+        278
+       ],
+       "quote": "completed, 25 minutes",
+       "verified": true
+      }
+     ]
+    },
+    {
+     "event_id": "HG-M042|HG-E107",
+     "patient_mrn": "HG-M042",
+     "encounter_ref": "HG-E107",
+     "service_date": "2026-01-14",
+     "service_type": "individual_therapy",
+     "occurred": "yes",
+     "patient_present": "yes",
+     "min_minutes": 45,
+     "max_minutes": 45,
+     "counts_as_therapy": 1,
+     "exclusion_reason": null,
+     "disputed": 0,
+     "resolved": {
+      "breaks": [],
+      "duration_claims": [
+       "c3ad273e5e7a-N01"
+      ],
+      "evidence_docs": [
+       "BH-D006",
+       "BH-D011"
+      ],
+      "max_minutes": 45,
+      "min_minutes": 45,
+      "occurred": "yes",
+      "patient_present": "yes",
+      "presence_intervals": [
+       [
+        "11:00",
+        "11:45"
+       ]
+      ],
+      "presence_note": "",
+      "service_date": "2026-01-14",
+      "service_type": "individual_therapy"
+     },
+     "match_rule": "RULE-MATCH-01",
+     "decisions": [
+      {
+       "field": "claim",
+       "rule": "RULE-MATCH-01",
+       "chosen": "a70408cc02c7-R07",
+       "why": "document states encounter HG-E107"
+      },
+      {
+       "field": "claim",
+       "rule": "RULE-MATCH-01",
+       "chosen": "c3ad273e5e7a-N01",
+       "why": "document states encounter HG-E107"
+      },
+      {
+       "field": "service_type",
+       "rule": "RULE-SVC-01",
+       "chosen": "individual_therapy",
+       "why": "weighted vote over claims; therapy and clinical wording preferred over administrative wording"
+      },
+      {
+       "field": "rejected_presence",
+       "rule": "RULE-PRES-02",
+       "chosen": "present",
+       "why": "schedule_export cannot establish that care was delivered (BH-D006)"
+      },
+      {
+       "field": "occurred",
+       "rule": "RULE-PRES-02",
+       "chosen": "yes",
+       "why": "attested or clinically documented patient contact: BH-D011"
+      },
+      {
+       "field": "minutes",
+       "rule": "RULE-DUR-02",
+       "chosen": "45",
+       "why": "clinical_note BH-D011 is the authority for duration on a individual_therapy event; intervals"
+      },
+      {
+       "field": "counts_as_therapy",
+       "rule": "RULE-INC-02",
+       "chosen": "yes",
+       "why": "patient-present therapy of a type the plan counts"
+      }
+     ],
+     "evidence": [
+      {
+       "event_id": "HG-M042|HG-E107",
+       "role": "corroborating",
+       "claim_id": "a70408cc02c7-R07",
+       "document": "BH-D006",
+       "file": "early_appointment_status_export.txt",
+       "authority": "schedule_export",
+       "offsets": [
+        779,
+        850
+       ],
+       "quote": "HG-E107   | Jan14 | Individual therapy     | 11:00\u201311:45    | Completed",
+       "verified": true
+      },
+      {
+       "event_id": "HG-M042|HG-E107",
+       "role": "primary",
+       "claim_id": "c3ad273e5e7a-N01",
+       "document": "BH-D011",
+       "file": "individual_therapy_jan14.txt",
+       "authority": "clinical_note",
+       "offsets": [
+        276,
+        297
+       ],
+       "quote": "completed, 45 minutes",
+       "verified": true
+      }
+     ]
+    },
+    {
+     "event_id": "HG-M042|HG-E108",
+     "patient_mrn": "HG-M042",
+     "encounter_ref": "HG-E108",
+     "service_date": "2026-01-15",
+     "service_type": "group_therapy",
+     "occurred": "no",
+     "patient_present": "no",
+     "min_minutes": 0,
+     "max_minutes": 0,
+     "counts_as_therapy": 0,
+     "exclusion_reason": "contact did not occur (occurred=no)",
+     "disputed": 0,
+     "resolved": {
+      "breaks": [],
+      "duration_claims": [],
+      "evidence_docs": [
+       "BH-D006",
+       "BH-D016"
+      ],
+      "max_minutes": 0,
+      "min_minutes": 0,
+      "occurred": "no",
+      "patient_present": "no",
+      "presence_intervals": [],
+      "presence_note": "cancelled by the clinic",
+      "service_date": "2026-01-15",
+      "service_type": "group_therapy"
+     },
+     "match_rule": "RULE-MATCH-01",
+     "decisions": [
+      {
+       "field": "claim",
+       "rule": "RULE-MATCH-01",
+       "chosen": "6bc56d1a89c4-N01",
+       "why": "document states encounter HG-E108"
+      },
+      {
+       "field": "claim",
+       "rule": "RULE-MATCH-01",
+       "chosen": "a70408cc02c7-R08",
+       "why": "document states encounter HG-E108"
+      },
+      {
+       "field": "service_type",
+       "rule": "RULE-SVC-01",
+       "chosen": "group_therapy",
+       "why": "weighted vote over claims; therapy and clinical wording preferred over administrative wording"
+      },
+      {
+       "field": "occurred",
+       "rule": "RULE-PRES-03",
+       "chosen": "no",
+       "why": "final disposition records cancelled (BH-D016: cancelled by the clinic)"
+      },
+      {
+       "field": "counts_as_therapy",
+       "rule": "RULE-INC-02",
+       "chosen": "no",
+       "why": "contact did not occur (occurred=no)"
+      }
+     ],
+     "evidence": [
+      {
+       "event_id": "HG-M042|HG-E108",
+       "role": "corroborating",
+       "claim_id": "6bc56d1a89c4-N01",
+       "document": "BH-D016",
+       "file": "group_cancellation_notice_jan15.txt",
+       "authority": "admin_log",
+       "offsets": [
+        284,
+        405
+       ],
+       "quote": "The coping skills group scheduled for January 15 from 10:00 to 11:30 is cancelled by the clinic because of staff illness.",
+       "verified": true
+      },
+      {
+       "event_id": "HG-M042|HG-E108",
+       "role": "corroborating",
+       "claim_id": "a70408cc02c7-R08",
+       "document": "BH-D006",
+       "file": "early_appointment_status_export.txt",
+       "authority": "schedule_export",
+       "offsets": [
+        851,
+        929
+       ],
+       "quote": "HG-E108   | Jan15 | Coping skills group    | 10:00\u201311:30    | Clinic cancelled",
+       "verified": true
+      }
+     ]
+    },
+    {
+     "event_id": "HG-M042|HG-E109",
+     "patient_mrn": "HG-M042",
+     "encounter_ref": "HG-E109",
+     "service_date": "2026-01-16",
+     "service_type": "collateral_contact",
+     "occurred": "yes",
+     "patient_present": "no",
+     "min_minutes": 0,
+     "max_minutes": 0,
+     "counts_as_therapy": 0,
+     "exclusion_reason": "collateral_contact is named in the plan as not contributing",
+     "disputed": 0,
+     "resolved": {
+      "breaks": [],
+      "duration_claims": [],
+      "evidence_docs": [
+       "BH-D006",
+       "BH-D012"
+      ],
+      "max_minutes": 0,
+      "min_minutes": 0,
+      "occurred": "yes",
+      "patient_present": "no",
+      "presence_intervals": [],
+      "presence_note": "absent for the entire",
+      "service_date": "2026-01-16",
+      "service_type": "collateral_contact"
+     },
+     "match_rule": "RULE-MATCH-01",
+     "decisions": [
+      {
+       "field": "claim",
+       "rule": "RULE-MATCH-01",
+       "chosen": "2784824e6db4-N01",
+       "why": "document states encounter HG-E109"
+      },
+      {
+       "field": "claim",
+       "rule": "RULE-MATCH-01",
+       "chosen": "a70408cc02c7-R09",
+       "why": "document states encounter HG-E109"
+      },
+      {
+       "field": "service_type",
+       "rule": "RULE-SVC-01",
+       "chosen": "collateral_contact",
+       "why": "weighted vote over claims; therapy and clinical wording preferred over administrative wording"
+      },
+      {
+       "field": "rejected_presence",
+       "rule": "RULE-PRES-02",
+       "chosen": "present",
+       "why": "schedule_export cannot establish that care was delivered (BH-D006)"
+      },
+      {
+       "field": "occurred",
+       "rule": "RULE-PRES-03",
+       "chosen": "yes",
+       "why": "contact is documented but the patient was not present (BH-D012: absent for the entire)"
+      },
+      {
+       "field": "counts_as_therapy",
+       "rule": "RULE-INC-01",
+       "chosen": "no",
+       "why": "collateral_contact is named in the plan as not contributing"
+      }
+     ],
+     "evidence": [
+      {
+       "event_id": "HG-M042|HG-E109",
+       "role": "corroborating",
+       "claim_id": "2784824e6db4-N01",
+       "document": "BH-D012",
+       "file": "partner_collateral_jan16.txt",
+       "authority": "clinical_note",
+       "offsets": [
+        318,
+        358
+       ],
+       "quote": "Rowan was absent for the entire contact.",
+       "verified": true
+      },
+      {
+       "event_id": "HG-M042|HG-E109",
+       "role": "corroborating",
+       "claim_id": "a70408cc02c7-R09",
+       "document": "BH-D006",
+       "file": "early_appointment_status_export.txt",
+       "authority": "schedule_export",
+       "offsets": [
+        930,
+        1001
+       ],
+       "quote": "HG-E109   | Jan16 | Family collateral      | 14:00\u201314:40    | Completed",
+       "verified": true
+      }
+     ]
+    },
+    {
+     "event_id": "HG-M042|HG-E110",
+     "patient_mrn": "HG-M042",
+     "encounter_ref": "HG-E110",
+     "service_date": "2026-01-19",
+     "service_type": "group_therapy",
+     "occurred": "yes",
+     "patient_present": "yes",
+     "min_minutes": 60,
+     "max_minutes": 60,
+     "counts_as_therapy": 1,
+     "exclusion_reason": null,
+     "disputed": 0,
+     "resolved": {
+      "breaks": [
+       [
+        "10:45",
+        "11:00"
+       ]
+      ],
+      "duration_claims": [
+       "c8fbc79cb86f-N01"
+      ],
+      "evidence_docs": [
+       "BH-D101",
+       "BH-D102",
+       "BH-D103",
+       "BH-D104"
+      ],
+      "max_minutes": 60,
+      "min_minutes": 60,
+      "occurred": "yes",
+      "patient_present": "yes",
+      "presence_intervals": [
+       [
+        "10:00",
+        "10:45"
+       ],
+       [
+        "11:00",
+        "11:15"
+       ]
+      ],
+      "presence_note": "",
+      "service_date": "2026-01-19",
+      "service_type": "group_therapy"
+     },
+     "match_rule": "RULE-MATCH-01",
+     "decisions": [
+      {
+       "field": "claim",
+       "rule": "RULE-MATCH-01",
+       "chosen": "39ac0f9b9622-N01",
+       "why": "document states encounter HG-E110"
+      },
+      {
+       "field": "claim",
+       "rule": "RULE-MATCH-01",
+       "chosen": "6853e674a5cd-N02",
+       "why": "document states encounter HG-E110"
+      },
+      {
+       "field": "claim",
+       "rule": "RULE-MATCH-01",
+       "chosen": "c8fbc79cb86f-N01",
+       "why": "document states encounter HG-E110"
+      },
+      {
+       "field": "claim",
+       "rule": "RULE-MATCH-01",
+       "chosen": "fd5cd70c565e-N01",
+       "why": "document states encounter HG-E110"
+      },
+      {
+       "field": "claim",
+       "rule": "RULE-PRES-01",
+       "chosen": "6853e674a5cd-C01",
+       "why": "correction names encounter HG-E110; attached to that event"
+      },
+      {
+       "field": "service_type",
+       "rule": "RULE-SVC-01",
+       "chosen": "group_therapy",
+       "why": "weighted vote over claims; therapy and clinical wording preferred over administrative wording"
+      },
+      {
+       "field": "rejected_presence",
+       "rule": "RULE-PRES-02",
+       "chosen": "present",
+       "why": "retransmission cannot establish that care was delivered (BH-D104)"
+      },
+      {
+       "field": "occurred",
+       "rule": "RULE-PRES-02",
+       "chosen": "yes",
+       "why": "attested or clinically documented patient contact: BH-D102"
+      },
+      {
+       "field": "breaks",
+       "rule": "RULE-DUR-04",
+       "chosen": "[[\"10:45\", \"11:00\"]]",
+       "why": "nontherapeutic intervals subtracted by overlap with the patient's own presence interval, not as a flat amount"
+      },
+      {
+       "field": "rejected_duration",
+       "rule": "RULE-DUR-05",
+       "chosen": "[['10:00', '11:30']]",
+       "why": "retransmission contributes no duration (BH-D104)"
+      },
+      {
+       "field": "correction_not_applied",
+       "rule": "RULE-PRES-01",
+       "chosen": "6853e674a5cd-C01",
+       "why": "correction replaces departure='11:30', which this record does not contain; not applied"
+      },
+      {
+       "field": "correction_not_applied",
+       "rule": "RULE-PRES-01",
+       "chosen": "6853e674a5cd-C01",
+       "why": "correction replaces departure='11:30', which this record does not contain; not applied"
+      },
+      {
+       "field": "minutes",
+       "rule": "RULE-DUR-01",
+       "chosen": "60",
+       "why": "attendance_register BH-D102 is the authority for duration on a group_therapy event; intervals+correction; correction 6853e674a5cd-C01 applied"
+      },
+      {
+       "field": "counts_as_therapy",
+       "rule": "RULE-INC-02",
+       "chosen": "yes",
+       "why": "patient-present therapy of a type the plan counts"
+      }
+     ],
+     "evidence": [
+      {
+       "event_id": "HG-M042|HG-E110",
+       "role": "correction",
+       "claim_id": "6853e674a5cd-C01",
+       "document": "BH-D103",
+       "file": "BH-D103_attendance_correction_2026-01-20.txt",
+       "authority": "correction",
+       "offsets": [
+        223,
+        320
+       ],
+       "quote": "Correction: Patient departure for HG-E110 is 11:15, replacing the original roster value of 11:30.",
+       "verified": true
+      },
+      {
+       "event_id": "HG-M042|HG-E110",
+       "role": "corroborating",
+       "claim_id": "6853e674a5cd-N02",
+       "document": "BH-D103",
+       "file": "BH-D103_attendance_correction_2026-01-20.txt",
+       "authority": "correction",
+       "offsets": [
+        156,
+        221
+       ],
+       "quote": "Applies to group encounter HG-E110, service date January 19, 2026",
+       "verified": true
+      },
+      {
+       "event_id": "HG-M042|HG-E110",
+       "role": "corroborating",
+       "claim_id": "fd5cd70c565e-N01",
+       "document": "BH-D101",
+       "file": "BH-D101_group_content_2026-01-19.txt",
+       "authority": "clinical_note",
+       "offsets": [
+        114,
+        169
+       ],
+       "quote": "Group encounter: HG-E110 | Facilitator: Leah Chen, LCSW",
+       "verified": true
+      },
+      {
+       "event_id": "HG-M042|HG-E110",
+       "role": "primary",
+       "claim_id": "c8fbc79cb86f-N01",
+       "document": "BH-D102",
+       "file": "BH-D102_original_attendance_2026-01-19.txt",
+       "authority": "attendance_register",
+       "offsets": [
+        296,
+        364
+       ],
+       "quote": "Patient arrival: 10:00 | Patient departure: 11:30 | Status: Attended",
+       "verified": true
+      },
+      {
+       "event_id": "HG-M042|HG-E110",
+       "role": "superseded",
+       "claim_id": "39ac0f9b9622-N01",
+       "document": "BH-D104",
+       "file": "BH-D104_resent_roster_received_2026-01-26.txt",
+       "authority": "retransmission",
+       "offsets": [
+        789,
+        857
+       ],
+       "quote": "Patient arrival: 10:00 | Patient departure: 11:30 | Status: Attended",
+       "verified": true
+      }
+     ]
+    },
+    {
+     "event_id": "HG-M042|HG-E111",
+     "patient_mrn": "HG-M042",
+     "encounter_ref": "HG-E111",
+     "service_date": "2026-01-19",
+     "service_type": "individual_therapy",
+     "occurred": "yes",
+     "patient_present": "yes",
+     "min_minutes": 30,
+     "max_minutes": 30,
+     "counts_as_therapy": 1,
+     "exclusion_reason": null,
+     "disputed": 0,
+     "resolved": {
+      "breaks": [],
+      "duration_claims": [
+       "b063ae064568-N01"
+      ],
+      "evidence_docs": [
+       "BH-D105"
+      ],
+      "max_minutes": 30,
+      "min_minutes": 30,
+      "occurred": "yes",
+      "patient_present": "yes",
+      "presence_intervals": [
+       [
+        "11:15",
+        "11:45"
+       ]
+      ],
+      "presence_note": "",
+      "service_date": "2026-01-19",
+      "service_type": "individual_therapy"
+     },
+     "match_rule": "RULE-MATCH-01",
+     "decisions": [
+      {
+       "field": "claim",
+       "rule": "RULE-MATCH-01",
+       "chosen": "b063ae064568-N01",
+       "why": "document states encounter HG-E111"
+      },
+      {
+       "field": "service_type",
+       "rule": "RULE-SVC-01",
+       "chosen": "individual_therapy",
+       "why": "weighted vote over claims; therapy and clinical wording preferred over administrative wording"
+      },
+      {
+       "field": "occurred",
+       "rule": "RULE-PRES-02",
+       "chosen": "yes",
+       "why": "attested or clinically documented patient contact: BH-D105"
+      },
+      {
+       "field": "minutes",
+       "rule": "RULE-DUR-02",
+       "chosen": "30",
+       "why": "clinical_note BH-D105 is the authority for duration on a individual_therapy event; intervals"
+      },
+      {
+       "field": "counts_as_therapy",
+       "rule": "RULE-INC-02",
+       "chosen": "yes",
+       "why": "patient-present therapy of a type the plan counts"
+      }
+     ],
+     "evidence": [
+      {
+       "event_id": "HG-M042|HG-E111",
+       "role": "primary",
+       "claim_id": "b063ae064568-N01",
+       "document": "BH-D105",
+       "file": "BH-D105_individual_2026-01-19.txt",
+       "authority": "clinical_note",
+       "offsets": [
+        172,
+        224
+       ],
+       "quote": "Patient contact: 11:15\u201311:45 | Completed: 30 minutes",
+       "verified": true
+      }
+     ]
+    },
+    {
+     "event_id": "HG-M042|HG-E112",
+     "patient_mrn": "HG-M042",
+     "encounter_ref": "HG-E112",
+     "service_date": "2026-01-21",
+     "service_type": "individual_therapy",
+     "occurred": "yes",
+     "patient_present": "yes",
+     "min_minutes": 45,
+     "max_minutes": 45,
+     "counts_as_therapy": 1,
+     "exclusion_reason": null,
+     "disputed": 0,
+     "resolved": {
+      "breaks": [
+       [
+        "13:20",
+        "13:30"
+       ]
+      ],
+      "duration_claims": [
+       "98a452acc34a-N01"
+      ],
+      "evidence_docs": [
+       "BH-D106"
+      ],
+      "max_minutes": 45,
+      "min_minutes": 45,
+      "occurred": "yes",
+      "patient_present": "yes",
+      "presence_intervals": [
+       [
+        "13:00",
+        "13:20"
+       ],
+       [
+        "13:30",
+        "13:55"
+       ]
+      ],
+      "presence_note": "",
+      "service_date": "2026-01-21",
+      "service_type": "individual_therapy"
+     },
+     "match_rule": "RULE-MATCH-01",
+     "decisions": [
+      {
+       "field": "claim",
+       "rule": "RULE-MATCH-01",
+       "chosen": "98a452acc34a-N01",
+       "why": "document states encounter HG-E112"
+      },
+      {
+       "field": "claim",
+       "rule": "RULE-MATCH-02",
+       "chosen": "98a452acc34a-X00",
+       "why": "appointment HG-A112 belongs to encounter HG-E112; call id VC-112A is not an event key (RULE-MATCH-03)"
+      },
+      {
+       "field": "claim",
+       "rule": "RULE-MATCH-02",
+       "chosen": "98a452acc34a-X01",
+       "why": "appointment HG-A112 belongs to encounter HG-E112; call id VC-112B is not an event key (RULE-MATCH-03)"
+      },
+      {
+       "field": "service_type",
+       "rule": "RULE-SVC-01",
+       "chosen": "individual_therapy",
+       "why": "weighted vote over claims; therapy and clinical wording preferred over administrative wording"
+      },
+      {
+       "field": "rejected_presence",
+       "rule": "RULE-PRES-02",
+       "chosen": "present",
+       "why": "platform_log cannot establish that care was delivered (BH-D106)"
+      },
+      {
+       "field": "rejected_presence",
+       "rule": "RULE-PRES-02",
+       "chosen": "present",
+       "why": "platform_log cannot establish that care was delivered (BH-D106)"
+      },
+      {
+       "field": "occurred",
+       "rule": "RULE-PRES-02",
+       "chosen": "yes",
+       "why": "attested or clinically documented patient contact: BH-D106"
+      },
+      {
+       "field": "breaks",
+       "rule": "RULE-DUR-04",
+       "chosen": "[[\"13:20\", \"13:30\"]]",
+       "why": "nontherapeutic intervals subtracted by overlap with the patient's own presence interval, not as a flat amount"
+      },
+      {
+       "field": "rejected_duration",
+       "rule": "RULE-DUR-05",
+       "chosen": "[['13:00', '13:20']]",
+       "why": "platform_log contributes no duration (BH-D106)"
+      },
+      {
+       "field": "rejected_duration",
+       "rule": "RULE-DUR-05",
+       "chosen": "[['13:30', '13:55']]",
+       "why": "platform_log contributes no duration (BH-D106)"
+      },
+      {
+       "field": "minutes",
+       "rule": "RULE-DUR-02",
+       "chosen": "45",
+       "why": "clinical_note BH-D106 is the authority for duration on a individual_therapy event; intervals"
+      },
+      {
+       "field": "counts_as_therapy",
+       "rule": "RULE-INC-02",
+       "chosen": "yes",
+       "why": "patient-present therapy of a type the plan counts"
+      }
+     ],
+     "evidence": [
+      {
+       "event_id": "HG-M042|HG-E112",
+       "role": "corroborating",
+       "claim_id": "98a452acc34a-X00",
+       "document": "BH-D106",
+       "file": "BH-D106_telehealth_2026-01-21.txt",
+       "authority": "platform_log",
+       "offsets": [
+        1462,
+        1517
+       ],
+       "quote": "HG-A112 | VC-112A | January 21 13:00 | January 21 13:20",
+       "verified": true
+      },
+      {
+       "event_id": "HG-M042|HG-E112",
+       "role": "corroborating",
+       "claim_id": "98a452acc34a-X01",
+       "document": "BH-D106",
+       "file": "BH-D106_telehealth_2026-01-21.txt",
+       "authority": "platform_log",
+       "offsets": [
+        1518,
+        1573
+       ],
+       "quote": "HG-A112 | VC-112B | January 21 13:30 | January 21 13:55",
+       "verified": true
+      },
+      {
+       "event_id": "HG-M042|HG-E112",
+       "role": "primary",
+       "claim_id": "98a452acc34a-N01",
+       "document": "BH-D106",
+       "file": "BH-D106_telehealth_2026-01-21.txt",
+       "authority": "clinical_note",
+       "offsets": [
+        368,
+        416
+       ],
+       "quote": "Total patient psychotherapy contact: 45 minutes.",
+       "verified": true
+      }
+     ]
+    },
+    {
+     "event_id": "HG-M042|HG-E113",
+     "patient_mrn": "HG-M042",
+     "encounter_ref": "HG-E113",
+     "service_date": "2026-01-22",
+     "service_type": "group_therapy",
+     "occurred": "yes",
+     "patient_present": "yes",
+     "min_minutes": 45,
+     "max_minutes": 45,
+     "counts_as_therapy": 1,
+     "exclusion_reason": null,
+     "disputed": 0,
+     "resolved": {
+      "breaks": [
+       [
+        "10:45",
+        "11:00"
+       ]
+      ],
+      "duration_claims": [
+       "7eddf208984b-R01"
+      ],
+      "evidence_docs": [
+       "BH-D107",
+       "BH-D108"
+      ],
+      "max_minutes": 45,
+      "min_minutes": 45,
+      "occurred": "yes",
+      "patient_present": "yes",
+      "presence_intervals": [
+       [
+        "10:30",
+        "10:45"
+       ],
+       [
+        "11:00",
+        "11:30"
+       ]
+      ],
+      "presence_note": "",
+      "service_date": "2026-01-22",
+      "service_type": "group_therapy"
+     },
+     "match_rule": "RULE-MATCH-01",
+     "decisions": [
+      {
+       "field": "claim",
+       "rule": "RULE-MATCH-01",
+       "chosen": "46256e2f682a-N01",
+       "why": "document states encounter HG-E113"
+      },
+      {
+       "field": "claim",
+       "rule": "RULE-MATCH-01",
+       "chosen": "7eddf208984b-R01",
+       "why": "document states encounter HG-E113"
+      },
+      {
+       "field": "claim",
+       "rule": "RULE-MATCH-04",
+       "chosen": "7eddf208984b-T05",
+       "why": "no encounter id; matched on date 2026-01-22 and service group_therapy"
+      },
+      {
+       "field": "service_type",
+       "rule": "RULE-SVC-01",
+       "chosen": "group_therapy",
+       "why": "weighted vote over claims; therapy and clinical wording preferred over administrative wording"
+      },
+      {
+       "field": "occurred",
+       "rule": "RULE-PRES-02",
+       "chosen": "yes",
+       "why": "attested or clinically documented patient contact: BH-D107, BH-D108"
+      },
+      {
+       "field": "breaks",
+       "rule": "RULE-DUR-04",
+       "chosen": "[[\"10:45\", \"11:00\"]]",
+       "why": "nontherapeutic intervals subtracted by overlap with the patient's own presence interval, not as a flat amount"
+      },
+      {
+       "field": "minutes",
+       "rule": "RULE-DUR-01",
+       "chosen": "45",
+       "why": "attendance_register BH-D108 is the authority for duration on a group_therapy event; intervals"
+      },
+      {
+       "field": "counts_as_therapy",
+       "rule": "RULE-INC-02",
+       "chosen": "yes",
+       "why": "patient-present therapy of a type the plan counts"
+      }
+     ],
+     "evidence": [
+      {
+       "event_id": "HG-M042|HG-E113",
+       "role": "corroborating",
+       "claim_id": "46256e2f682a-N01",
+       "document": "BH-D107",
+       "file": "BH-D107_group_activity_records_2026-01-22_and_29.txt",
+       "authority": "clinical_note",
+       "offsets": [
+        360,
+        505
+       ],
+       "quote": "Members practiced reducing a complicated task to an action that could be completed in a few minutes and identifying the cue that would prompt it.",
+       "verified": true
+      },
+      {
+       "event_id": "HG-M042|HG-E113",
+       "role": "corroborating",
+       "claim_id": "7eddf208984b-T05",
+       "document": "BH-D108",
+       "file": "BH-D108_final_attendance_and_cancellation_register.txt",
+       "authority": "attendance_register",
+       "offsets": [
+        800,
+        938
+       ],
+       "quote": "January 22 attendance attestation: Rowan arrived at 10:30 and remained until the group closed. Signed: Leah Chen, LCSW, January 22, 12:09.",
+       "verified": true
+      },
+      {
+       "event_id": "HG-M042|HG-E113",
+       "role": "primary",
+       "claim_id": "7eddf208984b-R01",
+       "document": "BH-D108",
+       "file": "BH-D108_final_attendance_and_cancellation_register.txt",
+       "authority": "attendance_register",
+       "offsets": [
+        444,
+        534
+       ],
+       "quote": "January 22 | HG-E113 | Skills group | 10:00\u201311:30 | 10:30 | 11:30 | Attended, late arrival",
+       "verified": true
+      }
+     ]
+    },
+    {
+     "event_id": "HG-M042|HG-E114",
+     "patient_mrn": "HG-M042",
+     "encounter_ref": "HG-E114",
+     "service_date": "2026-01-23",
+     "service_type": "care_coordination",
+     "occurred": "yes",
+     "patient_present": "no",
+     "min_minutes": 0,
+     "max_minutes": 0,
+     "counts_as_therapy": 0,
+     "exclusion_reason": "care_coordination is named in the plan as not contributing",
+     "disputed": 0,
+     "resolved": {
+      "breaks": [],
+      "duration_claims": [],
+      "evidence_docs": [
+       "BH-D109"
+      ],
+      "max_minutes": 0,
+      "min_minutes": 0,
+      "occurred": "yes",
+      "patient_present": "no",
+      "presence_intervals": [],
+      "presence_note": "patient participation: none",
+      "service_date": "2026-01-23",
+      "service_type": "care_coordination"
+     },
+     "match_rule": "RULE-MATCH-01",
+     "decisions": [
+      {
+       "field": "claim",
+       "rule": "RULE-MATCH-01",
+       "chosen": "a68d459c61a7-N01",
+       "why": "document states encounter HG-E114"
+      },
+      {
+       "field": "service_type",
+       "rule": "RULE-SVC-01",
+       "chosen": "care_coordination",
+       "why": "weighted vote over claims; therapy and clinical wording preferred over administrative wording"
+      },
+      {
+       "field": "occurred",
+       "rule": "RULE-PRES-03",
+       "chosen": "yes",
+       "why": "contact is documented but the patient was not present (BH-D109: patient participation: none)"
+      },
+      {
+       "field": "counts_as_therapy",
+       "rule": "RULE-INC-01",
+       "chosen": "no",
+       "why": "care_coordination is named in the plan as not contributing"
+      }
+     ],
+     "evidence": [
+      {
+       "event_id": "HG-M042|HG-E114",
+       "role": "corroborating",
+       "claim_id": "a68d459c61a7-N01",
+       "document": "BH-D109",
+       "file": "BH-D109_care_coordination_2026-01-23.txt",
+       "authority": "clinical_note",
+       "offsets": [
+        238,
+        266
+       ],
+       "quote": "Patient participation: None.",
+       "verified": true
+      }
+     ]
+    },
+    {
+     "event_id": "HG-M042|HG-E115",
+     "patient_mrn": "HG-M042",
+     "encounter_ref": "HG-E115",
+     "service_date": "2026-01-26",
+     "service_type": "individual_therapy",
+     "occurred": "yes",
+     "patient_present": "yes",
+     "min_minutes": 40,
+     "max_minutes": 50,
+     "counts_as_therapy": 1,
+     "exclusion_reason": null,
+     "disputed": 1,
+     "resolved": {
+      "breaks": [],
+      "duration_claims": [
+       "22c4009c836f-N01",
+       "ec4906d5bc7d-N01"
+      ],
+      "evidence_docs": [
+       "BH-D110",
+       "BH-D111"
+      ],
+      "max_minutes": 50,
+      "min_minutes": 40,
+      "occurred": "yes",
+      "patient_present": "yes",
+      "presence_intervals": [
+       [
+        "09:00",
+        "09:50"
+       ]
+      ],
+      "presence_note": "",
+      "service_date": "2026-01-26",
+      "service_type": "individual_therapy"
+     },
+     "match_rule": "RULE-MATCH-01",
+     "decisions": [
+      {
+       "field": "claim",
+       "rule": "RULE-MATCH-01",
+       "chosen": "22c4009c836f-N01",
+       "why": "document states encounter HG-E115"
+      },
+      {
+       "field": "claim",
+       "rule": "RULE-MATCH-01",
+       "chosen": "ec4906d5bc7d-N01",
+       "why": "document states encounter HG-E115"
+      },
+      {
+       "field": "service_type",
+       "rule": "RULE-SVC-01",
+       "chosen": "individual_therapy",
+       "why": "weighted vote over claims; therapy and clinical wording preferred over administrative wording"
+      },
+      {
+       "field": "occurred",
+       "rule": "RULE-PRES-02",
+       "chosen": "yes",
+       "why": "attested or clinically documented patient contact: BH-D110, BH-D111"
+      },
+      {
+       "field": "minutes",
+       "rule": "RULE-DUR-03",
+       "chosen": "40-50",
+       "why": "records of equal authority disagree and neither is a correction: kept as bounds (BH-D111=40min; BH-D110=50min)"
+      },
+      {
+       "field": "counts_as_therapy",
+       "rule": "RULE-INC-02",
+       "chosen": "yes",
+       "why": "patient-present therapy of a type the plan counts"
+      }
+     ],
+     "evidence": [
+      {
+       "event_id": "HG-M042|HG-E115",
+       "role": "primary",
+       "claim_id": "22c4009c836f-N01",
+       "document": "BH-D111",
+       "file": "BH-D111_individual_second_record_2026-01-26.txt",
+       "authority": "clinical_note",
+       "offsets": [
+        260,
+        322
+       ],
+       "quote": "Actual patient psychotherapy contact: 09:10\u201309:50, 40 minutes.",
+       "verified": true
+      },
+      {
+       "event_id": "HG-M042|HG-E115",
+       "role": "primary",
+       "claim_id": "ec4906d5bc7d-N01",
+       "document": "BH-D110",
+       "file": "BH-D110_individual_primary_record_2026-01-26.txt",
+       "authority": "clinical_note",
+       "offsets": [
+        241,
+        303
+       ],
+       "quote": "Actual patient psychotherapy contact: 09:00\u201309:50, 50 minutes.",
+       "verified": true
+      }
+     ]
+    },
+    {
+     "event_id": "HG-M042|HG-E116",
+     "patient_mrn": "HG-M042",
+     "encounter_ref": "HG-E116",
+     "service_date": "2026-01-27",
+     "service_type": "group_therapy",
+     "occurred": "no",
+     "patient_present": "no",
+     "min_minutes": 0,
+     "max_minutes": 0,
+     "counts_as_therapy": 0,
+     "exclusion_reason": "contact did not occur (occurred=no)",
+     "disputed": 0,
+     "resolved": {
+      "breaks": [],
+      "duration_claims": [],
+      "evidence_docs": [
+       "BH-D108",
+       "BH-D112"
+      ],
+      "max_minutes": 0,
+      "min_minutes": 0,
+      "occurred": "no",
+      "patient_present": "no",
+      "presence_intervals": [],
+      "presence_note": "no show",
+      "service_date": "2026-01-27",
+      "service_type": "group_therapy"
+     },
+     "match_rule": "RULE-MATCH-01",
+     "decisions": [
+      {
+       "field": "claim",
+       "rule": "RULE-MATCH-01",
+       "chosen": "7eddf208984b-R02",
+       "why": "document states encounter HG-E116"
+      },
+      {
+       "field": "claim",
+       "rule": "RULE-MATCH-01",
+       "chosen": "ee1f15e7d9e4-B02",
+       "why": "document states encounter HG-E116"
+      },
+      {
+       "field": "claim",
+       "rule": "RULE-MATCH-01",
+       "chosen": "ee1f15e7d9e4-N01",
+       "why": "document states encounter HG-E116"
+      },
+      {
+       "field": "service_type",
+       "rule": "RULE-SVC-01",
+       "chosen": "group_therapy",
+       "why": "weighted vote over claims; therapy and clinical wording preferred over administrative wording"
+      },
+      {
+       "field": "rejected_presence",
+       "rule": "RULE-PRES-02",
+       "chosen": "present",
+       "why": "draft_note cannot establish that care was delivered (BH-D112)"
+      },
+      {
+       "field": "occurred",
+       "rule": "RULE-PRES-03",
+       "chosen": "no",
+       "why": "final disposition records absent (BH-D108: no show)"
+      },
+      {
+       "field": "counts_as_therapy",
+       "rule": "RULE-INC-02",
+       "chosen": "no",
+       "why": "contact did not occur (occurred=no)"
+      }
+     ],
+     "evidence": [
+      {
+       "event_id": "HG-M042|HG-E116",
+       "role": "corroborating",
+       "claim_id": "7eddf208984b-R02",
+       "document": "BH-D108",
+       "file": "BH-D108_final_attendance_and_cancellation_register.txt",
+       "authority": "attendance_register",
+       "offsets": [
+        535,
+        626
+       ],
+       "quote": "January 27 | HG-E116 | Skills group | 10:00\u201311:30 | \u2014 | \u2014 | No show; patient did not attend",
+       "verified": true
+      },
+      {
+       "event_id": "HG-M042|HG-E116",
+       "role": "rejected",
+       "claim_id": "ee1f15e7d9e4-B02",
+       "document": "BH-D112",
+       "file": "BH-D112_draft_note_and_charge_extract_2026-01-27.txt",
+       "authority": "billing",
+       "offsets": [
+        900,
+        1139
+       ],
+       "quote": "Charge ID: CH-116 | Encounter: HG-E116\nService date: January 27, 2026 | Posting date: January 27, 2026, 18:06\nDescription: Group psychotherapy\nQuantity charged: 1 group session\nCharge status in this export: Posted\n\nThe charge row was expor",
+       "verified": true
+      },
+      {
+       "event_id": "HG-M042|HG-E116",
+       "role": "rejected",
+       "claim_id": "ee1f15e7d9e4-N01",
+       "document": "BH-D112",
+       "file": "BH-D112_draft_note_and_charge_extract_2026-01-27.txt",
+       "authority": "draft_note",
+       "offsets": [
+        411,
+        513
+       ],
+       "quote": "Template attendance text: Patient attended the full session and participated in the skills discussion.",
+       "verified": true
+      }
+     ]
+    },
+    {
+     "event_id": "HG-M042|HG-E117",
+     "patient_mrn": "HG-M042",
+     "encounter_ref": "HG-E117",
+     "service_date": "2026-01-28",
+     "service_type": "individual_therapy",
+     "occurred": "no",
+     "patient_present": "no",
+     "min_minutes": 0,
+     "max_minutes": 0,
+     "counts_as_therapy": 0,
+     "exclusion_reason": "contact did not occur (occurred=no)",
+     "disputed": 0,
+     "resolved": {
+      "breaks": [],
+      "duration_claims": [],
+      "evidence_docs": [
+       "BH-D108"
+      ],
+      "max_minutes": 0,
+      "min_minutes": 0,
+      "occurred": "no",
+      "patient_present": "no",
+      "presence_intervals": [],
+      "presence_note": "patient cancelled",
+      "service_date": "2026-01-28",
+      "service_type": "individual_therapy"
+     },
+     "match_rule": "RULE-MATCH-01",
+     "decisions": [
+      {
+       "field": "claim",
+       "rule": "RULE-MATCH-01",
+       "chosen": "7eddf208984b-R03",
+       "why": "document states encounter HG-E117"
+      },
+      {
+       "field": "claim",
+       "rule": "RULE-MATCH-01",
+       "chosen": "7eddf208984b-T07",
+       "why": "document states encounter HG-E117"
+      },
+      {
+       "field": "service_type",
+       "rule": "RULE-SVC-01",
+       "chosen": "individual_therapy",
+       "why": "weighted vote over claims; therapy and clinical wording preferred over administrative wording"
+      },
+      {
+       "field": "occurred",
+       "rule": "RULE-PRES-03",
+       "chosen": "no",
+       "why": "final disposition records cancelled (BH-D108: patient cancelled)"
+      },
+      {
+       "field": "counts_as_therapy",
+       "rule": "RULE-INC-02",
+       "chosen": "no",
+       "why": "contact did not occur (occurred=no)"
+      }
+     ],
+     "evidence": [
+      {
+       "event_id": "HG-M042|HG-E117",
+       "role": "corroborating",
+       "claim_id": "7eddf208984b-R03",
+       "document": "BH-D108",
+       "file": "BH-D108_final_attendance_and_cancellation_register.txt",
+       "authority": "attendance_register",
+       "offsets": [
+        627,
+        721
+       ],
+       "quote": "January 28 | HG-E117 | Individual | 14:00\u201314:45 | \u2014 | \u2014 | Patient cancelled before appointment",
+       "verified": true
+      },
+      {
+       "event_id": "HG-M042|HG-E117",
+       "role": "corroborating",
+       "claim_id": "7eddf208984b-T07",
+       "document": "BH-D108",
+       "file": "BH-D108_final_attendance_and_cancellation_register.txt",
+       "authority": "attendance_register",
+       "offsets": [
+        1242,
+        1532
+       ],
+       "quote": "January 28 scheduling entry: Cancellation received from patient January 28, 08:12. Rowan reported a personal scheduling conflict. Appointment HG-E117 was cancelled before the scheduled start; no replacement appointment was booked within January 2026. Entered by Ana Reed, January 28, 08:18.",
+       "verified": true
+      }
+     ]
+    },
+    {
+     "event_id": "HG-M042|HG-E118",
+     "patient_mrn": "HG-M042",
+     "encounter_ref": "HG-E118",
+     "service_date": "2026-01-29",
+     "service_type": "group_therapy",
+     "occurred": "yes",
+     "patient_present": "yes",
+     "min_minutes": 75,
+     "max_minutes": 75,
+     "counts_as_therapy": 1,
+     "exclusion_reason": null,
+     "disputed": 0,
+     "resolved": {
+      "breaks": [
+       [
+        "10:45",
+        "11:00"
+       ]
+      ],
+      "duration_claims": [
+       "7eddf208984b-R04"
+      ],
+      "evidence_docs": [
+       "BH-D107",
+       "BH-D108"
+      ],
+      "max_minutes": 75,
+      "min_minutes": 75,
+      "occurred": "yes",
+      "patient_present": "yes",
+      "presence_intervals": [
+       [
+        "10:00",
+        "10:45"
+       ],
+       [
+        "11:00",
+        "11:30"
+       ]
+      ],
+      "presence_note": "",
+      "service_date": "2026-01-29",
+      "service_type": "group_therapy"
+     },
+     "match_rule": "RULE-MATCH-01",
+     "decisions": [
+      {
+       "field": "claim",
+       "rule": "RULE-MATCH-01",
+       "chosen": "46256e2f682a-N02",
+       "why": "document states encounter HG-E118"
+      },
+      {
+       "field": "claim",
+       "rule": "RULE-MATCH-01",
+       "chosen": "7eddf208984b-R04",
+       "why": "document states encounter HG-E118"
+      },
+      {
+       "field": "service_type",
+       "rule": "RULE-SVC-01",
+       "chosen": "group_therapy",
+       "why": "weighted vote over claims; therapy and clinical wording preferred over administrative wording"
+      },
+      {
+       "field": "occurred",
+       "rule": "RULE-PRES-02",
+       "chosen": "yes",
+       "why": "attested or clinically documented patient contact: BH-D108"
+      },
+      {
+       "field": "breaks",
+       "rule": "RULE-DUR-04",
+       "chosen": "[[\"10:45\", \"11:00\"]]",
+       "why": "nontherapeutic intervals subtracted by overlap with the patient's own presence interval, not as a flat amount"
+      },
+      {
+       "field": "minutes",
+       "rule": "RULE-DUR-01",
+       "chosen": "75",
+       "why": "attendance_register BH-D108 is the authority for duration on a group_therapy event; intervals"
+      },
+      {
+       "field": "counts_as_therapy",
+       "rule": "RULE-INC-02",
+       "chosen": "yes",
+       "why": "patient-present therapy of a type the plan counts"
+      }
+     ],
+     "evidence": [
+      {
+       "event_id": "HG-M042|HG-E118",
+       "role": "corroborating",
+       "claim_id": "46256e2f682a-N02",
+       "document": "BH-D107",
+       "file": "BH-D107_group_activity_records_2026-01-22_and_29.txt",
+       "authority": "clinical_note",
+       "offsets": [
+        941,
+        977
+       ],
+       "quote": "January 29, 2026 | Encounter HG-E118",
+       "verified": true
+      },
+      {
+       "event_id": "HG-M042|HG-E118",
+       "role": "primary",
+       "claim_id": "7eddf208984b-R04",
+       "document": "BH-D108",
+       "file": "BH-D108_final_attendance_and_cancellation_register.txt",
+       "authority": "attendance_register",
+       "offsets": [
+        722,
+        798
+       ],
+       "quote": "January 29 | HG-E118 | Skills group | 10:00\u201311:30 | 10:00 | 11:30 | Attended",
+       "verified": true
+      }
+     ]
+    },
+    {
+     "event_id": "HG-M042|HG-E119",
+     "patient_mrn": "HG-M042",
+     "encounter_ref": "HG-E119",
+     "service_date": "2026-01-30",
+     "service_type": "family_therapy",
+     "occurred": "yes",
+     "patient_present": "yes",
+     "min_minutes": 30,
+     "max_minutes": 30,
+     "counts_as_therapy": 1,
+     "exclusion_reason": null,
+     "disputed": 0,
+     "resolved": {
+      "breaks": [],
+      "duration_claims": [
+       "60903341f281-N01"
+      ],
+      "evidence_docs": [
+       "BH-D113"
+      ],
+      "max_minutes": 30,
+      "min_minutes": 30,
+      "occurred": "yes",
+      "patient_present": "yes",
+      "presence_intervals": [
+       [
+        "13:15",
+        "13:45"
+       ]
+      ],
+      "presence_note": "",
+      "service_date": "2026-01-30",
+      "service_type": "family_therapy"
+     },
+     "match_rule": "RULE-MATCH-01",
+     "decisions": [
+      {
+       "field": "claim",
+       "rule": "RULE-MATCH-01",
+       "chosen": "60903341f281-N01",
+       "why": "document states encounter HG-E119"
+      },
+      {
+       "field": "service_type",
+       "rule": "RULE-SVC-01",
+       "chosen": "family_therapy",
+       "why": "weighted vote over claims; therapy and clinical wording preferred over administrative wording"
+      },
+      {
+       "field": "occurred",
+       "rule": "RULE-PRES-02",
+       "chosen": "yes",
+       "why": "attested or clinically documented patient contact: BH-D113"
+      },
+      {
+       "field": "minutes",
+       "rule": "RULE-DUR-02",
+       "chosen": "30",
+       "why": "clinical_note BH-D113 is the authority for duration on a family_therapy event; intervals"
+      },
+      {
+       "field": "counts_as_therapy",
+       "rule": "RULE-INC-02",
+       "chosen": "yes",
+       "why": "patient-present therapy of a type the plan counts"
+      }
+     ],
+     "evidence": [
+      {
+       "event_id": "HG-M042|HG-E119",
+       "role": "primary",
+       "claim_id": "60903341f281-N01",
+       "document": "BH-D113",
+       "file": "BH-D113_family_therapy_2026-01-30.txt",
+       "authority": "clinical_note",
+       "offsets": [
+        278,
+        330
+       ],
+       "quote": "Rowan present with partner: 13:15\u201313:45, 30 minutes.",
+       "verified": true
+      }
+     ]
+    },
+    {
+     "event_id": "HG-M042|HG-E120",
+     "patient_mrn": "HG-M042",
+     "encounter_ref": "HG-E120",
+     "service_date": "2026-01-30",
+     "service_type": "medication_management",
+     "occurred": "yes",
+     "patient_present": "yes",
+     "min_minutes": 20,
+     "max_minutes": 20,
+     "counts_as_therapy": 0,
+     "exclusion_reason": "medication_management is named in the plan as not contributing",
+     "disputed": 0,
+     "resolved": {
+      "breaks": [],
+      "duration_claims": [
+       "ec0e9c945671-N01"
+      ],
+      "evidence_docs": [
+       "BH-D114"
+      ],
+      "max_minutes": 20,
+      "min_minutes": 20,
+      "occurred": "yes",
+      "patient_present": "yes",
+      "presence_intervals": [
+       [
+        "15:00",
+        "15:20"
+       ]
+      ],
+      "presence_note": "",
+      "service_date": "2026-01-30",
+      "service_type": "medication_management"
+     },
+     "match_rule": "RULE-MATCH-01",
+     "decisions": [
+      {
+       "field": "claim",
+       "rule": "RULE-MATCH-01",
+       "chosen": "ec0e9c945671-N01",
+       "why": "document states encounter HG-E120"
+      },
+      {
+       "field": "service_type",
+       "rule": "RULE-SVC-01",
+       "chosen": "medication_management",
+       "why": "weighted vote over claims; therapy and clinical wording preferred over administrative wording"
+      },
+      {
+       "field": "occurred",
+       "rule": "RULE-PRES-02",
+       "chosen": "yes",
+       "why": "attested or clinically documented patient contact: BH-D114"
+      },
+      {
+       "field": "minutes",
+       "rule": "RULE-DUR-02",
+       "chosen": "20",
+       "why": "clinical_note BH-D114 is the authority for duration on a medication_management event; intervals"
+      },
+      {
+       "field": "counts_as_therapy",
+       "rule": "RULE-INC-01",
+       "chosen": "no",
+       "why": "medication_management is named in the plan as not contributing"
+      }
+     ],
+     "evidence": [
+      {
+       "event_id": "HG-M042|HG-E120",
+       "role": "primary",
+       "claim_id": "ec0e9c945671-N01",
+       "document": "BH-D114",
+       "file": "BH-D114_medication_management_2026-01-30.txt",
+       "authority": "clinical_note",
+       "offsets": [
+        140,
+        194
+       ],
+       "quote": "January 30, 2026 | 15:00\u201315:20 | Completed, 20 minutes",
+       "verified": true
+      }
+     ]
+    }
+   ],
+   "observations": [
+    {
+     "obs_id": "a069d81f9183-O04|activity",
+     "patient_mrn": "HG-M042",
+     "obs_date": "2026-01-05",
+     "domain": "activity",
+     "polarity": "worsening",
+     "reporter": "clinician",
+     "claim_id": "a069d81f9183-O04",
+     "quote": "Reason for care: Rowan describes several weeks of low mood, reduced interest in usual activities, fragmented sleep, and difficulty beginning ordinary tasks.",
+     "quote_start": 378,
+     "quote_end": 534,
+     "doc_id": "BH-D002",
+     "filename": "intake_and_individual_jan05.txt",
+     "service_type": null
+    },
+    {
+     "obs_id": "a069d81f9183-O04|mood",
+     "patient_mrn": "HG-M042",
+     "obs_date": "2026-01-05",
+     "domain": "mood",
+     "polarity": "worsening",
+     "reporter": "clinician",
+     "claim_id": "a069d81f9183-O04",
+     "quote": "Reason for care: Rowan describes several weeks of low mood, reduced interest in usual activities, fragmented sleep, and difficulty beginning ordinary tasks.",
+     "quote_start": 378,
+     "quote_end": 534,
+     "doc_id": "BH-D002",
+     "filename": "intake_and_individual_jan05.txt",
+     "service_type": null
+    },
+    {
+     "obs_id": "a069d81f9183-O04|sleep",
+     "patient_mrn": "HG-M042",
+     "obs_date": "2026-01-05",
+     "domain": "sleep",
+     "polarity": "worsening",
+     "reporter": "clinician",
+     "claim_id": "a069d81f9183-O04",
+     "quote": "Reason for care: Rowan describes several weeks of low mood, reduced interest in usual activities, fragmented sleep, and difficulty beginning ordinary tasks.",
+     "quote_start": 378,
+     "quote_end": 534,
+     "doc_id": "BH-D002",
+     "filename": "intake_and_individual_jan05.txt",
+     "service_type": null
+    },
+    {
+     "obs_id": "8878c8a0423e-O02|sleep",
+     "patient_mrn": "HG-M042",
+     "obs_date": "2026-01-08",
+     "domain": "sleep",
+     "polarity": "persistence",
+     "reporter": "clinician",
+     "claim_id": "8878c8a0423e-O02",
+     "quote": "They said the morning had gotten away from them after a poor night of sleep and confirmed that they still intended to attend the next day's visit with Casey.",
+     "quote_start": 840,
+     "quote_end": 997,
+     "doc_id": "BH-D015",
+     "filename": "missed_visit_outreach_jan08.txt",
+     "service_type": null
+    },
+    {
+     "obs_id": "8971a83ecbe8-O02|participation",
+     "patient_mrn": "HG-M042",
+     "obs_date": "2026-01-09",
+     "domain": "participation",
+     "polarity": "persistence",
+     "reporter": "clinician",
+     "claim_id": "8971a83ecbe8-O02",
+     "quote": "Rowan remained present and engaged throughout the visit.",
+     "quote_start": 1171,
+     "quote_end": 1227,
+     "doc_id": "BH-D007",
+     "filename": "family_primary_jan09.txt",
+     "service_type": null
+    },
+    {
+     "obs_id": "8971a83ecbe8-O03|activity",
+     "patient_mrn": "HG-M042",
+     "obs_date": "2026-01-09",
+     "domain": "activity",
+     "polarity": "improvement",
+     "reporter": "clinician",
+     "claim_id": "8971a83ecbe8-O03",
+     "quote": "They became more animated when describing a shared evening walk and identified this as support that did not feel like pressure.",
+     "quote_start": 1228,
+     "quote_end": 1355,
+     "doc_id": "BH-D007",
+     "filename": "family_primary_jan09.txt",
+     "service_type": null
+    },
+    {
+     "obs_id": "8971a83ecbe8-O03|social_support",
+     "patient_mrn": "HG-M042",
+     "obs_date": "2026-01-09",
+     "domain": "social_support",
+     "polarity": "improvement",
+     "reporter": "clinician",
+     "claim_id": "8971a83ecbe8-O03",
+     "quote": "They became more animated when describing a shared evening walk and identified this as support that did not feel like pressure.",
+     "quote_start": 1228,
+     "quote_end": 1355,
+     "doc_id": "BH-D007",
+     "filename": "family_primary_jan09.txt",
+     "service_type": null
+    },
+    {
+     "obs_id": "48543ce513a8-O02|avoidance_work",
+     "patient_mrn": "HG-M042",
+     "obs_date": "2026-01-12",
+     "domain": "avoidance_work",
+     "polarity": "improvement",
+     "reporter": "clinician",
+     "claim_id": "48543ce513a8-O02",
+     "quote": "They identified looking at one message as a lower step than replying to every outstanding message.",
+     "quote_start": 973,
+     "quote_end": 1071,
+     "doc_id": "BH-D009",
+     "filename": "group_facilitator_jan12.txt",
+     "service_type": null
+    },
+    {
+     "obs_id": "48543ce513a8-O03|activity",
+     "patient_mrn": "HG-M042",
+     "obs_date": "2026-01-12",
+     "domain": "activity",
+     "polarity": "improvement",
+     "reporter": "clinician",
+     "claim_id": "48543ce513a8-O03",
+     "quote": "They also described taking a walk with Casey over the weekend and noted that it helped the evening feel less dominated by worry.",
+     "quote_start": 1072,
+     "quote_end": 1200,
+     "doc_id": "BH-D009",
+     "filename": "group_facilitator_jan12.txt",
+     "service_type": null
+    },
+    {
+     "obs_id": "48543ce513a8-O03|anxiety",
+     "patient_mrn": "HG-M042",
+     "obs_date": "2026-01-12",
+     "domain": "anxiety",
+     "polarity": "improvement",
+     "reporter": "clinician",
+     "claim_id": "48543ce513a8-O03",
+     "quote": "They also described taking a walk with Casey over the weekend and noted that it helped the evening feel less dominated by worry.",
+     "quote_start": 1072,
+     "quote_end": 1200,
+     "doc_id": "BH-D009",
+     "filename": "group_facilitator_jan12.txt",
+     "service_type": null
+    },
+    {
+     "obs_id": "cb505fa332c6-O02|activity",
+     "patient_mrn": "HG-M042",
+     "obs_date": "2026-01-13",
+     "domain": "activity",
+     "polarity": "mixed",
+     "reporter": "clinician",
+     "claim_id": "cb505fa332c6-O02",
+     "quote": "They described mood as somewhat less heavy on days with a planned activity but remained concerned about work communication.",
+     "quote_start": 575,
+     "quote_end": 698,
+     "doc_id": "BH-D010",
+     "filename": "medication_review_jan13.txt",
+     "service_type": null
+    },
+    {
+     "obs_id": "cb505fa332c6-O02|avoidance_work",
+     "patient_mrn": "HG-M042",
+     "obs_date": "2026-01-13",
+     "domain": "avoidance_work",
+     "polarity": "mixed",
+     "reporter": "clinician",
+     "claim_id": "cb505fa332c6-O02",
+     "quote": "They described mood as somewhat less heavy on days with a planned activity but remained concerned about work communication.",
+     "quote_start": 575,
+     "quote_end": 698,
+     "doc_id": "BH-D010",
+     "filename": "medication_review_jan13.txt",
+     "service_type": null
+    },
+    {
+     "obs_id": "cb505fa332c6-O02|mood",
+     "patient_mrn": "HG-M042",
+     "obs_date": "2026-01-13",
+     "domain": "mood",
+     "polarity": "mixed",
+     "reporter": "clinician",
+     "claim_id": "cb505fa332c6-O02",
+     "quote": "They described mood as somewhat less heavy on days with a planned activity but remained concerned about work communication.",
+     "quote_start": 575,
+     "quote_end": 698,
+     "doc_id": "BH-D010",
+     "filename": "medication_review_jan13.txt",
+     "service_type": null
+    },
+    {
+     "obs_id": "c3ad273e5e7a-O02|avoidance_work",
+     "patient_mrn": "HG-M042",
+     "obs_date": "2026-01-14",
+     "domain": "avoidance_work",
+     "polarity": "persistence",
+     "reporter": "clinician",
+     "claim_id": "c3ad273e5e7a-O02",
+     "quote": "They have not yet replied to the message and continue to imagine being asked questions they cannot answer.",
+     "quote_start": 509,
+     "quote_end": 615,
+     "doc_id": "BH-D011",
+     "filename": "individual_therapy_jan14.txt",
+     "service_type": null
+    },
+    {
+     "obs_id": "c3ad273e5e7a-O03|social_support",
+     "patient_mrn": "HG-M042",
+     "obs_date": "2026-01-14",
+     "domain": "social_support",
+     "polarity": "improvement",
+     "reporter": "patient",
+     "claim_id": "c3ad273e5e7a-O03",
+     "quote": "Rowan described the family appointment as helpful because the planned check-in with Casey reduced repeated reminders.",
+     "quote_start": 616,
+     "quote_end": 733,
+     "doc_id": "BH-D011",
+     "filename": "individual_therapy_jan14.txt",
+     "service_type": null
+    },
+    {
+     "obs_id": "c3ad273e5e7a-O04|sleep",
+     "patient_mrn": "HG-M042",
+     "obs_date": "2026-01-14",
+     "domain": "sleep",
+     "polarity": "persistence",
+     "reporter": "clinician",
+     "claim_id": "c3ad273e5e7a-O04",
+     "quote": "Sleep remains interrupted, and getting started in the morning continues to require effort.",
+     "quote_start": 734,
+     "quote_end": 824,
+     "doc_id": "BH-D011",
+     "filename": "individual_therapy_jan14.txt",
+     "service_type": null
+    },
+    {
+     "obs_id": "c3ad273e5e7a-O05|activity",
+     "patient_mrn": "HG-M042",
+     "obs_date": "2026-01-14",
+     "domain": "activity",
+     "polarity": "persistence",
+     "reporter": "clinician",
+     "claim_id": "c3ad273e5e7a-O05",
+     "quote": "Rowan noticed physical tension during the rehearsal but was able to remain with the task.",
+     "quote_start": 1067,
+     "quote_end": 1156,
+     "doc_id": "BH-D011",
+     "filename": "individual_therapy_jan14.txt",
+     "service_type": null
+    },
+    {
+     "obs_id": "c3ad273e5e7a-O05|anxiety",
+     "patient_mrn": "HG-M042",
+     "obs_date": "2026-01-14",
+     "domain": "anxiety",
+     "polarity": "persistence",
+     "reporter": "clinician",
+     "claim_id": "c3ad273e5e7a-O05",
+     "quote": "Rowan noticed physical tension during the rehearsal but was able to remain with the task.",
+     "quote_start": 1067,
+     "quote_end": 1156,
+     "doc_id": "BH-D011",
+     "filename": "individual_therapy_jan14.txt",
+     "service_type": null
+    },
+    {
+     "obs_id": "c3ad273e5e7a-O06|avoidance_work",
+     "patient_mrn": "HG-M042",
+     "obs_date": "2026-01-14",
+     "domain": "avoidance_work",
+     "polarity": "improvement",
+     "reporter": "clinician",
+     "claim_id": "c3ad273e5e7a-O06",
+     "quote": "They said the message seemed less overwhelming when it did not need to solve the entire return-to-work question.",
+     "quote_start": 1157,
+     "quote_end": 1269,
+     "doc_id": "BH-D011",
+     "filename": "individual_therapy_jan14.txt",
+     "service_type": null
+    },
+    {
+     "obs_id": "c3ad273e5e7a-O07|anxiety",
+     "patient_mrn": "HG-M042",
+     "obs_date": "2026-01-14",
+     "domain": "anxiety",
+     "polarity": "improvement",
+     "reporter": "clinician",
+     "claim_id": "c3ad273e5e7a-O07",
+     "quote": "Affect was more varied than at intake, although worry was evident when discussing employment.",
+     "quote_start": 1519,
+     "quote_end": 1612,
+     "doc_id": "BH-D011",
+     "filename": "individual_therapy_jan14.txt",
+     "service_type": null
+    },
+    {
+     "obs_id": "c3ad273e5e7a-O07|avoidance_work",
+     "patient_mrn": "HG-M042",
+     "obs_date": "2026-01-14",
+     "domain": "avoidance_work",
+     "polarity": "improvement",
+     "reporter": "clinician",
+     "claim_id": "c3ad273e5e7a-O07",
+     "quote": "Affect was more varied than at intake, although worry was evident when discussing employment.",
+     "quote_start": 1519,
+     "quote_end": 1612,
+     "doc_id": "BH-D011",
+     "filename": "individual_therapy_jan14.txt",
+     "service_type": null
+    },
+    {
+     "obs_id": "2784824e6db4-O02|activity",
+     "patient_mrn": "HG-M042",
+     "obs_date": "2026-01-16",
+     "domain": "activity",
+     "polarity": "improvement",
+     "reporter": "informant",
+     "claim_id": "2784824e6db4-O02",
+     "quote": "Casey reported that Rowan had been getting out for short walks and seemed more willing to discuss the coming week.",
+     "quote_start": 683,
+     "quote_end": 797,
+     "doc_id": "BH-D012",
+     "filename": "partner_collateral_jan16.txt",
+     "service_type": null
+    },
+    {
+     "obs_id": "2784824e6db4-O03|avoidance_work",
+     "patient_mrn": "HG-M042",
+     "obs_date": "2026-01-16",
+     "domain": "avoidance_work",
+     "polarity": "persistence",
+     "reporter": "informant",
+     "claim_id": "2784824e6db4-O03",
+     "quote": "Mornings remain difficult, and Casey described Rowan becoming quiet when the conversation turns to work.",
+     "quote_start": 798,
+     "quote_end": 902,
+     "doc_id": "BH-D012",
+     "filename": "partner_collateral_jan16.txt",
+     "service_type": null
+    },
+    {
+     "obs_id": "e66277f1439e-O03|avoidance_work",
+     "patient_mrn": "HG-M042",
+     "obs_date": "2026-01-16",
+     "domain": "avoidance_work",
+     "polarity": "mixed",
+     "reporter": "patient",
+     "claim_id": "e66277f1439e-O03",
+     "quote": "In the optional update field, Rowan wrote that getting out of the apartment had become a little easier, while thinking about work continued to make them want to put things off.",
+     "quote_start": 435,
+     "quote_end": 611,
+     "doc_id": "BH-D013",
+     "filename": "symptom_measure_review_jan16.txt",
+     "service_type": null
+    },
+    {
+     "obs_id": "e66277f1439e-O04|sleep",
+     "patient_mrn": "HG-M042",
+     "obs_date": "2026-01-16",
+     "domain": "sleep",
+     "polarity": "persistence",
+     "reporter": "patient",
+     "claim_id": "e66277f1439e-O04",
+     "quote": "Rowan also described sleep as inconsistent.",
+     "quote_start": 612,
+     "quote_end": 655,
+     "doc_id": "BH-D013",
+     "filename": "symptom_measure_review_jan16.txt",
+     "service_type": null
+    },
+    {
+     "obs_id": "e66277f1439e-O05|activity",
+     "patient_mrn": "HG-M042",
+     "obs_date": "2026-01-16",
+     "domain": "activity",
+     "polarity": "persistence",
+     "reporter": "clinician",
+     "claim_id": "e66277f1439e-O05",
+     "quote": "Rowan has attempted small activities and communication practice but has not yet established a reliable routine.",
+     "quote_start": 946,
+     "quote_end": 1057,
+     "doc_id": "BH-D013",
+     "filename": "symptom_measure_review_jan16.txt",
+     "service_type": null
+    },
+    {
+     "obs_id": "b063ae064568-O02|anxiety",
+     "patient_mrn": "HG-M042",
+     "obs_date": "2026-01-19",
+     "domain": "anxiety",
+     "polarity": "worsening",
+     "reporter": "clinician",
+     "claim_id": "b063ae064568-O02",
+     "quote": "The patient described feeling overwhelmed when other members discussed workplace demands and worried that returning to work would expose difficulties keeping up.",
+     "quote_start": 423,
+     "quote_end": 584,
+     "doc_id": "BH-D105",
+     "filename": "BH-D105_individual_2026-01-19.txt",
+     "service_type": null
+    },
+    {
+     "obs_id": "b063ae064568-O02|avoidance_work",
+     "patient_mrn": "HG-M042",
+     "obs_date": "2026-01-19",
+     "domain": "avoidance_work",
+     "polarity": "worsening",
+     "reporter": "clinician",
+     "claim_id": "b063ae064568-O02",
+     "quote": "The patient described feeling overwhelmed when other members discussed workplace demands and worried that returning to work would expose difficulties keeping up.",
+     "quote_start": 423,
+     "quote_end": 584,
+     "doc_id": "BH-D105",
+     "filename": "BH-D105_individual_2026-01-19.txt",
+     "service_type": null
+    },
+    {
+     "obs_id": "b063ae064568-O03|anxiety",
+     "patient_mrn": "HG-M042",
+     "obs_date": "2026-01-19",
+     "domain": "anxiety",
+     "polarity": "improvement",
+     "reporter": "clinician",
+     "claim_id": "b063ae064568-O03",
+     "quote": "Rowan participated throughout the individual contact and reported that the immediate intensity of anxiety eased enough to discuss a next step.",
+     "quote_start": 793,
+     "quote_end": 935,
+     "doc_id": "BH-D105",
+     "filename": "BH-D105_individual_2026-01-19.txt",
+     "service_type": null
+    },
+    {
+     "obs_id": "b063ae064568-O04|safety",
+     "patient_mrn": "HG-M042",
+     "obs_date": "2026-01-19",
+     "domain": "safety",
+     "polarity": "persistence",
+     "reporter": "patient",
+     "claim_id": "b063ae064568-O04",
+     "quote": "Rowan denied current suicidal thoughts and remained future oriented in discussing the next appointment.",
+     "quote_start": 1180,
+     "quote_end": 1283,
+     "doc_id": "BH-D105",
+     "filename": "BH-D105_individual_2026-01-19.txt",
+     "service_type": null
+    },
+    {
+     "obs_id": "fd5cd70c565e-O02|anxiety",
+     "patient_mrn": "HG-M042",
+     "obs_date": "2026-01-19",
+     "domain": "anxiety",
+     "polarity": "worsening",
+     "reporter": "patient",
+     "claim_id": "fd5cd70c565e-O02",
+     "quote": "When discussion turned to returning to the workplace, Rowan became visibly tense and said the amount of discussion felt difficult to manage.",
+     "quote_start": 968,
+     "quote_end": 1108,
+     "doc_id": "BH-D101",
+     "filename": "BH-D101_group_content_2026-01-19.txt",
+     "service_type": null
+    },
+    {
+     "obs_id": "fd5cd70c565e-O02|avoidance_work",
+     "patient_mrn": "HG-M042",
+     "obs_date": "2026-01-19",
+     "domain": "avoidance_work",
+     "polarity": "worsening",
+     "reporter": "patient",
+     "claim_id": "fd5cd70c565e-O02",
+     "quote": "When discussion turned to returning to the workplace, Rowan became visibly tense and said the amount of discussion felt difficult to manage.",
+     "quote_start": 968,
+     "quote_end": 1108,
+     "doc_id": "BH-D101",
+     "filename": "BH-D101_group_content_2026-01-19.txt",
+     "service_type": null
+    },
+    {
+     "obs_id": "98a452acc34a-O02|sleep",
+     "patient_mrn": "HG-M042",
+     "obs_date": "2026-01-21",
+     "domain": "sleep",
+     "polarity": "mixed",
+     "reporter": "patient",
+     "claim_id": "98a452acc34a-O02",
+     "quote": "Rowan described one night of improved sleep followed by a night of prolonged wakefulness.",
+     "quote_start": 1011,
+     "quote_end": 1100,
+     "doc_id": "BH-D106",
+     "filename": "BH-D106_telehealth_2026-01-21.txt",
+     "service_type": null
+    },
+    {
+     "obs_id": "22c4009c836f-O02|avoidance_work",
+     "patient_mrn": "HG-M042",
+     "obs_date": "2026-01-26",
+     "domain": "avoidance_work",
+     "polarity": "worsening",
+     "reporter": "clinician",
+     "claim_id": "22c4009c836f-O02",
+     "quote": "The patient anticipated becoming overwhelmed if several work issues were raised at once.",
+     "quote_start": 678,
+     "quote_end": 766,
+     "doc_id": "BH-D111",
+     "filename": "BH-D111_individual_second_record_2026-01-26.txt",
+     "service_type": null
+    },
+    {
+     "obs_id": "22c4009c836f-O03|anxiety",
+     "patient_mrn": "HG-M042",
+     "obs_date": "2026-01-26",
+     "domain": "anxiety",
+     "polarity": "persistence",
+     "reporter": "clinician",
+     "claim_id": "22c4009c836f-O03",
+     "quote": "The patient could use the cue during the rehearsal but remained uncertain about using it independently when anxious.",
+     "quote_start": 1138,
+     "quote_end": 1254,
+     "doc_id": "BH-D111",
+     "filename": "BH-D111_individual_second_record_2026-01-26.txt",
+     "service_type": null
+    },
+    {
+     "obs_id": "ec4906d5bc7d-O02|anxiety",
+     "patient_mrn": "HG-M042",
+     "obs_date": "2026-01-26",
+     "domain": "anxiety",
+     "polarity": "improvement",
+     "reporter": "clinician",
+     "claim_id": "ec4906d5bc7d-O02",
+     "quote": "The reply reduced one uncertainty but also brought up worry about being asked for commitments the patient might not be able to meet.",
+     "quote_start": 419,
+     "quote_end": 551,
+     "doc_id": "BH-D110",
+     "filename": "BH-D110_individual_primary_record_2026-01-26.txt",
+     "service_type": null
+    },
+    {
+     "obs_id": "ec4906d5bc7d-O03|avoidance_work",
+     "patient_mrn": "HG-M042",
+     "obs_date": "2026-01-26",
+     "domain": "avoidance_work",
+     "polarity": "persistence",
+     "reporter": "clinician",
+     "claim_id": "ec4906d5bc7d-O03",
+     "quote": "Rowan continued to postpone choosing a time for the conversation.",
+     "quote_start": 552,
+     "quote_end": 617,
+     "doc_id": "BH-D110",
+     "filename": "BH-D110_individual_primary_record_2026-01-26.txt",
+     "service_type": null
+    },
+    {
+     "obs_id": "ec4906d5bc7d-O04|avoidance_work",
+     "patient_mrn": "HG-M042",
+     "obs_date": "2026-01-26",
+     "domain": "avoidance_work",
+     "polarity": "persistence",
+     "reporter": "clinician",
+     "claim_id": "ec4906d5bc7d-O04",
+     "quote": "Sleep remained uneven, with difficulty settling on nights when work-related thoughts became repetitive.",
+     "quote_start": 618,
+     "quote_end": 721,
+     "doc_id": "BH-D110",
+     "filename": "BH-D110_individual_primary_record_2026-01-26.txt",
+     "service_type": null
+    },
+    {
+     "obs_id": "ec4906d5bc7d-O04|sleep",
+     "patient_mrn": "HG-M042",
+     "obs_date": "2026-01-26",
+     "domain": "sleep",
+     "polarity": "persistence",
+     "reporter": "clinician",
+     "claim_id": "ec4906d5bc7d-O04",
+     "quote": "Sleep remained uneven, with difficulty settling on nights when work-related thoughts became repetitive.",
+     "quote_start": 618,
+     "quote_end": 721,
+     "doc_id": "BH-D110",
+     "filename": "BH-D110_individual_primary_record_2026-01-26.txt",
+     "service_type": null
+    },
+    {
+     "obs_id": "ec4906d5bc7d-O05|activity",
+     "patient_mrn": "HG-M042",
+     "obs_date": "2026-01-26",
+     "domain": "activity",
+     "polarity": "persistence",
+     "reporter": "clinician",
+     "claim_id": "ec4906d5bc7d-O05",
+     "quote": "The patient remained attentive and collaborative, although hesitant about completing the task outside the office.",
+     "quote_start": 1154,
+     "quote_end": 1267,
+     "doc_id": "BH-D110",
+     "filename": "BH-D110_individual_primary_record_2026-01-26.txt",
+     "service_type": null
+    },
+    {
+     "obs_id": "1f8b098b51c5-O03|activity",
+     "patient_mrn": "HG-M042",
+     "obs_date": "2026-01-30",
+     "domain": "activity",
+     "polarity": "mixed",
+     "reporter": "clinician",
+     "claim_id": "1f8b098b51c5-O03",
+     "quote": "The patient continued to endorse sleep difficulty and trouble sustaining usual activities, with fewer days of pervasive low mood than reported at intake.",
+     "quote_start": 282,
+     "quote_end": 435,
+     "doc_id": "BH-D115",
+     "filename": "BH-D115_symptom_measure_review_2026-01-30.txt",
+     "service_type": null
+    },
+    {
+     "obs_id": "1f8b098b51c5-O03|mood",
+     "patient_mrn": "HG-M042",
+     "obs_date": "2026-01-30",
+     "domain": "mood",
+     "polarity": "mixed",
+     "reporter": "clinician",
+     "claim_id": "1f8b098b51c5-O03",
+     "quote": "The patient continued to endorse sleep difficulty and trouble sustaining usual activities, with fewer days of pervasive low mood than reported at intake.",
+     "quote_start": 282,
+     "quote_end": 435,
+     "doc_id": "BH-D115",
+     "filename": "BH-D115_symptom_measure_review_2026-01-30.txt",
+     "service_type": null
+    },
+    {
+     "obs_id": "1f8b098b51c5-O03|sleep",
+     "patient_mrn": "HG-M042",
+     "obs_date": "2026-01-30",
+     "domain": "sleep",
+     "polarity": "mixed",
+     "reporter": "clinician",
+     "claim_id": "1f8b098b51c5-O03",
+     "quote": "The patient continued to endorse sleep difficulty and trouble sustaining usual activities, with fewer days of pervasive low mood than reported at intake.",
+     "quote_start": 282,
+     "quote_end": 435,
+     "doc_id": "BH-D115",
+     "filename": "BH-D115_symptom_measure_review_2026-01-30.txt",
+     "service_type": null
+    },
+    {
+     "obs_id": "1f8b098b51c5-O04|avoidance_work",
+     "patient_mrn": "HG-M042",
+     "obs_date": "2026-01-30",
+     "domain": "avoidance_work",
+     "polarity": "mixed",
+     "reporter": "clinician",
+     "claim_id": "1f8b098b51c5-O04",
+     "quote": "Clinician review, January 30: Rowan shows partial improvement, with persistent avoidance and meaningful functional impact around returning to work.",
+     "quote_start": 540,
+     "quote_end": 687,
+     "doc_id": "BH-D115",
+     "filename": "BH-D115_symptom_measure_review_2026-01-30.txt",
+     "service_type": null
+    },
+    {
+     "obs_id": "1f8b098b51c5-O05|activity",
+     "patient_mrn": "HG-M042",
+     "obs_date": "2026-01-30",
+     "domain": "activity",
+     "polarity": "persistence",
+     "reporter": "clinician",
+     "claim_id": "1f8b098b51c5-O05",
+     "quote": "The patient has taken some initial steps, including drafting and sending a message, but continues to delay follow-up and becomes anxious when a task expands beyond a narrowly defined action.",
+     "quote_start": 688,
+     "quote_end": 878,
+     "doc_id": "BH-D115",
+     "filename": "BH-D115_symptom_measure_review_2026-01-30.txt",
+     "service_type": null
+    },
+    {
+     "obs_id": "1f8b098b51c5-O05|anxiety",
+     "patient_mrn": "HG-M042",
+     "obs_date": "2026-01-30",
+     "domain": "anxiety",
+     "polarity": "persistence",
+     "reporter": "clinician",
+     "claim_id": "1f8b098b51c5-O05",
+     "quote": "The patient has taken some initial steps, including drafting and sending a message, but continues to delay follow-up and becomes anxious when a task expands beyond a narrowly defined action.",
+     "quote_start": 688,
+     "quote_end": 878,
+     "doc_id": "BH-D115",
+     "filename": "BH-D115_symptom_measure_review_2026-01-30.txt",
+     "service_type": null
+    },
+    {
+     "obs_id": "1f8b098b51c5-O05|avoidance_work",
+     "patient_mrn": "HG-M042",
+     "obs_date": "2026-01-30",
+     "domain": "avoidance_work",
+     "polarity": "persistence",
+     "reporter": "clinician",
+     "claim_id": "1f8b098b51c5-O05",
+     "quote": "The patient has taken some initial steps, including drafting and sending a message, but continues to delay follow-up and becomes anxious when a task expands beyond a narrowly defined action.",
+     "quote_start": 688,
+     "quote_end": 878,
+     "doc_id": "BH-D115",
+     "filename": "BH-D115_symptom_measure_review_2026-01-30.txt",
+     "service_type": null
+    },
+    {
+     "obs_id": "1f8b098b51c5-O06|activity",
+     "patient_mrn": "HG-M042",
+     "obs_date": "2026-01-30",
+     "domain": "activity",
+     "polarity": "persistence",
+     "reporter": "clinician",
+     "claim_id": "1f8b098b51c5-O06",
+     "quote": "Sleep disruption remains an intermittent barrier to establishing a steadier daytime routine.",
+     "quote_start": 879,
+     "quote_end": 971,
+     "doc_id": "BH-D115",
+     "filename": "BH-D115_symptom_measure_review_2026-01-30.txt",
+     "service_type": null
+    },
+    {
+     "obs_id": "1f8b098b51c5-O06|sleep",
+     "patient_mrn": "HG-M042",
+     "obs_date": "2026-01-30",
+     "domain": "sleep",
+     "polarity": "persistence",
+     "reporter": "clinician",
+     "claim_id": "1f8b098b51c5-O06",
+     "quote": "Sleep disruption remains an intermittent barrier to establishing a steadier daytime routine.",
+     "quote_start": 879,
+     "quote_end": 971,
+     "doc_id": "BH-D115",
+     "filename": "BH-D115_symptom_measure_review_2026-01-30.txt",
+     "service_type": null
+    },
+    {
+     "obs_id": "60903341f281-O02|anxiety",
+     "patient_mrn": "HG-M042",
+     "obs_date": "2026-01-30",
+     "domain": "anxiety",
+     "polarity": "persistence",
+     "reporter": "clinician",
+     "claim_id": "60903341f281-O02",
+     "quote": "Rowan remained anxious about the work conversation but could explain the intended first step.",
+     "quote_start": 1238,
+     "quote_end": 1331,
+     "doc_id": "BH-D113",
+     "filename": "BH-D113_family_therapy_2026-01-30.txt",
+     "service_type": null
+    },
+    {
+     "obs_id": "60903341f281-O02|avoidance_work",
+     "patient_mrn": "HG-M042",
+     "obs_date": "2026-01-30",
+     "domain": "avoidance_work",
+     "polarity": "persistence",
+     "reporter": "clinician",
+     "claim_id": "60903341f281-O02",
+     "quote": "Rowan remained anxious about the work conversation but could explain the intended first step.",
+     "quote_start": 1238,
+     "quote_end": 1331,
+     "doc_id": "BH-D113",
+     "filename": "BH-D113_family_therapy_2026-01-30.txt",
+     "service_type": null
+    },
+    {
+     "obs_id": "ec0e9c945671-O02|anxiety",
+     "patient_mrn": "HG-M042",
+     "obs_date": "2026-01-30",
+     "domain": "anxiety",
+     "polarity": "mixed",
+     "reporter": "clinician",
+     "claim_id": "ec0e9c945671-O02",
+     "quote": "Mood felt less persistently low than earlier in the month, although anxiety remained noticeable when anticipating contact with work.",
+     "quote_start": 420,
+     "quote_end": 552,
+     "doc_id": "BH-D114",
+     "filename": "BH-D114_medication_management_2026-01-30.txt",
+     "service_type": null
+    },
+    {
+     "obs_id": "ec0e9c945671-O02|avoidance_work",
+     "patient_mrn": "HG-M042",
+     "obs_date": "2026-01-30",
+     "domain": "avoidance_work",
+     "polarity": "mixed",
+     "reporter": "clinician",
+     "claim_id": "ec0e9c945671-O02",
+     "quote": "Mood felt less persistently low than earlier in the month, although anxiety remained noticeable when anticipating contact with work.",
+     "quote_start": 420,
+     "quote_end": 552,
+     "doc_id": "BH-D114",
+     "filename": "BH-D114_medication_management_2026-01-30.txt",
+     "service_type": null
+    },
+    {
+     "obs_id": "ec0e9c945671-O02|mood",
+     "patient_mrn": "HG-M042",
+     "obs_date": "2026-01-30",
+     "domain": "mood",
+     "polarity": "mixed",
+     "reporter": "clinician",
+     "claim_id": "ec0e9c945671-O02",
+     "quote": "Mood felt less persistently low than earlier in the month, although anxiety remained noticeable when anticipating contact with work.",
+     "quote_start": 420,
+     "quote_end": 552,
+     "doc_id": "BH-D114",
+     "filename": "BH-D114_medication_management_2026-01-30.txt",
+     "service_type": null
+    }
+   ],
+   "totals": {
+    "sessions": 12,
+    "by_service_type": {
+     "family_therapy": 2,
+     "group_therapy": 5,
+     "individual_therapy": 5
+    },
+    "distinct_days": 11,
+    "days": [
+     "2026-01-05",
+     "2026-01-06",
+     "2026-01-09",
+     "2026-01-12",
+     "2026-01-14",
+     "2026-01-19",
+     "2026-01-21",
+     "2026-01-22",
+     "2026-01-26",
+     "2026-01-29",
+     "2026-01-30"
+    ]
+   }
+  }
+ ],
+ "documents": [
+  {
+   "doc_pk": "fd5cd70c565e018c938c53ca622627010993837e9720a67d73db1e74c3054d17",
+   "doc_id": "BH-D101",
+   "filename": "BH-D101_group_content_2026-01-19.txt",
+   "doc_class": "clinical_note",
+   "sha256_raw": "05a234a8adc98e72a51ba9e82c13e5975ee5026f03bb03e66575015b22562fb6",
+   "sha256_norm": "fd5cd70c565e018c938c53ca622627010993837e9720a67d73db1e74c3054d17",
+   "char_len": 1650,
+   "received_at": null,
+   "authored_at": null,
+   "extractor": "rules",
+   "extractor_ver": "1.1.0"
+  },
+  {
+   "doc_pk": "c8fbc79cb86f864d3413bce785931d1c26f4a849831ce62384f7c8f486b2b421",
+   "doc_id": "BH-D102",
+   "filename": "BH-D102_original_attendance_2026-01-19.txt",
+   "doc_class": "attendance_register",
+   "sha256_raw": "514ca20809f682607e91b924c6cef0bb22f43a3d12cedbd23ea5fa362910cce5",
+   "sha256_norm": "c8fbc79cb86f864d3413bce785931d1c26f4a849831ce62384f7c8f486b2b421",
+   "char_len": 1442,
+   "received_at": null,
+   "authored_at": null,
+   "extractor": "rules",
+   "extractor_ver": "1.1.0"
+  },
+  {
+   "doc_pk": "6853e674a5cd44c1c7749440a9440d213f27a31cbe1e13dd14f9599a344b3688",
+   "doc_id": "BH-D103",
+   "filename": "BH-D103_attendance_correction_2026-01-20.txt",
+   "doc_class": "correction",
+   "sha256_raw": "674440968b5d6d38d68b8b513cc7ac3b3516ddd97285bde1e4af69cb9f128bd9",
+   "sha256_norm": "6853e674a5cd44c1c7749440a9440d213f27a31cbe1e13dd14f9599a344b3688",
+   "char_len": 1445,
+   "received_at": "2026-01-20",
+   "authored_at": null,
+   "extractor": "rules",
+   "extractor_ver": "1.1.0"
+  },
+  {
+   "doc_pk": "39ac0f9b962262ea4fae078c79c6ff91c0078bbf3e3680c4c337d04d419e77d6",
+   "doc_id": "BH-D104",
+   "filename": "BH-D104_resent_roster_received_2026-01-26.txt",
+   "doc_class": "retransmission",
+   "sha256_raw": "f3f25065559f4e82b110b5c284df5c2c4f81c55c950721e7bd6a9c23a91241d5",
+   "sha256_norm": "39ac0f9b962262ea4fae078c79c6ff91c0078bbf3e3680c4c337d04d419e77d6",
+   "char_len": 1399,
+   "received_at": "2026-01-26",
+   "authored_at": null,
+   "extractor": "rules",
+   "extractor_ver": "1.1.0"
+  },
+  {
+   "doc_pk": "b063ae06456812958a4ee5e8ff8e04a0ffde45c8bf69267520a2f777b601a992",
+   "doc_id": "BH-D105",
+   "filename": "BH-D105_individual_2026-01-19.txt",
+   "doc_class": "clinical_note",
+   "sha256_raw": "91fd8e8b1b3182207971dbecd77e3d2bd13e5f49608f4083e4a9245b8a2d8935",
+   "sha256_norm": "b063ae06456812958a4ee5e8ff8e04a0ffde45c8bf69267520a2f777b601a992",
+   "char_len": 1618,
+   "received_at": null,
+   "authored_at": null,
+   "extractor": "rules",
+   "extractor_ver": "1.1.0"
+  },
+  {
+   "doc_pk": "98a452acc34aeb54b07298725e31a7fa2a4a31435ffa3bfab5469a8478d377dd",
+   "doc_id": "BH-D106",
+   "filename": "BH-D106_telehealth_2026-01-21.txt",
+   "doc_class": "clinical_note",
+   "sha256_raw": "09c946a2248a5a81b2c1dc85b7620babe57b72f1bd4bed3d49eba574be5ccd46",
+   "sha256_norm": "98a452acc34aeb54b07298725e31a7fa2a4a31435ffa3bfab5469a8478d377dd",
+   "char_len": 1699,
+   "received_at": null,
+   "authored_at": null,
+   "extractor": "rules",
+   "extractor_ver": "1.1.0"
+  },
+  {
+   "doc_pk": "46256e2f682a790684644e3ddfe4f82743cd694d6de5cd6d13285c9b2f49b56c",
+   "doc_id": "BH-D107",
+   "filename": "BH-D107_group_activity_records_2026-01-22_and_29.txt",
+   "doc_class": "clinical_note",
+   "sha256_raw": "c5953bcb242ef0143301019cf06964a4b759d432e26dc0e34f0ad1c2b819df70",
+   "sha256_norm": "46256e2f682a790684644e3ddfe4f82743cd694d6de5cd6d13285c9b2f49b56c",
+   "char_len": 1769,
+   "received_at": null,
+   "authored_at": null,
+   "extractor": "rules",
+   "extractor_ver": "1.1.0"
+  },
+  {
+   "doc_pk": "7eddf208984ba0d4a379115ad25e3cf1827f0cbc62e709d0ef17ff80b3fd58cf",
+   "doc_id": "BH-D108",
+   "filename": "BH-D108_final_attendance_and_cancellation_register.txt",
+   "doc_class": "attendance_register",
+   "sha256_raw": "805b2c69c7fa18ab31b618b4a313c39dcdbde570cc0890de2dfd52d77ca547e1",
+   "sha256_norm": "7eddf208984ba0d4a379115ad25e3cf1827f0cbc62e709d0ef17ff80b3fd58cf",
+   "char_len": 1752,
+   "received_at": "2026-01-28",
+   "authored_at": null,
+   "extractor": "rules",
+   "extractor_ver": "1.1.0"
+  },
+  {
+   "doc_pk": "a68d459c61a7a63331b5b46772cfcdf9f7503083bdee3dd0a8074e6956d2ab44",
+   "doc_id": "BH-D109",
+   "filename": "BH-D109_care_coordination_2026-01-23.txt",
+   "doc_class": "clinical_note",
+   "sha256_raw": "069ea4112779b68e7ba7bc9d06a73a6ad6dbb8110d7a1e7dfd3307769c6305be",
+   "sha256_norm": "a68d459c61a7a63331b5b46772cfcdf9f7503083bdee3dd0a8074e6956d2ab44",
+   "char_len": 1536,
+   "received_at": null,
+   "authored_at": null,
+   "extractor": "rules",
+   "extractor_ver": "1.1.0"
+  },
+  {
+   "doc_pk": "ec4906d5bc7d8eee612a96eb335e5127b6cd25933814b1922e5fcec6a0666daf",
+   "doc_id": "BH-D110",
+   "filename": "BH-D110_individual_primary_record_2026-01-26.txt",
+   "doc_class": "clinical_note",
+   "sha256_raw": "4b64c46a13b80c09ec46d1cbb7b577dbfe8027cb62366631c15efa8ec1a1f58b",
+   "sha256_norm": "ec4906d5bc7d8eee612a96eb335e5127b6cd25933814b1922e5fcec6a0666daf",
+   "char_len": 1624,
+   "received_at": null,
+   "authored_at": null,
+   "extractor": "rules",
+   "extractor_ver": "1.1.0"
+  },
+  {
+   "doc_pk": "22c4009c836fa552d4c8eed498bb467ac55afb670370ae52a7ce348e5786a9c4",
+   "doc_id": "BH-D111",
+   "filename": "BH-D111_individual_second_record_2026-01-26.txt",
+   "doc_class": "clinical_note",
+   "sha256_raw": "d03451942797c3fb189a5083c80950887657a79d0d1da9bb7f74bda8731d9380",
+   "sha256_norm": "22c4009c836fa552d4c8eed498bb467ac55afb670370ae52a7ce348e5786a9c4",
+   "char_len": 1775,
+   "received_at": null,
+   "authored_at": null,
+   "extractor": "rules",
+   "extractor_ver": "1.1.0"
+  },
+  {
+   "doc_pk": "ee1f15e7d9e4a2bc4bac7bd04e90387d035890ae73c8a5c266df081c2b3a8a18",
+   "doc_id": "BH-D112",
+   "filename": "BH-D112_draft_note_and_charge_extract_2026-01-27.txt",
+   "doc_class": "admin_log",
+   "sha256_raw": "b4390ed6b672381f671aae23dbfa937d9c5585ca4b6db83cd811797e2a34505f",
+   "sha256_norm": "ee1f15e7d9e4a2bc4bac7bd04e90387d035890ae73c8a5c266df081c2b3a8a18",
+   "char_len": 1461,
+   "received_at": null,
+   "authored_at": null,
+   "extractor": "rules",
+   "extractor_ver": "1.1.0"
+  },
+  {
+   "doc_pk": "60903341f281bec2adeab24a2b7418f852389c539e9c926b7fb2bd7e60cc9564",
+   "doc_id": "BH-D113",
+   "filename": "BH-D113_family_therapy_2026-01-30.txt",
+   "doc_class": "clinical_note",
+   "sha256_raw": "36764827bcb39caf2e9304c881f55e4acba9744a9792228bf36981f19a0feaf9",
+   "sha256_norm": "60903341f281bec2adeab24a2b7418f852389c539e9c926b7fb2bd7e60cc9564",
+   "char_len": 1581,
+   "received_at": null,
+   "authored_at": null,
+   "extractor": "rules",
+   "extractor_ver": "1.1.0"
+  },
+  {
+   "doc_pk": "ec0e9c94567189617b351334229a8ad3101596fde5e586060b03997b6e4a844f",
+   "doc_id": "BH-D114",
+   "filename": "BH-D114_medication_management_2026-01-30.txt",
+   "doc_class": "clinical_note",
+   "sha256_raw": "9942bd886fcd2158bbd56914551519397d70eef7103b6d33ba2fa90cc424093c",
+   "sha256_norm": "ec0e9c94567189617b351334229a8ad3101596fde5e586060b03997b6e4a844f",
+   "char_len": 1577,
+   "received_at": null,
+   "authored_at": null,
+   "extractor": "rules",
+   "extractor_ver": "1.1.0"
+  },
+  {
+   "doc_pk": "1f8b098b51c554f2a85284433b8ba1ab87355a586ecbe8c7d9f6c4b48154331d",
+   "doc_id": "BH-D115",
+   "filename": "BH-D115_symptom_measure_review_2026-01-30.txt",
+   "doc_class": "measure",
+   "sha256_raw": "4a3859fd81fc5afc5533e9add8718ce4b89492121bf68f812f73db92d319755e",
+   "sha256_norm": "1f8b098b51c554f2a85284433b8ba1ab87355a586ecbe8c7d9f6c4b48154331d",
+   "char_len": 1632,
+   "received_at": null,
+   "authored_at": null,
+   "extractor": "rules",
+   "extractor_ver": "1.1.0"
+  },
+  {
+   "doc_pk": "a70408cc02c78793d9d455bb52af28cf83e074c53ab220f5ca1ac1275a398a61",
+   "doc_id": "BH-D006",
+   "filename": "early_appointment_status_export.txt",
+   "doc_class": "schedule_export",
+   "sha256_raw": "0bf056f3769e7daf39941514e6f3e1c40c99cbc00dbb4228ee0fac07d9f75f96",
+   "sha256_norm": "a70408cc02c78793d9d455bb52af28cf83e074c53ab220f5ca1ac1275a398a61",
+   "char_len": 1401,
+   "received_at": null,
+   "authored_at": null,
+   "extractor": "rules",
+   "extractor_ver": "1.1.0"
+  },
+  {
+   "doc_pk": "9b99167da1600c6b796dcfde5258132155f3cf635a82890666746c000742e7da",
+   "doc_id": "BH-D005",
+   "filename": "early_group_attendance_roster.txt",
+   "doc_class": "attendance_register",
+   "sha256_raw": "6f205f89f8d3dbd05094e647925bb3c5955f11e9fb44f255f8cdedc3edb49616",
+   "sha256_norm": "9b99167da1600c6b796dcfde5258132155f3cf635a82890666746c000742e7da",
+   "char_len": 1478,
+   "received_at": null,
+   "authored_at": null,
+   "extractor": "rules",
+   "extractor_ver": "1.1.0"
+  },
+  {
+   "doc_pk": "942315bad46ebf79e46218385de4ed959a41eef4f022310136d0c9b65d331c20",
+   "doc_id": "BH-D008",
+   "filename": "family_cofacilitator_jan09.txt",
+   "doc_class": "clinical_note",
+   "sha256_raw": "ad416fbda80683308baa15c433c7d1df7fe9221b9e8baf1f2189964bc0421aed",
+   "sha256_norm": "942315bad46ebf79e46218385de4ed959a41eef4f022310136d0c9b65d331c20",
+   "char_len": 1525,
+   "received_at": null,
+   "authored_at": "2026-01-10",
+   "extractor": "rules",
+   "extractor_ver": "1.1.0"
+  },
+  {
+   "doc_pk": "8971a83ecbe86596b01fe48547a47126a788408edf1c9e6de7e6c171c7655b30",
+   "doc_id": "BH-D007",
+   "filename": "family_primary_jan09.txt",
+   "doc_class": "clinical_note",
+   "sha256_raw": "924dee06b05c0a841c3f86d0c394c7af39447db6c9ea7b643cc6eb3a3c40df6b",
+   "sha256_norm": "8971a83ecbe86596b01fe48547a47126a788408edf1c9e6de7e6c171c7655b30",
+   "char_len": 1743,
+   "received_at": null,
+   "authored_at": "2026-01-09",
+   "extractor": "rules",
+   "extractor_ver": "1.1.0"
+  },
+  {
+   "doc_pk": "441fa02eed8672d191428bb50021ee26722ba953c11b4e7dfe417a742dfa392e",
+   "doc_id": "BH-D001",
+   "filename": "group_authorization_letter.txt",
+   "doc_class": "authorization",
+   "sha256_raw": "d2240979a2de7d7782a34a6ca26e289ee829d01eea9932e4d61b3588c724ceb1",
+   "sha256_norm": "441fa02eed8672d191428bb50021ee26722ba953c11b4e7dfe417a742dfa392e",
+   "char_len": 1365,
+   "received_at": "2026-01-04",
+   "authored_at": null,
+   "extractor": "rules",
+   "extractor_ver": "1.1.0"
+  },
+  {
+   "doc_pk": "6bc56d1a89c4587244096bf7a8a29a713cce5511545db490d9e23b3977332a72",
+   "doc_id": "BH-D016",
+   "filename": "group_cancellation_notice_jan15.txt",
+   "doc_class": "admin_log",
+   "sha256_raw": "5f3375f11c857ad3e9917ad2eefffffd5ee0412e6ab56885901c1b5d5b2115f9",
+   "sha256_norm": "6bc56d1a89c4587244096bf7a8a29a713cce5511545db490d9e23b3977332a72",
+   "char_len": 1351,
+   "received_at": "2026-01-15",
+   "authored_at": null,
+   "extractor": "rules",
+   "extractor_ver": "1.1.0"
+  },
+  {
+   "doc_pk": "727178535a049aa59ed253b3a2563f79af03e51d723731524275ca1778357de3",
+   "doc_id": "BH-D004",
+   "filename": "group_facilitator_jan06.txt",
+   "doc_class": "clinical_note",
+   "sha256_raw": "5edddc6b20937ecdadf834b331c399375d0889d12a8595eb4084f1da2d4f4a11",
+   "sha256_norm": "727178535a049aa59ed253b3a2563f79af03e51d723731524275ca1778357de3",
+   "char_len": 1478,
+   "received_at": null,
+   "authored_at": "2026-01-06",
+   "extractor": "rules",
+   "extractor_ver": "1.1.0"
+  },
+  {
+   "doc_pk": "48543ce513a8a6d7ad9419fac8f3d7481e944a6f6a6edc3c1e99df9ac3770359",
+   "doc_id": "BH-D009",
+   "filename": "group_facilitator_jan12.txt",
+   "doc_class": "clinical_note",
+   "sha256_raw": "d30d18d0335d5d428acea2e5ee0334fbbafc10665133a462061a01c94baa09b7",
+   "sha256_norm": "48543ce513a8a6d7ad9419fac8f3d7481e944a6f6a6edc3c1e99df9ac3770359",
+   "char_len": 1615,
+   "received_at": null,
+   "authored_at": "2026-01-12",
+   "extractor": "rules",
+   "extractor_ver": "1.1.0"
+  },
+  {
+   "doc_pk": "f249c8ccad0925ee13e1348245ff0fa4e8aa5f3dd94d6c19e705b8218d69729c",
+   "doc_id": "BH-D014",
+   "filename": "imported_measure_summary_received_jan26.txt",
+   "doc_class": "admin_log",
+   "sha256_raw": "85e2c780abded9efe663fd61ac6e6a7a56e5b30c9597b24f35f90076b6f7358b",
+   "sha256_norm": "f249c8ccad0925ee13e1348245ff0fa4e8aa5f3dd94d6c19e705b8218d69729c",
+   "char_len": 1378,
+   "received_at": "2026-01-26",
+   "authored_at": null,
+   "extractor": "rules",
+   "extractor_ver": "1.1.0"
+  },
+  {
+   "doc_pk": "c3ad273e5e7aecbca0b6f0aef2d357e9b416e18743c2e2bcd3b51a2adb4259cb",
+   "doc_id": "BH-D011",
+   "filename": "individual_therapy_jan14.txt",
+   "doc_class": "clinical_note",
+   "sha256_raw": "8c2fbaf5bb4545cc4590b288d768ab893a4d727f6946bcc88339669d0629eb8a",
+   "sha256_norm": "c3ad273e5e7aecbca0b6f0aef2d357e9b416e18743c2e2bcd3b51a2adb4259cb",
+   "char_len": 1882,
+   "received_at": null,
+   "authored_at": "2026-01-14",
+   "extractor": "rules",
+   "extractor_ver": "1.1.0"
+  },
+  {
+   "doc_pk": "a069d81f91839f42b74b99340f86ce9bf6ce059ac398a2d2184de2d9bc4f63b1",
+   "doc_id": "BH-D002",
+   "filename": "intake_and_individual_jan05.txt",
+   "doc_class": "clinical_note",
+   "sha256_raw": "7f5f7d4bbfc9b47a632fb33cca1b261999078d058cbd7601c63f6c6e5be3c747",
+   "sha256_norm": "a069d81f91839f42b74b99340f86ce9bf6ce059ac398a2d2184de2d9bc4f63b1",
+   "char_len": 2380,
+   "received_at": null,
+   "authored_at": "2026-01-05",
+   "extractor": "rules",
+   "extractor_ver": "1.1.0"
+  },
+  {
+   "doc_pk": "cb505fa332c64966e25e5bb9e547ce471127021f6ee4fd3138a7bbdc648b928f",
+   "doc_id": "BH-D010",
+   "filename": "medication_review_jan13.txt",
+   "doc_class": "clinical_note",
+   "sha256_raw": "95debafd3a72e32fd806d7aa4b420b1984f9c565d2af3c0d807269ee71aa8482",
+   "sha256_norm": "cb505fa332c64966e25e5bb9e547ce471127021f6ee4fd3138a7bbdc648b928f",
+   "char_len": 1707,
+   "received_at": null,
+   "authored_at": "2026-01-13",
+   "extractor": "rules",
+   "extractor_ver": "1.1.0"
+  },
+  {
+   "doc_pk": "8878c8a0423e084765e18df42e9cddfe39b1e3e3d702a98f938fa514015aadac",
+   "doc_id": "BH-D015",
+   "filename": "missed_visit_outreach_jan08.txt",
+   "doc_class": "admin_log",
+   "sha256_raw": "4521a120a4d7a8f896d5fe9137a44f72719adc5cadbd839ef1b9d9646316b7c4",
+   "sha256_norm": "8878c8a0423e084765e18df42e9cddfe39b1e3e3d702a98f938fa514015aadac",
+   "char_len": 1377,
+   "received_at": "2026-01-08",
+   "authored_at": null,
+   "extractor": "rules",
+   "extractor_ver": "1.1.0"
+  },
+  {
+   "doc_pk": "2784824e6db47dc3e602c9cf8d2801b44a366472d16d6483109653c3d76da415",
+   "doc_id": "BH-D012",
+   "filename": "partner_collateral_jan16.txt",
+   "doc_class": "clinical_note",
+   "sha256_raw": "432c973d1a4d505b49ba85c3c92dead5c2a70faca6b6dd66e87db92b95329fea",
+   "sha256_norm": "2784824e6db47dc3e602c9cf8d2801b44a366472d16d6483109653c3d76da415",
+   "char_len": 1735,
+   "received_at": null,
+   "authored_at": "2026-01-16",
+   "extractor": "rules",
+   "extractor_ver": "1.1.0"
+  },
+  {
+   "doc_pk": "2583c396f1af0dcff815c546485da857e43fbcd7b6df75a313217ec8b8063dde",
+   "doc_id": "BH-D003",
+   "filename": "signed_treatment_plan_jan05.txt",
+   "doc_class": "treatment_plan",
+   "sha256_raw": "3b3f50db40b348bdd9e3baeb64b67a11d5edaf12699954762bec9633ad79ad12",
+   "sha256_norm": "2583c396f1af0dcff815c546485da857e43fbcd7b6df75a313217ec8b8063dde",
+   "char_len": 2217,
+   "received_at": null,
+   "authored_at": "2026-01-05",
+   "extractor": "rules",
+   "extractor_ver": "1.1.0"
+  },
+  {
+   "doc_pk": "e66277f1439ed079ea4a324a83c5e1965113e0efd2f11aeff6bd3498c16fdbea",
+   "doc_id": "BH-D013",
+   "filename": "symptom_measure_review_jan16.txt",
+   "doc_class": "measure",
+   "sha256_raw": "300a30dbe42be8dcfdf7ad644f23c583259611467ae32e944e8d7154c78b968e",
+   "sha256_norm": "e66277f1439ed079ea4a324a83c5e1965113e0efd2f11aeff6bd3498c16fdbea",
+   "char_len": 1374,
+   "received_at": null,
+   "authored_at": null,
+   "extractor": "rules",
+   "extractor_ver": "1.1.0"
+  }
+ ],
+ "decisions": [
+  {
+   "decision_id": 145,
+   "event_id": null,
+   "patient_mrn": "HG-M042",
+   "scope": "match",
+   "field": "unmatched",
+   "chosen": "e66277f1439e-N01",
+   "rule_id": "RULE-MATCH-05",
+   "rationale": "administrative content (measurement_review) with no encounter id and no patient-present time",
+   "from_claims": "[\"e66277f1439e-N01\"]"
+  },
+  {
+   "decision_id": 146,
+   "event_id": null,
+   "patient_mrn": "HG-M042",
+   "scope": "match",
+   "field": "unmatched",
+   "chosen": "f249c8ccad09-T02",
+   "rule_id": "RULE-MATCH-05",
+   "rationale": "administrative content (None) with no encounter id and no patient-present time",
+   "from_claims": "[\"f249c8ccad09-T02\"]"
+  },
+  {
+   "decision_id": 147,
+   "event_id": null,
+   "patient_mrn": "HG-M042",
+   "scope": "match",
+   "field": "unmatched",
+   "chosen": "f249c8ccad09-N01",
+   "rule_id": "RULE-MATCH-05",
+   "rationale": "document states it records no patient visit; never matched to an encounter",
+   "from_claims": "[\"f249c8ccad09-N01\"]"
+  },
+  {
+   "decision_id": 148,
+   "event_id": null,
+   "patient_mrn": "HG-M042",
+   "scope": "match",
+   "field": "unmatched",
+   "chosen": "7eddf208984b-T06",
+   "rule_id": "RULE-MATCH-05",
+   "rationale": "administrative content (scheduling_admin) with no encounter id and no patient-present time",
+   "from_claims": "[\"7eddf208984b-T06\"]"
+  },
+  {
+   "decision_id": 149,
+   "event_id": null,
+   "patient_mrn": "HG-M042",
+   "scope": "match",
+   "field": "unmatched",
+   "chosen": "7eddf208984b-T08",
+   "rule_id": "RULE-MATCH-05",
+   "rationale": "administrative content (None) with no encounter id and no patient-present time",
+   "from_claims": "[\"7eddf208984b-T08\"]"
+  },
+  {
+   "decision_id": 150,
+   "event_id": null,
+   "patient_mrn": "HG-M042",
+   "scope": "match",
+   "field": "unmatched",
+   "chosen": "1f8b098b51c5-N01",
+   "rule_id": "RULE-MATCH-05",
+   "rationale": "document states it records no patient visit; never matched to an encounter",
+   "from_claims": "[\"1f8b098b51c5-N01\"]"
+  },
+  {
+   "decision_id": 151,
+   "event_id": null,
+   "patient_mrn": "HG-M042",
+   "scope": "measure",
+   "field": "identity",
+   "chosen": "HG-M042|PHQ-9|-|2026-01-05",
+   "rule_id": "RULE-MEAS-01",
+   "rationale": "PHQ-9 identified by form none and completion date 2026-01-05",
+   "from_claims": "[\"a069d81f9183-M02\"]"
+  },
+  {
+   "decision_id": 152,
+   "event_id": null,
+   "patient_mrn": "HG-M042",
+   "scope": "measure",
+   "field": "identity",
+   "chosen": "HG-M042|PHQ-9|HG-Q116|2026-01-16",
+   "rule_id": "RULE-MEAS-01",
+   "rationale": "PHQ-9 identified by form HG-Q116 and completion date 2026-01-16",
+   "from_claims": "[\"e66277f1439e-M02\"]"
+  },
+  {
+   "decision_id": 153,
+   "event_id": null,
+   "patient_mrn": "HG-M042",
+   "scope": "measure",
+   "field": "identity",
+   "chosen": "HG-M042|PHQ-9|HG-Q116|2026-01-16",
+   "rule_id": "RULE-MEAS-01",
+   "rationale": "PHQ-9 identified by form HG-Q116 and completion date 2026-01-16",
+   "from_claims": "[\"f249c8ccad09-X00\"]"
+  },
+  {
+   "decision_id": 154,
+   "event_id": null,
+   "patient_mrn": "HG-M042",
+   "scope": "measure",
+   "field": "identity",
+   "chosen": "HG-M042|PHQ-9|-|2026-01-30",
+   "rule_id": "RULE-MEAS-01",
+   "rationale": "PHQ-9 identified by form none and completion date 2026-01-30",
+   "from_claims": "[\"1f8b098b51c5-M02\"]"
+  },
+  {
+   "decision_id": 155,
+   "event_id": null,
+   "patient_mrn": "HG-M042",
+   "scope": "plan",
+   "field": "therapy_days",
+   "chosen": ">= 3.0 per week_mon_sun",
+   "rule_id": "RULE-INC-01",
+   "rationale": "requirement read from the treatment plan, effective 2026-01-05 to 2026-01-30",
+   "from_claims": "[\"2583c396f1af-P02\"]"
+  },
+  {
+   "decision_id": 156,
+   "event_id": null,
+   "patient_mrn": "HG-M042",
+   "scope": "plan",
+   "field": "therapy_minutes",
+   "chosen": ">= 150.0 per week_mon_sun",
+   "rule_id": "RULE-INC-01",
+   "rationale": "requirement read from the treatment plan, effective 2026-01-05 to 2026-01-30",
+   "from_claims": "[\"2583c396f1af-P03\"]"
+  }
+ ],
+ "duplicates": []
+}

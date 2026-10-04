@@ -1,0 +1,552 @@
+Backbone execution log
+started      2026-10-03T18:36:51-05:00
+python       Python 3.13.5
+platform     MINGW64_NT-10.0-26200 3.6.10-710e5275.x86_64
+documents    31 files
+
+=============================================================
+$ python -m backbone build documents
+-------------------------------------------------------------
+ingest    31/31 files, 99 claims, 0.15s
+reconcile HG-M042: 20 events (12 therapy, 1 disputed), 0.01s
+integrity ok
+abstraction out/clinical.db  284.0 KiB
+
+=============================================================
+$ python -m backbone verify
+-------------------------------------------------------------
+test_episode_and_plan_read_from_the_record (test_gold.GoldLedger.test_episode_and_plan_read_from_the_record) ... ok
+test_every_counted_event_has_a_decision_trail (test_gold.GoldLedger.test_every_counted_event_has_a_decision_trail) ... ok
+test_every_counted_event_matches_the_hand_ledger (test_gold.GoldLedger.test_every_counted_event_matches_the_hand_ledger) ... ok
+test_every_quote_matches_its_offsets (test_gold.GoldLedger.test_every_quote_matches_its_offsets) ... ok
+test_excluded_encounters_are_excluded_with_a_reason (test_gold.GoldLedger.test_excluded_encounters_are_excluded_with_a_reason) ... ok
+test_integrity_passes (test_gold.GoldLedger.test_integrity_passes) ... ok
+test_jan19_and_jan21_reconstruction (test_gold.GoldLedger.test_jan19_and_jan21_reconstruction) ... ok
+test_no_severity_label_is_invented (test_gold.GoldLedger.test_no_severity_label_is_invented) ... ok
+test_patient_discovered_from_documents (test_gold.GoldLedger.test_patient_discovered_from_documents) ... ok
+test_session_counts (test_gold.GoldLedger.test_session_counts) ... ok
+test_telehealth_rejoin_is_one_event_not_two (test_gold.GoldLedger.test_telehealth_rejoin_is_one_event_not_two) ... ok
+test_three_distinct_phq9_administrations (test_gold.GoldLedger.test_three_distinct_phq9_administrations) ... ok
+test_total_minutes_and_hours (test_gold.GoldLedger.test_total_minutes_and_hours) ... ok
+test_weekly_minutes_days_and_compliance (test_gold.GoldLedger.test_weekly_minutes_days_and_compliance) ... ok
+test_duplicate_file_changes_nothing (test_gold.Idempotence.test_duplicate_file_changes_nothing) ... ok
+test_compare_harness_loads_the_same_ledger (test_gold.LedgerConsistency.test_compare_harness_loads_the_same_ledger) ... ok
+test_gold_ledger_json_matches_this_module (test_gold.LedgerConsistency.test_gold_ledger_json_matches_this_module) ... ok
+test_answer_after_restart_without_reingest (test_gold.Restart.test_answer_after_restart_without_reingest) ... ok
+test_it_carries_its_source_span (test_multipatient.CorrectionsTable.test_it_carries_its_source_span) ... ok
+test_re_ingesting_does_not_duplicate_the_row (test_multipatient.CorrectionsTable.test_re_ingesting_does_not_duplicate_the_row) ... ok
+test_the_correction_relationship_is_a_row (test_multipatient.CorrectionsTable.test_the_correction_relationship_is_a_row) ... ok
+test_both_patients_exist (test_multipatient.DecisionLogScoping.test_both_patients_exist) ... ok
+test_every_decision_is_stamped_with_a_patient (test_multipatient.DecisionLogScoping.test_every_decision_is_stamped_with_a_patient) ... ok
+test_exclusion_list_does_not_grow_on_rebuild (test_multipatient.DecisionLogScoping.test_exclusion_list_does_not_grow_on_rebuild) ... ok
+test_one_patients_answer_does_not_cite_the_others_claims (test_multipatient.DecisionLogScoping.test_one_patients_answer_does_not_cite_the_others_claims) ... ok
+test_rebuilding_does_not_duplicate_decisions (test_multipatient.DecisionLogScoping.test_rebuilding_does_not_duplicate_decisions) ... ok
+test_reconciling_one_patient_leaves_the_other_untouched (test_multipatient.DecisionLogScoping.test_reconciling_one_patient_leaves_the_other_untouched) ... ok
+test_supplied_corpus_answers_are_unchanged_by_a_second_patient (test_multipatient.DecisionLogScoping.test_supplied_corpus_answers_are_unchanged_by_a_second_patient) ... ok
+test_a_file_edited_in_place_replaces_its_old_claims (test_multipatient.DocumentIntake.test_a_file_edited_in_place_replaces_its_old_claims) ... ok
+test_more_than_txt_is_picked_up (test_multipatient.DocumentIntake.test_more_than_txt_is_picked_up) ... ok
+test_a_decision_records_the_conflict (test_multipatient.MeasureScoreConflict.test_a_decision_records_the_conflict) ... ok
+test_it_is_still_one_administration (test_multipatient.MeasureScoreConflict.test_it_is_still_one_administration) ... ok
+test_progress_declines_to_state_a_single_score (test_multipatient.MeasureScoreConflict.test_progress_declines_to_state_a_single_score) ... ok
+test_the_disagreement_is_flagged_not_absorbed (test_multipatient.MeasureScoreConflict.test_the_disagreement_is_flagged_not_absorbed) ... ok
+test_a_real_cancellation_is_still_read (test_multipatient.PresenceByContext.test_a_real_cancellation_is_still_read) ... ok
+test_a_sentence_about_the_patient_beats_a_bare_mention (test_multipatient.PresenceByContext.test_a_sentence_about_the_patient_beats_a_bare_mention) ... ok
+test_equal_authority_conflict_asserts_nothing (test_multipatient.PresenceByContext.test_equal_authority_conflict_asserts_nothing) ... ok
+test_status_field_beats_a_cancellation_mentioned_elsewhere (test_multipatient.PresenceByContext.test_status_field_beats_a_cancellation_mentioned_elsewhere) ... ok
+test_below_weeks_carry_their_sessions_and_quotes (test_per_patient.CollectionEvidence.test_below_weeks_carry_their_sessions_and_quotes) ... ok
+test_every_evidence_item_names_a_patient_and_a_week (test_per_patient.CollectionEvidence.test_every_evidence_item_names_a_patient_and_a_week) ... ok
+test_evidence_is_not_empty (test_per_patient.CollectionEvidence.test_evidence_is_not_empty) ... ok
+test_quotes_resolve_against_the_source_files (test_per_patient.CollectionEvidence.test_quotes_resolve_against_the_source_files) ... ok
+test_the_plan_requirement_is_cited_too (test_per_patient.CollectionEvidence.test_the_plan_requirement_is_cited_too) ... ok
+test_the_renderer_shows_the_passages (test_per_patient.CollectionEvidence.test_the_renderer_shows_the_passages) ... ok
+test_an_explicit_window_is_shared_by_all_patients (test_per_patient.PerPatientAnswers.test_an_explicit_window_is_shared_by_all_patients) ... ok
+test_both_patients_were_discovered (test_per_patient.PerPatientAnswers.test_both_patients_were_discovered) ... ok
+test_collection_wide_questions_do_not_fan_out (test_per_patient.PerPatientAnswers.test_collection_wide_questions_do_not_fan_out) ... ok
+test_compliance_fans_out (test_per_patient.PerPatientAnswers.test_compliance_fans_out) ... ok
+test_each_patient_is_measured_over_their_own_episode (test_per_patient.PerPatientAnswers.test_each_patient_is_measured_over_their_own_episode) ... ok
+test_each_patient_question_fans_out (test_per_patient.PerPatientAnswers.test_each_patient_question_fans_out) ... ok
+test_evidence_is_attributed_to_the_right_patient (test_per_patient.PerPatientAnswers.test_evidence_is_attributed_to_the_right_patient) ... ok
+test_naming_one_patient_still_answers_only_for_them (test_per_patient.PerPatientAnswers.test_naming_one_patient_still_answers_only_for_them) ... ok
+test_progress_fans_out (test_per_patient.PerPatientAnswers.test_progress_fans_out) ... ok
+test_routing_reports_that_it_fanned_out (test_per_patient.PerPatientAnswers.test_routing_reports_that_it_fanned_out) ... ok
+test_the_fan_out_is_rendered_per_mrn (test_per_patient.PerPatientAnswers.test_the_fan_out_is_rendered_per_mrn) ... ok
+test_a_midweek_change_flags_its_split_week (test_per_patient.PlanChangePerWeek.test_a_midweek_change_flags_its_split_week) ... ok
+test_both_slices_report_their_week_count (test_per_patient.PlanChangePerWeek.test_both_slices_report_their_week_count) ... ok
+test_each_week_uses_the_requirement_in_force_that_week (test_per_patient.PlanChangePerWeek.test_each_week_uses_the_requirement_in_force_that_week) ... ok
+test_raw_totals_are_equal_but_per_week_rates_are_not (test_per_patient.PlanChangePerWeek.test_raw_totals_are_equal_but_per_week_rates_are_not) ... ok
+test_the_amendment_is_detected (test_per_patient.PlanChangePerWeek.test_the_amendment_is_detected) ... ok
+test_the_renderer_leads_with_per_week_figures (test_per_patient.PlanChangePerWeek.test_the_renderer_leads_with_per_week_figures) ... ok
+test_attendance_is_recorded_as_unresolved (test_review_fixes.DisputedAttendanceBounds.test_attendance_is_recorded_as_unresolved) ... ok
+test_patient_lands_in_depends_on_documentation (test_review_fixes.DisputedAttendanceBounds.test_patient_lands_in_depends_on_documentation) ... ok
+test_upper_bound_carries_the_minutes_the_note_describes (test_review_fixes.DisputedAttendanceBounds.test_upper_bound_carries_the_minutes_the_note_describes) ... ok
+test_week_is_undetermined_not_failed (test_review_fixes.DisputedAttendanceBounds.test_week_is_undetermined_not_failed) ... ok
+test_keywords_match_whole_words_only (test_review_fixes.RouterPrecision.test_keywords_match_whole_words_only) ... ok
+test_meeting_does_not_route_to_compliance (test_review_fixes.RouterPrecision.test_meeting_does_not_route_to_compliance) ... ok
+test_week_beginning_also_works (test_review_fixes.RouterPrecision.test_week_beginning_also_works) ... ok
+test_week_of_a_date_selects_that_week_only (test_review_fixes.RouterPrecision.test_week_of_a_date_selects_that_week_only) ... ok
+test_only_the_minute_goal_is_in_force (test_review_fixes.SingleMetricPlan.test_only_the_minute_goal_is_in_force) ... ok
+test_renderer_does_not_crash_and_omits_the_missing_column (test_review_fixes.SingleMetricPlan.test_renderer_does_not_crash_and_omits_the_missing_column) ... ok
+test_correction_with_an_old_value_targets_only_that_interval (test_review_fixes.SmallerIssues.test_correction_with_an_old_value_targets_only_that_interval) ... ok
+test_correction_without_an_old_value_is_not_applied_to_every_interval (test_review_fixes.SmallerIssues.test_correction_without_an_old_value_is_not_applied_to_every_interval) ... ok
+test_days_arithmetic_is_not_always_zero (test_review_fixes.SmallerIssues.test_days_arithmetic_is_not_always_zero) ... ok
+test_match_rule_recorded_per_claim_not_always_encounter_id (test_review_fixes.SmallerIssues.test_match_rule_recorded_per_claim_not_always_encounter_id) ... ok
+test_narrative_date_prefers_the_encounter_header_line (test_review_fixes.SmallerIssues.test_narrative_date_prefers_the_encounter_header_line) ... ok
+test_progress_statements_name_only_observed_domains (test_review_fixes.SmallerIssues.test_progress_statements_name_only_observed_domains) ... ok
+test_reimport_without_a_form_id_still_collapses (test_review_fixes.SmallerIssues.test_reimport_without_a_form_id_still_collapses) ... ok
+test_stated_minutes_with_a_documented_break_becomes_a_band (test_review_fixes.SmallerIssues.test_stated_minutes_with_a_documented_break_becomes_a_band) ... ok
+test_a_genuine_overnight_span_still_works (test_review_fixes.TimeFormats.test_a_genuine_overnight_span_still_works) ... ok
+test_bare_hour_end (test_review_fixes.TimeFormats.test_bare_hour_end) ... ok
+test_extractor_reads_the_new_phrasings (test_review_fixes.TimeFormats.test_extractor_reads_the_new_phrasings) ... ok
+test_meridiem (test_review_fixes.TimeFormats.test_meridiem) ... ok
+test_twelve_hour_range_is_not_read_as_crossing_midnight (test_review_fixes.TimeFormats.test_twelve_hour_range_is_not_read_as_crossing_midnight) ... ok
+test_month_abbreviations (test_units.Dates.test_month_abbreviations) ... ok
+test_every_claim_quote_verifies_on_unseen_text (test_units.ExtractorGeneralisation.test_every_claim_quote_verifies_on_unseen_text) ... ok
+test_unseen_correction_targets_the_right_field (test_units.ExtractorGeneralisation.test_unseen_correction_targets_the_right_field) ... ok
+test_unseen_group_note_with_a_break_and_a_desk_roster (test_units.ExtractorGeneralisation.test_unseen_group_note_with_a_break_and_a_desk_roster) ... ok
+test_unseen_patient_and_hour_based_requirement (test_units.ExtractorGeneralisation.test_unseen_patient_and_hour_based_requirement) ... ok
+test_break_is_subtracted_by_overlap_not_by_length (test_units.Intervals.test_break_is_subtracted_by_overlap_not_by_length) ... ok
+test_duplicate_intervals_do_not_double_count (test_units.Intervals.test_duplicate_intervals_do_not_double_count) ... ok
+test_overlap_detection (test_units.Intervals.test_overlap_detection) ... ok
+test_split_session_sums_only_connected_time (test_units.Intervals.test_split_session_sums_only_connected_time) ... ok
+test_week_keys (test_units.Intervals.test_week_keys) ... ok
+test_receipt_furniture_does_not_change_identity (test_units.Normalisation.test_receipt_furniture_does_not_change_identity) ... ok
+test_all_five_dev_questions_route_without_a_patient_error (test_units.RouterSafety.test_all_five_dev_questions_route_without_a_patient_error) ... ok
+test_collection_question_is_not_scoped_to_one_patient (test_units.RouterSafety.test_collection_question_is_not_scoped_to_one_patient) ... ok
+test_no_patient_name_is_hardcoded_anywhere_in_the_package (test_units.RouterSafety.test_no_patient_name_is_hardcoded_anywhere_in_the_package) ... ok
+test_unknown_patient_is_refused_not_silently_redirected (test_units.RouterSafety.test_unknown_patient_is_refused_not_silently_redirected) ... ok
+test_unmatched_question_warns_instead_of_guessing_silently (test_units.RouterSafety.test_unmatched_question_warns_instead_of_guessing_silently) ... ok
+test_every_module_parses (test_units.SourceHygiene.test_every_module_parses) ... ok
+test_no_raw_control_characters (test_units.SourceHygiene.test_no_raw_control_characters) ... ok
+test_class_comes_from_the_masthead_not_a_passing_mention (test_units.Taxonomy.test_class_comes_from_the_masthead_not_a_passing_mention) ... ok
+test_service_synonyms (test_units.Taxonomy.test_service_synonyms) ... ok
+test_not_met_outranks_cannot_determine (test_units.VerdictPrecedence.test_not_met_outranks_cannot_determine) ... ok
+test_rowan_week_four_is_still_undetermined (test_units.VerdictPrecedence.test_rowan_week_four_is_still_undetermined) ... ok
+test_empty_weeks_are_not_met_and_count_as_consecutive (test_units.WeeklyCoverage.test_empty_weeks_are_not_met_and_count_as_consecutive) ... ok
+test_every_week_in_the_episode_appears (test_units.WeeklyCoverage.test_every_week_in_the_episode_appears) ... ok
+
+----------------------------------------------------------------------
+Ran 108 tests in 3.091s
+
+OK
+All integrity checks pass (quote offsets verified; no counted contacts overlap in wall-clock time).
+
+=============================================================
+$ python -m backbone answer questions.json
+-------------------------------------------------------------
+wrote out/answers.md and out\answers.json
+
+=============================================================
+$ python -m backbone bench --repeat 5
+-------------------------------------------------------------
+corpus              31 documents, 48.9 KiB
+cold build          0.141s  (ingest 0.136s = 4.39 ms/doc, reconcile 0.005s)
+                    99 claims -> 20 events (12 therapy, 1 disputed)
+warm re-ingest      0.009s, 0 re-extracted / 31 unchanged
+one new document    0.009s (extract + reconcile that patient only)
+abstraction size    284.0 KiB (9381 B/document, 5.8x the source text)
+query latency (median of repeats)
+  session_counts (one patient)           0.84 ms   [0.80-1.13]
+  minutes by week (one patient)          0.62 ms   [0.60-0.70]
+  compliance (one patient)               0.79 ms   [0.78-0.89]
+  day_detail (two dates)                 0.18 ms   [0.17-0.20]
+  progress (one patient)                 1.03 ms   [1.02-1.25]
+  consecutive_below (all patients)       0.85 ms   [0.80-0.90]
+  trace (one event)                      0.06 ms   [0.05-0.09]
+  integrity (all patients)               1.55 ms   [1.50-1.63]
+  end_to_end_nl_question                 1.05 ms   [0.18-2.65]
+model usage         the measured build makes no model calls: the rules extractor is the default and is deterministic. `cached_extraction_usage` is what the optional model path cost when it was run (see docs/experiment-extractor-comparison.md).
+
+wrote out/benchmark.json
+
+=============================================================
+$ python -m backbone experiment
+-------------------------------------------------------------
+# Tested design decision: conflict-resolution policy
+
+Same documents, same extractor, same query code. Only the policy in
+`reconcile.py` changes. Reproduce with `python -m backbone experiment`.
+
+- **explicit-correction (shipped)**: only an entry naming the record and field it replaces supersedes that field.
+- **latest-document**: the most recently received document wins.
+
+## Totals
+
+| patient | | explicit-correction (shipped) | latest-document |
+|---|---|---|---|
+| `HG-M042` | sessions | **12** | 12 |
+| | episode minutes | **585-595** | 600 |
+| | wall-clock check | passes | FAILS |
+
+## Weeks that change
+
+| patient | week | shipped | latest-document |
+|---|---|---|---|
+| `HG-M042` | 2026-01-19 | 180 min, MET | 195 min, MET |
+| `HG-M042` | 2026-01-26 | 145-155 min, CANNOT_DETERMINE | 145 min, NOT_MET |
+
+## Events that resolve differently
+
+| patient | event | date | field | shipped | latest-document |
+|---|---|---|---|---|---|
+| `HG-M042` | `HG-E109` | 2026-01-16 | occurred | yes | no |
+| `HG-M042` | `HG-E110` | 2026-01-19 | minutes | 60 | 75 |
+| `HG-M042` | `HG-E114` | 2026-01-23 | occurred | yes | no |
+| `HG-M042` | `HG-E115` | 2026-01-26 | minutes | 40-50 | 40 |
+| `HG-M042` | `HG-E115` | 2026-01-26 | disputed | 1 | 0 |
+
+### Decision logs side by side
+
+**`HG-E109`** — shipped policy
+
+- `[RULE-PRES-02]` rejected_presence = present -- schedule_export cannot establish that care was delivered (BH-D006)
+- `[RULE-PRES-03]` occurred = yes -- contact is documented but the patient was not present (BH-D012: absent for the entire)
+
+**`HG-E109`** — latest-document policy
+
+- `[POLICY-LATEST]` occurred = no -- latest-document policy: BH-D012 (2026-01-16) states absent
+
+**`HG-E110`** — shipped policy
+
+- `[RULE-PRES-02]` rejected_presence = present -- retransmission cannot establish that care was delivered (BH-D104)
+- `[RULE-PRES-02]` occurred = yes -- attested or clinically documented patient contact: BH-D102
+- `[RULE-DUR-05]` rejected_duration = [['10:00', '11:30']] -- retransmission contributes no duration (BH-D104)
+- `[RULE-DUR-01]` minutes = 60 -- attendance_register BH-D102 is the authority for duration on a group_therapy event; intervals+correction; correction 6853e674a5cd-C01 applied
+
+**`HG-E110`** — latest-document policy
+
+- `[POLICY-LATEST]` occurred = yes -- latest-document policy: BH-D104 (2026-01-26) states present
+- `[POLICY-LATEST]` minutes = 75 -- latest-document policy: BH-D104 (2026-01-26) -> 75 min
+
+**`HG-E114`** — shipped policy
+
+- `[RULE-PRES-03]` occurred = yes -- contact is documented but the patient was not present (BH-D109: patient participation: none)
+
+**`HG-E114`** — latest-document policy
+
+- `[POLICY-LATEST]` occurred = no -- latest-document policy: BH-D109 (2026-01-23) states absent
+
+**`HG-E115`** — shipped policy
+
+- `[RULE-PRES-02]` occurred = yes -- attested or clinically documented patient contact: BH-D110, BH-D111
+- `[RULE-DUR-03]` minutes = 40-50 -- records of equal authority disagree and neither is a correction: kept as bounds (BH-D111=40min; BH-D110=50min)
+
+**`HG-E115`** — latest-document policy
+
+- `[POLICY-LATEST]` occurred = yes -- latest-document policy: BH-D111 (2026-01-26) states present
+- `[POLICY-LATEST]` minutes = 40 -- latest-document policy: BH-D111 (2026-01-26) -> 40 min
+
+## What the wall-clock check found
+
+The naive policy is not merely a different judgement call: it makes the record internally impossible, and the system detects that *without being told the right answer*. A patient cannot be in two therapy rooms at once, so an overlap between two counted contacts on one day means the reconciliation is wrong somewhere.
+
+    {"check": "wall_clock", "patient": "HG-M042", "date": "2026-01-19", "detail": [{"a": "HG-E110", "b": "HG-E111", "overlap_minutes": 15}]}
+
+That check (`queries.integrity`) runs on every build. It is the cheapest answer-independent signal I found that a reconciliation policy is wrong, and it is why recency is only ever a tiebreak in the shipped policy, never authority.
+
+## The quieter effect
+
+Recency also *resolves* conflicts the documents do not resolve. Where the shipped policy keeps bounds and reports `CANNOT_DETERMINE`, picking the later signature produces a confident verdict from a record that does not support one:
+
+- `HG-M042` week of 2026-01-26: `CANNOT_DETERMINE` (145-155 min) becomes `NOT_MET` (145 min)
+
+Unlike the overlap, this one leaves no trace in the output at all. It is the argument for carrying bounds rather than a chosen value.
+
+
+wrote docs/experiment-conflict-policy.md
+
+=============================================================
+$ python -m backbone export
+-------------------------------------------------------------
+wrote out/abstraction.json (120.3 KiB)
+
+--- restart: a new process answers new questions from the saved file ---
+
+=============================================================
+$ python -m backbone ask How many group therapy sessions did Rowan attend?
+-------------------------------------------------------------
+[session_counts(mrn='HG-M042', start='2026-01-05', end='2026-01-30')  4 ms  router=rules]
+
+**12 therapy sessions** on **11 distinct days** (2026-01-05 to 2026-01-30).
+
+| service type | sessions |
+|---|---:|
+| family therapy | 2 |
+| group therapy | 5 |
+| individual therapy | 5 |
+| **total** | **12** |
+
+Service types the plan counts: family_therapy, group_therapy, individual_therapy.
+
+**Per-session ledger**
+
+| date | encounter | service | minutes | certain |
+|---|---|---|---:|---|
+| 2026-01-05 | HG-E101 | individual therapy | 50 | yes |
+| 2026-01-06 | HG-E102 | group therapy | 45 | yes |
+| 2026-01-09 | HG-E104 | family therapy | 45 | yes |
+| 2026-01-12 | HG-E105 | group therapy | 75 | yes |
+| 2026-01-14 | HG-E107 | individual therapy | 45 | yes |
+| 2026-01-19 | HG-E110 | group therapy | 60 | yes |
+| 2026-01-19 | HG-E111 | individual therapy | 30 | yes |
+| 2026-01-21 | HG-E112 | individual therapy | 45 | yes |
+| 2026-01-22 | HG-E113 | group therapy | 45 | yes |
+| 2026-01-26 | HG-E115 | individual therapy | 40-50 | yes |
+| 2026-01-29 | HG-E118 | group therapy | 75 | yes |
+| 2026-01-30 | HG-E119 | family therapy | 30 | yes |
+
+**Records that could produce a duplicate or ineligible count**
+
+- `HG-E103` 2026-01-08 -- contact did not occur (occurred=no)
+    - BH-D015 [372:445] "There was no arrival call or cancellation message on the scheduling line."
+    - BH-D006 [493:562] "HG-E103   | Jan08 | Individual therapy     | 11:00–11:45    | No show"
+- `HG-E106` 2026-01-13 -- medication_management is named in the plan as not contributing
+    - BH-D006 [707:778] "HG-E106   | Jan13 | Medication management  | 09:00–09:25    | Completed"
+    - BH-D010 [257:278] "completed, 25 minutes"
+- `HG-E108` 2026-01-15 -- contact did not occur (occurred=no)
+    - BH-D016 [284:405] "The coping skills group scheduled for January 15 from 10:00 to 11:30 is cancelled by the clinic because of staff illness."
+    - BH-D006 [851:929] "HG-E108   | Jan15 | Coping skills group    | 10:00–11:30    | Clinic cancelled"
+- `HG-E109` 2026-01-16 -- collateral_contact is named in the plan as not contributing
+    - BH-D012 [318:358] "Rowan was absent for the entire contact."
+    - BH-D006 [930:1001] "HG-E109   | Jan16 | Family collateral      | 14:00–14:40    | Completed"
+- `HG-E114` 2026-01-23 -- care_coordination is named in the plan as not contributing
+    - BH-D109 [238:266] "Patient participation: None."
+- `HG-E116` 2026-01-27 -- contact did not occur (occurred=no)
+    - BH-D108 [535:626] "January 27 | HG-E116 | Skills group | 10:00–11:30 | — | — | No show; patient did not attend"
+    - BH-D112 [900:1139] "Charge ID: CH-116 | Encounter: HG-E116 Service date: January 27, 2026 | Posting date: January 27, 2026, 18:06 Description: Group psychotherapy Quantity charged: 1 group session ..."
+- `HG-E117` 2026-01-28 -- contact did not occur (occurred=no)
+    - BH-D108 [627:721] "January 28 | HG-E117 | Individual | 14:00–14:45 | — | — | Patient cancelled before appointment"
+    - BH-D108 [1242:1532] "January 28 scheduling entry: Cancellation received from patient January 28, 08:12. Rowan reported a personal scheduling conflict. Appointment HG-E117 was cancelled before the sc..."
+- `HG-E120` 2026-01-30 -- medication_management is named in the plan as not contributing
+    - BH-D114 [140:194] "January 30, 2026 | 15:00–15:20 | Completed, 20 minutes"
+
+**Claims rejected or left unmatched during reconciliation**
+
+- [RULE-PRES-02] schedule_export cannot establish that care was delivered (BH-D006)
+- [RULE-PRES-02] schedule_export cannot establish that care was delivered (BH-D006)
+- [RULE-PRES-02] schedule_export cannot establish that care was delivered (BH-D006)
+- [RULE-PRES-02] schedule_export cannot establish that care was delivered (BH-D006)
+- [RULE-PRES-02] schedule_export cannot establish that care was delivered (BH-D006)
+- [RULE-PRES-02] schedule_export cannot establish that care was delivered (BH-D006)
+- [RULE-PRES-02] schedule_export cannot establish that care was delivered (BH-D006)
+- [RULE-PRES-02] retransmission cannot establish that care was delivered (BH-D104)
+- [RULE-DUR-05] retransmission contributes no duration (BH-D104)
+- [RULE-PRES-02] platform_log cannot establish that care was delivered (BH-D106)
+- [RULE-PRES-02] platform_log cannot establish that care was delivered (BH-D106)
+- [RULE-DUR-05] platform_log contributes no duration (BH-D106)
+- [RULE-DUR-05] platform_log contributes no duration (BH-D106)
+- [RULE-PRES-02] draft_note cannot establish that care was delivered (BH-D112)
+
+=============================================================
+$ python -m backbone ask Did Rowan meet the minute goal in the week of January 12, 2026?
+-------------------------------------------------------------
+[compliance(mrn='HG-M042', start='2026-01-12', end='2026-01-18')  3 ms  router=rules]
+
+**Goal as documented in the treatment plan**
+
+- therapy days >= 3 per mon_sun week, effective 2026-01-05 to 2026-01-30
+    - counts: individual_therapy, group_therapy, family_therapy
+    - BH-D003 [779:918] "Local treatment participation goal: at least 3 therapy days and at least 150 minutes of patient-present therapy in each Monday–Sunday week."
+- therapy minutes >= 150 per mon_sun week, effective 2026-01-05 to 2026-01-30
+    - counts: individual_therapy, group_therapy, family_therapy
+    - BH-D003 [779:918] "Local treatment participation goal: at least 3 therapy days and at least 150 minutes of patient-present therapy in each Monday–Sunday week."
+
+| week | therapy days (goal) | therapy minutes (goal) | result |
+|---|---|---|---|
+| 2026-01-12 -> 2026-01-18 | 2 (>=3) NOT_MET | 120 (>=150) NOT_MET | **NOT_MET** |
+
+**Arithmetic**
+
+- week 2026-01-12..2026-01-18 therapy_days: 2 >= 3 -> NOT_MET
+- week 2026-01-12..2026-01-18 therapy_minutes: 120 >= 150 -> NOT_MET
+
+=============================================================
+$ python -m backbone ask Which patients had two consecutive weeks below the plan requirement?
+-------------------------------------------------------------
+[consecutive_below(mrn=None, n=2, start=None, end=None)  3 ms  router=rules]
+
+**Patients with 2 or more consecutive weeks below the plan requirement**
+
+*Included on the record as it stands:*
+- `HG-M042` runs: 2026-01-05->2026-01-18 (longest run 2 weeks even under the most favourable reading)
+
+*Inclusion depends on unresolved documentation:* none
+
+**Below-goal weeks, with the sessions and passages behind them**
+
+- `HG-M042` week 2026-01-05 -> 2026-01-11: **NOT_MET**, 140 min across 3 day(s) (50 + 45 + 45 = 140)
+    - 2026-01-05 `HG-E101` individual therapy: 50 min
+    - 2026-01-06 `HG-E102` group therapy: 45 min
+    - 2026-01-09 `HG-E104` family therapy: 45 min
+    - BH-D002 [323:345] "completed, 50 minutes."
+    - BH-D005 [429:521] "2026-01-06 | HG-E102   | 10:00–11:30    | 10:15           | 11:15            | Attended part"
+    - BH-D007 [343:394] "Patient-present family therapy duration: 45 minutes"
+    - BH-D008 [348:384] "both present for the full 45 minutes"
+- `HG-M042` week 2026-01-12 -> 2026-01-18: **NOT_MET**, 120 min across 2 day(s) (75 + 45 = 120)
+    - 2026-01-12 `HG-E105` group therapy: 75 min
+    - 2026-01-14 `HG-E107` individual therapy: 45 min
+    - BH-D005 [522:614] "2026-01-12 | HG-E105   | 10:00–11:30    | 10:00           | 11:30            | Attended full"
+    - BH-D011 [276:297] "completed, 45 minutes"
+- `HG-M042` week 2026-01-26 -> 2026-02-01: **CANNOT_DETERMINE**, 145-155 min across 3 day(s) ((40-50) + 75 + 30 = 145-155)
+    - 2026-01-26 `HG-E115` individual therapy: 40-50 min
+    - 2026-01-29 `HG-E118` group therapy: 75 min
+    - 2026-01-30 `HG-E119` family therapy: 30 min
+    - BH-D111 [260:322] "Actual patient psychotherapy contact: 09:10–09:50, 40 minutes."
+    - BH-D110 [241:303] "Actual patient psychotherapy contact: 09:00–09:50, 50 minutes."
+    - BH-D108 [722:798] "January 29 | HG-E118 | Skills group | 10:00–11:30 | 10:00 | 11:30 | Attended"
+    - BH-D113 [278:330] "Rowan present with partner: 13:15–13:45, 30 minutes."
+
+**Per-patient week status**
+
+- `HG-M042`: 2026-01-05=NOT_MET(140min,3d), 2026-01-12=NOT_MET(120min,2d), 2026-01-19=MET(180min,3d), 2026-01-26=CANNOT_DETERMINE(145-155min,3d)
+
+=============================================================
+$ python -m backbone ask Reconstruct the care on January 26, 2026
+-------------------------------------------------------------
+[day_detail(mrn='HG-M042', dates=['2026-01-26'])  3 ms  router=rules]
+
+WARNING: the question does not name a patient; answered for the only patient in the collection (HG-M042)
+
+**2026-01-26** -- 1 therapy contact(s), 40-50 patient therapy minutes (1 contact record(s) of all kinds).
+
+- `HG-E115` individual therapy -- occurred=yes, patient present=yes, 40-50 min (counted)
+    - resolved patient-present interval(s): [['09:00', '09:50']]
+    - [RULE-PRES-02] occurred = yes -- attested or clinically documented patient contact: BH-D110, BH-D111
+    - [RULE-DUR-03] minutes = 40-50 -- records of equal authority disagree and neither is a correction: kept as bounds (BH-D111=40min; BH-D110=50min)
+    - BH-D111 [260:322] "Actual patient psychotherapy contact: 09:10–09:50, 40 minutes."
+    - BH-D110 [241:303] "Actual patient psychotherapy contact: 09:00–09:50, 50 minutes."
+
+Wall-clock check: no two counted contacts overlap in time.
+
+**Arithmetic**
+
+- 2026-01-26: HG-E115 40 = 40-50 min
+
+=============================================================
+$ python -m backbone ask How did the care change before and after a treatment-plan change?
+-------------------------------------------------------------
+[plan_change_comparison(mrn='HG-M042', change_date=None)  2 ms  router=rules]
+
+WARNING: the question does not name a patient; answered for the only patient in the collection (HG-M042)
+
+**No mid-episode plan change is documented.** the record contains one plan period only; no mid-episode plan change was documented
+
+The comparison function is available for any date, so a plan amendment in a later drop is handled by the same code path; with a single plan period in force there is nothing to compare across.
+
+=============================================================
+$ python -m backbone trace HG-M042|HG-E115
+-------------------------------------------------------------
+**HG-M042|HG-E115** -- 2026-01-26 individual_therapy
+- occurred: yes; patient present: yes
+- minutes: 40-50  (disputed)
+- counts as therapy: yes
+- resolved: {"breaks": [], "duration_claims": ["22c4009c836f-N01", "ec4906d5bc7d-N01"], "evidence_docs": ["BH-D110", "BH-D111"], "max_minutes": 50, "min_minutes": 40, "occurred": "yes", "patient_present": "yes", "presence_intervals": [["09:00", "09:50"]], "presence_note": "", "service_date": "2026-01-26", "service_type": "individual_therapy"}
+
+**Decision log**
+
+- [RULE-MATCH-01] claim = 22c4009c836f-N01 -- document states encounter HG-E115
+- [RULE-MATCH-01] claim = ec4906d5bc7d-N01 -- document states encounter HG-E115
+- [RULE-SVC-01] service_type = individual_therapy -- weighted vote over claims; therapy and clinical wording preferred over administrative wording
+- [RULE-PRES-02] occurred = yes -- attested or clinically documented patient contact: BH-D110, BH-D111
+- [RULE-DUR-03] minutes = 40-50 -- records of equal authority disagree and neither is a correction: kept as bounds (BH-D111=40min; BH-D110=50min)
+- [RULE-INC-02] counts_as_therapy = yes -- patient-present therapy of a type the plan counts
+
+**Every claim attached to this event**
+
+- (primary, clinical_note) BH-D111 [260:322] "Actual patient psychotherapy contact: 09:10–09:50, 40 minutes."
+- (primary, clinical_note) BH-D110 [241:303] "Actual patient psychotherapy contact: 09:00–09:50, 50 minutes."
+
+--- idempotence: the same document again, and a re-stamped copy ---
+
+=============================================================
+$ python -m backbone add out/tmpdup/resent_copy.txt
+-------------------------------------------------------------
+{
+ "status": "exact_duplicate",
+ "doc_pk": "c8fbc79cb86f864d3413bce785931d1c26f4a849831ce62384f7c8f486b2b421",
+ "claims": 0,
+ "duplicate_of": "BH-D102_original_attendance_2026-01-19.txt"
+}
+0.003s
+
+=============================================================
+$ python -m backbone add out/tmpdup/faxed_copy.txt
+-------------------------------------------------------------
+{
+ "status": "normalized_duplicate",
+ "doc_pk": "c8fbc79cb86f864d3413bce785931d1c26f4a849831ce62384f7c8f486b2b421",
+ "claims": 0,
+ "duplicate_of": "BH-D102_original_attendance_2026-01-19.txt"
+}
+0.003s
+
+=============================================================
+$ python -m backbone ask How many therapy minutes did Rowan receive in total?
+-------------------------------------------------------------
+[minutes(mrn='HG-M042', start='2026-01-05', end='2026-01-30')  4 ms  router=rules]
+
+**Total patient-present therapy: 585-595 minutes (9.75-9.92 hours).**
+Weeks are mon–sun.
+
+| week | therapy days | minutes | hours | calculation |
+|---|---:|---:|---:|---|
+| 2026-01-05 -> 2026-01-11 | 3 | 140 | 2.33 | 50 + 45 + 45 = 140 |
+| 2026-01-12 -> 2026-01-18 | 2 | 120 | 2 | 75 + 45 = 120 |
+| 2026-01-19 -> 2026-01-25 | 3 | 180 | 3 | 60 + 30 + 45 + 45 = 180 |
+| 2026-01-26 -> 2026-02-01 | 3 | 145-155 | 2.42-2.58 | (40-50) + 75 + 30 = 145-155 |
+
+**Session detail with sources**
+
+*week of 2026-01-05*
+- 2026-01-05 `HG-E101` individual therapy: 50 min
+    - BH-D002 [323:345] "completed, 50 minutes."
+- 2026-01-06 `HG-E102` group therapy: 45 min, breaks [['10:45', '11:00']]
+    - BH-D005 [429:521] "2026-01-06 | HG-E102   | 10:00–11:30    | 10:15           | 11:15            | Attended part"
+- 2026-01-09 `HG-E104` family therapy: 45 min
+    - BH-D007 [343:394] "Patient-present family therapy duration: 45 minutes"
+    - BH-D008 [348:384] "both present for the full 45 minutes"
+
+*week of 2026-01-12*
+- 2026-01-12 `HG-E105` group therapy: 75 min, breaks [['10:40', '10:55']]
+    - BH-D005 [522:614] "2026-01-12 | HG-E105   | 10:00–11:30    | 10:00           | 11:30            | Attended full"
+- 2026-01-14 `HG-E107` individual therapy: 45 min
+    - BH-D011 [276:297] "completed, 45 minutes"
+
+*week of 2026-01-19*
+- 2026-01-19 `HG-E110` group therapy: 60 min, breaks [['10:45', '11:00']]
+    - BH-D103 [223:320] "Correction: Patient departure for HG-E110 is 11:15, replacing the original roster value of 11:30."
+    - BH-D102 [296:364] "Patient arrival: 10:00 | Patient departure: 11:30 | Status: Attended"
+- 2026-01-19 `HG-E111` individual therapy: 30 min
+    - BH-D105 [172:224] "Patient contact: 11:15–11:45 | Completed: 30 minutes"
+- 2026-01-21 `HG-E112` individual therapy: 45 min, breaks [['13:20', '13:30']]
+    - BH-D106 [368:416] "Total patient psychotherapy contact: 45 minutes."
+- 2026-01-22 `HG-E113` group therapy: 45 min, breaks [['10:45', '11:00']]
+    - BH-D108 [444:534] "January 22 | HG-E113 | Skills group | 10:00–11:30 | 10:30 | 11:30 | Attended, late arrival"
+
+*week of 2026-01-26*
+- 2026-01-26 `HG-E115` individual therapy: 40-50 min
+    - BH-D111 [260:322] "Actual patient psychotherapy contact: 09:10–09:50, 40 minutes."
+    - BH-D110 [241:303] "Actual patient psychotherapy contact: 09:00–09:50, 50 minutes."
+- 2026-01-29 `HG-E118` group therapy: 75 min, breaks [['10:45', '11:00']]
+    - BH-D108 [722:798] "January 29 | HG-E118 | Skills group | 10:00–11:30 | 10:00 | 11:30 | Attended"
+- 2026-01-30 `HG-E119` family therapy: 30 min
+    - BH-D113 [278:330] "Rowan present with partner: 13:15–13:45, 30 minutes."
+
+**Not settled by the available documents**
+
+- `HG-E115` 2026-01-26: bounds 40-50 min [RULE-DUR-03]
+    - records of equal authority disagree and neither is a correction: kept as bounds (BH-D111=40min; BH-D110=50min)
+    - would be settled by: an addendum or correction from either author that names the other record's value, or a check-in/room-transfer timestamp for the start of the contact
+    - BH-D111 [260:322] "Actual patient psychotherapy contact: 09:10–09:50, 40 minutes."
+    - BH-D110 [241:303] "Actual patient psychotherapy contact: 09:00–09:50, 50 minutes."
+
+=============================================================
+$ python -m backbone ask which duplicate documents were detected?
+-------------------------------------------------------------
+[duplicates()  2 ms  router=rules]
+
+| file | resolved to | kind |
+|---|---|---|
+| out\tmpdup\faxed_copy.txt | BH-D102 | normalized_duplicate |
+| out\tmpdup\resent_copy.txt | BH-D102 | exact_duplicate |
+
+finished     2026-10-03T18:37:02-05:00

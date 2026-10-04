@@ -1,0 +1,65 @@
+[
+ {
+  "sha": "1f1cba267881",
+  "patient_present_intervals": [
+   [
+    "10:00",
+    "10:45"
+   ],
+   [
+    "11:00",
+    "11:30"
+   ]
+  ],
+  "breaks": [
+   [
+    "10:45",
+    "11:00"
+   ]
+  ],
+  "observations": 0,
+  "out_tokens": 700
+ },
+ {
+  "sha": "1f1cba267881",
+  "patient_present_intervals": [
+   [
+    "10:00",
+    "10:45"
+   ],
+   [
+    "11:00",
+    "11:30"
+   ]
+  ],
+  "breaks": [
+   [
+    "10:45",
+    "11:00"
+   ]
+  ],
+  "observations": 0,
+  "out_tokens": 625
+ },
+ {
+  "sha": "1f1cba267881",
+  "patient_present_intervals": [
+   [
+    "10:00",
+    "10:45"
+   ],
+   [
+    "11:00",
+    "11:30"
+   ]
+  ],
+  "breaks": [
+   [
+    "10:45",
+    "11:00"
+   ]
+  ],
+  "observations": 0,
+  "out_tokens": 598
+ }
+]

@@ -297,8 +297,11 @@ its source document.
 
 ## `document_aliases`
 
-One row per *file path* that resolved to an already-known document. 2 rows on
-the supplied corpus (both created by the idempotence test's copies).
+One row per *file path* that resolved to an already-known document. **0 rows on
+a clean build** — every file in `documents/` is distinct. Rows appear only when
+the same content arrives at a second path: the test suite's `out/tmpdup/`
+copies, or a re-ingest of a directory that is itself a copy. It is the one table
+whose emptiness is the expected result rather than a sign of breakage.
 
 ```sql
 path    TEXT PRIMARY KEY   -- the duplicate file's own path
@@ -563,6 +566,66 @@ Note that negative claims use a **different, wider** list (reconcile.py:391):
 `attendance_register`, `schedule_export`, `admin_log`, `clinical_note`,
 `correction`. The asymmetry is deliberate — a schedule export cannot prove a
 session happened, but it is adequate evidence that one was cancelled.
+
+### Why a veto and not just a ranking — the measured answer
+
+`taxonomy.FIELD_AUTHORITY` (taxonomy.py:126) *does* contain a presence ranking:
+`correction` 100, `attendance_register` 80, `clinical_note` 70, `draft_note` 5,
+`billing` 0. The obvious objection is that a ranking already handles January 27
+— the register scores 80, the draft scores 5, the register wins, so why is an
+admissibility veto needed at all?
+
+Two reasons, and the second is the real one.
+
+**First: `FIELD_AUTHORITY["presence"]` is never read.** The only reference to
+`FIELD_AUTHORITY` anywhere in the package is reconcile.py:565, and it reads the
+`"duration"` map. The presence sub-map is dead data — the second such case in
+this schema, alongside [`presence_basis`](#why-presence-and-presence_basis--and-which-one-actually-decides).
+Presence is decided entirely by admissibility plus a refusal to break ties, with
+no scoring involved.
+
+**Second: a ranking cannot return "none of the above".** `max()` over a
+one-element list is that element. `draft_note` scoring 5 only loses when
+something scores higher; delete the higher thing and 5 is the maximum. Five beats
+an empty field.
+
+That is testable, so it was tested. Removing
+`BH-D108_final_attendance_and_cancellation_register.txt` from the corpus and
+rebuilding leaves `HG-E116` with only the draft note and its posted charge:
+
+```
+events:  occurred=unknown  patient_present=unknown  min=0  max=0
+         counts_as_therapy=0  disputed=1
+
+[RULE-PRES-02] rejected_presence = present
+    draft_note cannot establish that care was delivered (BH-D112)
+[RULE-PRES-02] occurred = unknown
+    the only records asserting this contact cannot establish delivery
+```
+
+Under a ranking the draft would have been the sole candidate and won by default:
+`occurred = yes`, a therapy session counted and a charge substantiated for a
+contact that never happened. Under the veto the honest answer survives the
+disappearance of the authoritative document.
+
+This is the same shape as the `_stated_minutes` veto in the extractor, and the
+reason is identical in both places: **a ranking expresses "which of these
+wins?", a veto expresses "does anything here qualify at all?"** The second
+question has no answer in a scoring scheme.
+
+For completeness, two admissible records that disagree are not ranked either —
+they escalate:
+
+```
+[RULE-PRES-04] occurred = unknown
+    qualified records disagree about whether the contact happened
+```
+
+So even `attendance_register` (80) against `clinical_note` (70) yields `unknown`
+rather than letting the register win. `RULE-PRES-04` fires zero times on the
+supplied corpus — the one disputed event, `HG-E115` on January 26, is disputed
+over *duration* (40 vs 50 minutes), where ranking genuinely is used. Presence
+never ranks.
 
 ### Why `authority_class` is on the claim, not just the document
 
@@ -904,8 +967,8 @@ possible.
 
 ## `decisions`
 
-One row per conclusion, naming the rule that produced it. 158 rows for 31
-documents — the largest table by row count.
+One row per conclusion, naming the rule that produced it. 156 rows for 31
+documents on a clean build — the largest table by row count.
 
 ```sql
 decision_id INTEGER PRIMARY KEY AUTOINCREMENT
@@ -1482,24 +1545,33 @@ plan's own wording.
 
 ## Row counts on the supplied corpus
 
-31 documents, one patient, 276 KiB on disk.
+31 documents, one patient, 276 KiB on disk, from a pristine
+`python -m backbone build documents` into a fresh file.
+
+These differ from a database the test suite has touched. `tests/` writes
+duplicate copies under `out/tmpdup/` to exercise dedupe, which adds
+`document_aliases` rows and `RULE-DEDUPE-01` decisions keyed by those paths, and
+every `build` or `ask` appends a `run_log` row. A test-touched database shows 2
+aliases, 158 decisions and 2 run_log rows — and the committed `out/clinical.db`
+is one of those, which is why `out/abstraction.json` mentions `out	mpdup`
+paths that do not exist for a reviewer. The counts below are the clean ones.
 
 | table | rows | what one row is |
 |---|---:|---|
 | `documents` | 31 | a distinct document |
-| `document_aliases` | 2 | a duplicate file path (from the idempotence test) |
+| `document_aliases` | 0 | a duplicate file path (none in `documents/`) |
 | `patients` | 1 | a patient |
 | `claims` | 99 | one assertion by one document |
 | `corrections` | 1 | the Jan 19 departure correction |
 | `events` | 20 | a reconciled contact (12 counted as therapy) |
 | `event_claims` | 48 | a claim supporting an event, with its role |
-| `decisions` | 158 | a conclusion, with its rule |
+| `decisions` | 156 | a conclusion, with its rule |
 | `plan_requirements` | 2 | a dated goal (days, minutes) |
 | `episodes` | 1 | the episode window |
 | `measures` | 3 | a distinct PHQ-9 administration |
 | `observations` | 54 | a dated narrative observation, per domain |
-| `run_log` | 2 | a command that built this file |
+| `run_log` | 1 | a command that built this file |
 
-The ratio worth noting: **99 claims produce 20 events and 158 decisions.** There
+The ratio worth noting: **99 claims produce 20 events and 156 decisions.** There
 are more explanations than conclusions, which is the intended shape — the system
 spends more rows saying *why* than saying *what*.

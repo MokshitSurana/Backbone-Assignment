@@ -310,8 +310,9 @@ def _dob_spans(text: str) -> list[tuple[int, int]]:
 
 
 def extract(text: str, doc_pk: str, store=None) -> tuple[DocFacts, list[Claim]]:
-    # `store` is accepted for interface parity with the llm extractor,
-    # which caches model responses there. The rules path needs no state.
+    # `store` is accepted so that an extractor needing state (a cache, a
+    # lookup) can be dropped in behind the same signature. This one is
+    # stateless, which is what makes it byte-reproducible across runs.
     facts = doc_facts(text)
     year = _guess_year(text)
     claims: list[Claim] = []

@@ -7,7 +7,7 @@ Source: `questions.json`  ·  abstraction: `out/clinical.db`  ·  all figures co
 
 > For January 5–30, 2026, how many therapy sessions did Rowan attend, by service type and in total, and on how many distinct days? Provide a reviewable abstraction with source support and explain records that could lead to duplicate or ineligible counts.
 
-*Resolved to* `session_counts(mrn='HG-M042', start='2026-01-05', end='2026-01-30')` *in 3 ms (router: rules).*
+*Resolved to* `session_counts(mrn='HG-M042', start='2026-01-05', end='2026-01-30')` *in 4 ms (router: rules).*
 
 **12 therapy sessions** on **11 distinct days** (2026-01-05 to 2026-01-30).
 
@@ -83,7 +83,7 @@ Service types the plan counts: family_therapy, group_therapy, individual_therapy
 
 > How many therapy minutes and hours did Rowan actually receive during the review period, overall and for each Monday–Sunday week? Show calculations or supporting detail, and report any conclusion the available documents do not settle.
 
-*Resolved to* `minutes(mrn='HG-M042', start='2026-01-05', end='2026-01-30')` *in 2 ms (router: rules).*
+*Resolved to* `minutes(mrn='HG-M042', start='2026-01-05', end='2026-01-30')` *in 1 ms (router: rules).*
 
 **Total patient-present therapy: 585-595 minutes (9.75-9.92 hours).**
 Weeks are mon–sun.
@@ -144,7 +144,7 @@ Weeks are mon–sun.
 
 > For each week, did the delivered therapy meet the goal documented in Rowan’s treatment plan? State the goal, the relevant therapy-day and minute totals, and whether it was met, not met, or cannot be determined from the current record.
 
-*Resolved to* `compliance(mrn='HG-M042', start='2026-01-05', end='2026-01-30')` *in 1 ms (router: rules).*
+*Resolved to* `compliance(mrn='HG-M042', start='2026-01-05', end='2026-01-30')` *in 2 ms (router: rules).*
 
 **Goal as documented in the treatment plan**
 

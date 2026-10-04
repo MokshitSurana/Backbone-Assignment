@@ -5,9 +5,9 @@ documents and never free-form SQL. The router resolves intent and parameters;
 the function computes the numbers and carries its own evidence. This is the part
 that makes "related questions" cheap: the abstraction is already built.
 
-Routing is deterministic by default. An optional LLM router (enabled with
---router llm and an ANTHROPIC_API_KEY) only chooses the function and fills its
-parameters; it never produces a number.
+Routing is deterministic: keyword intent matching plus patient, window and
+date extraction. No model is involved in choosing a function or in producing a
+number.
 """
 from __future__ import annotations
 
@@ -246,11 +246,6 @@ PER_PATIENT = {"session_counts", "minutes", "compliance", "progress",
 
 def route(st: Store, question: str, router: str = "rules") -> dict:
     """Return {"function": name, "params": {...}} for a natural-language question."""
-    if router == "llm":
-        from .extract.llm import route_llm
-        picked = route_llm(st, question, list(FUNCS))
-        if picked:
-            return picked
     intent, hits = classify(question)
     who = resolve_patients(st, question)
     mrns, mrn = who["mrns"], (who["mrns"][0] if who["mrns"] else None)

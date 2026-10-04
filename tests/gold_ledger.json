@@ -1,5 +1,5 @@
 {
- "_comment": "Hand-computed from the supplied documents before any pipeline code was written. Consumed by backbone/compare.py to score extractor disagreements, and cross-checked against tests/test_gold.py so the two cannot drift. Deliberately NOT inside the package: the brief forbids encoding patient facts in the implementation.",
+ "_comment": "Hand-computed from the supplied documents before any pipeline code was written. Cross-checked against tests/test_gold.py by LedgerConsistency so the two cannot drift. Deliberately NOT inside the package: the brief forbids encoding patient facts in the implementation.",
  "events": {
   "2026-01-05|HG-E101": {
    "service_type": "individual_therapy",

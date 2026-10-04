@@ -125,7 +125,8 @@ def run(args) -> dict:
     st.commit()
     sizes = {t: st.q1(f"SELECT COUNT(*) n FROM {t}")["n"] for t in
              ("documents", "claims", "events", "event_claims", "decisions",
-              "observations", "measures", "plan_requirements", "llm_cache")}
+              "observations", "measures", "plan_requirements",
+              "corrections")}
     st.close()
     total = sum(pathlib.Path(str(db) + s).stat().st_size
                 for s in ("", "-wal", "-shm")
@@ -139,36 +140,16 @@ def run(args) -> dict:
     }
 
     # ---- model usage ------------------------------------------------------
-    from .extract import llm
-    ok, why = llm.available()
-    # Report what the model path actually cost, read from the response cache,
-    # rather than describing it as unmeasured.
-    cache = {"responses": 0, "in_tokens": 0, "out_tokens": 0, "usd": 0.0}
-    if llm.CACHE_DB.exists():
-        cs = Store(llm.CACHE_DB)
-        row = cs.q1("SELECT COUNT(*) n, COALESCE(SUM(in_tokens),0) i,"
-                    " COALESCE(SUM(out_tokens),0) o, COALESCE(SUM(usd),0) u"
-                    " FROM llm_cache")
-        models = [r["model"] for r in
-                  cs.q("SELECT DISTINCT model FROM llm_cache")]
-        cs.close()
-        cache = {"responses": row["n"], "in_tokens": row["i"],
-                 "out_tokens": row["o"], "usd": round(row["u"], 6),
-                 "models": models}
+    # The default and only extractor is deterministic, so a build makes no
+    # model calls and costs nothing. (An optional model-backed extractor and a
+    # rules-vs-model comparison live on the post-timebox branch.)
     out["model"] = {
-        "default_extractor": "rules",
-        "default_path_model_calls": 0,
-        "default_path_usd": 0.0,
-        "llm_extractor_available": ok,
-        "llm_extractor_note": why or f"{llm.describe()}, temperature "
-                                     f"{llm.TEMPERATURE}, prompt "
-                                     f"{llm.PROMPT_VERSION}",
-        "cached_extraction_usage": cache,
-        "comment": "the measured build makes no model calls: the rules "
-                   "extractor is the default and is deterministic. "
-                   "`cached_extraction_usage` is what the optional model path "
-                   "cost when it was run (see "
-                   "docs/experiment-extractor-comparison.md).",
+        "extractor": "rules",
+        "model_calls": 0,
+        "tokens": 0,
+        "usd": 0.0,
+        "comment": "the pipeline is fully deterministic: no model is called at "
+                   "any point in ingest, reconcile or query.",
     }
 
     pathlib.Path(args.out).parent.mkdir(parents=True, exist_ok=True)

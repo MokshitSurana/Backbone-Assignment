@@ -1,1 +1,1 @@
-"""Claim extractors: deterministic (rules) and model-backed (llm)."""
+"""Claim extractors. `rules` is the deterministic one and the only one here."""

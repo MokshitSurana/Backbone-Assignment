@@ -237,8 +237,8 @@ if __name__ == "__main__":
 
 
 class LedgerConsistency(unittest.TestCase):
-    """The ledger exists twice: as assertions here, and as data the extractor
-    comparison harness scores against. They must not drift apart."""
+    """The hand-computed ledger exists twice: as assertions in this module, and
+    as data in tests/gold_ledger.json. They must not drift apart."""
 
     def test_gold_ledger_json_matches_this_module(self):
         data = json.loads(pathlib.Path("tests/gold_ledger.json")
@@ -251,7 +251,3 @@ class LedgerConsistency(unittest.TestCase):
         self.assertEqual({k: tuple(v) for k, v in data["weeks"].items()},
                          {k: (v["min"], v["max"]) for k, v in GOLD_WEEKS.items()})
 
-    def test_compare_harness_loads_the_same_ledger(self):
-        from backbone import compare
-        self.assertEqual(len(compare.GOLD), 20)
-        self.assertEqual(compare.GOLD["2026-01-19|HG-E110"][1:3], (60, 60))

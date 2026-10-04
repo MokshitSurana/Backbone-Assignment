@@ -215,39 +215,6 @@ def cmd_experiment(args) -> int:
     return 0
 
 
-def cmd_models(args) -> int:
-    from . import provider
-    ok, why = provider.available()
-    if not ok:
-        print(why)
-        print("\nPut one key in a .env file at the repository root "
-              "(see .env.example):\n    GROQ_API_KEY=gsk_...")
-        return 1
-    print(f"provider: {provider.provider()}   default model: {provider.model()}")
-    try:
-        models = provider.list_models()
-    except provider.ModelError as e:
-        print("")
-        print(f"could not list models: {e}")
-        print("")
-        print("A 401 or 403 here means the key itself was rejected. Rewrite "
-              ".env with the current key and no stray characters:")
-        print("    $k = Read-Host 'Groq API key'; "
-              "Set-Content -Path .env -Value \"GROQ_API_KEY=$k\" -Encoding ascii")
-        return 1
-    for m in models:
-        ctx = f"ctx {m['context']}" if m.get("context") else ""
-        price = "priced locally" if m["priced"] else "no local price"
-        print(f"  {str(m['id']):<52} {str(m['owned_by'] or ''):<18} "
-              f"{ctx:<12} {price}")
-    return 0
-
-
-def cmd_compare(args) -> int:
-    from .compare import run
-    return run(args)
-
-
 def cmd_verify(args) -> int:
     import unittest
     st = _store(args)
@@ -268,9 +235,11 @@ def _global_flags(ap) -> None:
                     choices=reconcile.POLICIES,
                     help="conflict-resolution policy "
                          "(see docs/experiment-conflict-policy.md)")
-    ap.add_argument("--extractor", default="rules",
-                    choices=("rules", "llm", "llm_full"))
-    ap.add_argument("--router", default="rules", choices=("rules", "llm"))
+    ap.add_argument("--extractor", default="rules", choices=("rules",),
+                    help="claim extractor (only the deterministic one ships "
+                         "here; a model-backed extractor is on the "
+                         "post-timebox branch)")
+    ap.add_argument("--router", default="rules", choices=("rules",))
     ap.add_argument("--force", action="store_true",
                     help="re-extract known documents")
 
@@ -280,8 +249,8 @@ def main(argv=None) -> int:
                                formatter_class=argparse.RawDescriptionHelpFormatter)
     _global_flags(p)
     # The same flags are attached to every subcommand through a parent parser,
-    # so `build documents --extractor llm` works as well as
-    # `--extractor llm build documents`. Requiring one order is a trap when
+    # so `build documents --db other.db` works as well as
+    # `--db other.db build documents`. Requiring one order is a trap when
     # somebody else is driving.
     common = argparse.ArgumentParser(add_help=False)
     _global_flags(common)
@@ -334,14 +303,7 @@ def main(argv=None) -> int:
     s = sub.add_parser("verify", parents=[common], help="integrity checks + regression tests")
     s.set_defaults(fn=cmd_verify)
 
-    s = sub.add_parser("models", parents=[common], help="list models this API key can use")
-    s.set_defaults(fn=cmd_models)
 
-    s = sub.add_parser("compare", parents=[common], help="diff the rules and model extractors")
-    s.add_argument("path", nargs="?", default="documents")
-    s.add_argument("--out", default="docs/experiment-extractor-comparison.md")
-    s.add_argument("--extractor-b", default="llm_full", choices=("llm", "llm_full"))
-    s.set_defaults(fn=cmd_compare)
 
     # argparse lets the subcommand's defaults overwrite a value given before
     # it, so resolve each global flag from whichever side supplied a non-default.

@@ -1,0 +1,2 @@
+# No third-party packages. The pipeline runs on the Python 3.11+ standard
+# library alone; SQLite ships with Python. Nothing to install.

@@ -20,15 +20,12 @@ from .store import Store, now
 from .taxonomy import EXTRACTOR_VERSION
 
 
-EXTRACTORS = ("rules", "llm", "llm_full")
+EXTRACTORS = ("rules",)
 
 
 def _extractor(name: str):
     if name == "rules":
         return rules
-    if name in ("llm", "llm_full"):
-        from .extract import llm
-        return llm
     raise SystemExit(f"unknown extractor {name!r} (use: {', '.join(EXTRACTORS)})")
 
 
@@ -70,10 +67,7 @@ def ingest_path(st: Store, path: pathlib.Path, extractor: str = "rules",
 
     mod = _extractor(extractor)
     t0 = time.perf_counter()
-    if mod.NAME == "llm":
-        facts, claims = mod.extract(raw, doc_pk, st, mode=extractor)
-    else:
-        facts, claims = mod.extract(raw, doc_pk, st)
+    facts, claims = mod.extract(raw, doc_pk, st)
     elapsed = time.perf_counter() - t0
 
     st.drop_doc_derivations(doc_pk)

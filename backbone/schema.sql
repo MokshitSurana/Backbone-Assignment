@@ -176,17 +176,6 @@ CREATE TABLE IF NOT EXISTS observations (
 );
 CREATE INDEX IF NOT EXISTS ix_obs_pat ON observations(patient_mrn, obs_date);
 
-CREATE TABLE IF NOT EXISTS llm_cache (
-    cache_key  TEXT PRIMARY KEY,           -- sha256(norm_text|prompt_ver|model)
-    model      TEXT NOT NULL,
-    prompt_ver TEXT NOT NULL,
-    response   TEXT NOT NULL,
-    in_tokens  INTEGER,
-    out_tokens INTEGER,
-    usd        REAL,
-    created_at TEXT NOT NULL
-);
-
 CREATE TABLE IF NOT EXISTS run_log (
     run_id     INTEGER PRIMARY KEY AUTOINCREMENT,
     started_at TEXT NOT NULL,

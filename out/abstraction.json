@@ -3839,7 +3839,42 @@
    "rule_id": "RULE-INC-01",
    "rationale": "requirement read from the treatment plan, effective 2026-01-05 to 2026-01-30",
    "from_claims": "[\"2583c396f1af-P03\"]"
+  },
+  {
+   "decision_id": 157,
+   "event_id": null,
+   "patient_mrn": null,
+   "scope": "dedupe",
+   "field": "duplicate",
+   "chosen": "out\\tmpdup\\resent_copy.txt",
+   "rule_id": "RULE-DEDUPE-01",
+   "rationale": "exact_duplicate of BH-D102_original_attendance_2026-01-19.txt (normalized sha256 c8fbc79cb86f); no new claims created",
+   "from_claims": "[]"
+  },
+  {
+   "decision_id": 158,
+   "event_id": null,
+   "patient_mrn": null,
+   "scope": "dedupe",
+   "field": "duplicate",
+   "chosen": "out\\tmpdup\\faxed_copy.txt",
+   "rule_id": "RULE-DEDUPE-01",
+   "rationale": "normalized_duplicate of BH-D102_original_attendance_2026-01-19.txt (normalized sha256 c8fbc79cb86f); no new claims created",
+   "from_claims": "[]"
   }
  ],
- "duplicates": []
+ "duplicates": [
+  {
+   "path": "out\\tmpdup\\faxed_copy.txt",
+   "kind": "normalized_duplicate",
+   "filename": "BH-D102_original_attendance_2026-01-19.txt",
+   "doc_id": "BH-D102"
+  },
+  {
+   "path": "out\\tmpdup\\resent_copy.txt",
+   "kind": "exact_duplicate",
+   "filename": "BH-D102_original_attendance_2026-01-19.txt",
+   "doc_id": "BH-D102"
+  }
+ ]
 }

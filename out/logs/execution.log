@@ -1,5 +1,5 @@
 Backbone execution log
-started      2026-10-03T18:36:51-05:00
+started      2026-10-03T23:45:14-05:00
 python       Python 3.13.5
 platform     MINGW64_NT-10.0-26200 3.6.10-710e5275.x86_64
 documents    31 files
@@ -7,10 +7,10 @@ documents    31 files
 =============================================================
 $ python -m backbone build documents
 -------------------------------------------------------------
-ingest    31/31 files, 99 claims, 0.15s
+ingest    31/31 files, 99 claims, 0.19s
 reconcile HG-M042: 20 events (12 therapy, 1 disputed), 0.01s
 integrity ok
-abstraction out/clinical.db  284.0 KiB
+abstraction out/clinical.db  276.0 KiB
 
 =============================================================
 $ python -m backbone verify
@@ -30,7 +30,6 @@ test_three_distinct_phq9_administrations (test_gold.GoldLedger.test_three_distin
 test_total_minutes_and_hours (test_gold.GoldLedger.test_total_minutes_and_hours) ... ok
 test_weekly_minutes_days_and_compliance (test_gold.GoldLedger.test_weekly_minutes_days_and_compliance) ... ok
 test_duplicate_file_changes_nothing (test_gold.Idempotence.test_duplicate_file_changes_nothing) ... ok
-test_compare_harness_loads_the_same_ledger (test_gold.LedgerConsistency.test_compare_harness_loads_the_same_ledger) ... ok
 test_gold_ledger_json_matches_this_module (test_gold.LedgerConsistency.test_gold_ledger_json_matches_this_module) ... ok
 test_answer_after_restart_without_reingest (test_gold.Restart.test_answer_after_restart_without_reingest) ... ok
 test_it_carries_its_source_span (test_multipatient.CorrectionsTable.test_it_carries_its_source_span) ... ok
@@ -125,7 +124,7 @@ test_empty_weeks_are_not_met_and_count_as_consecutive (test_units.WeeklyCoverage
 test_every_week_in_the_episode_appears (test_units.WeeklyCoverage.test_every_week_in_the_episode_appears) ... ok
 
 ----------------------------------------------------------------------
-Ran 108 tests in 3.091s
+Ran 107 tests in 4.196s
 
 OK
 All integrity checks pass (quote offsets verified; no counted contacts overlap in wall-clock time).
@@ -139,22 +138,22 @@ wrote out/answers.md and out\answers.json
 $ python -m backbone bench --repeat 5
 -------------------------------------------------------------
 corpus              31 documents, 48.9 KiB
-cold build          0.141s  (ingest 0.136s = 4.39 ms/doc, reconcile 0.005s)
+cold build          0.188s  (ingest 0.18s = 5.81 ms/doc, reconcile 0.008s)
                     99 claims -> 20 events (12 therapy, 1 disputed)
-warm re-ingest      0.009s, 0 re-extracted / 31 unchanged
-one new document    0.009s (extract + reconcile that patient only)
-abstraction size    284.0 KiB (9381 B/document, 5.8x the source text)
+warm re-ingest      0.01s, 0 re-extracted / 31 unchanged
+one new document    0.011s (extract + reconcile that patient only)
+abstraction size    276.0 KiB (9117 B/document, 5.64x the source text)
 query latency (median of repeats)
-  session_counts (one patient)           0.84 ms   [0.80-1.13]
-  minutes by week (one patient)          0.62 ms   [0.60-0.70]
-  compliance (one patient)               0.79 ms   [0.78-0.89]
-  day_detail (two dates)                 0.18 ms   [0.17-0.20]
-  progress (one patient)                 1.03 ms   [1.02-1.25]
-  consecutive_below (all patients)       0.85 ms   [0.80-0.90]
-  trace (one event)                      0.06 ms   [0.05-0.09]
-  integrity (all patients)               1.55 ms   [1.50-1.63]
-  end_to_end_nl_question                 1.05 ms   [0.18-2.65]
-model usage         the measured build makes no model calls: the rules extractor is the default and is deterministic. `cached_extraction_usage` is what the optional model path cost when it was run (see docs/experiment-extractor-comparison.md).
+  session_counts (one patient)           1.46 ms   [0.82-2.00]
+  minutes by week (one patient)          0.94 ms   [0.65-1.31]
+  compliance (one patient)               0.81 ms   [0.79-1.24]
+  day_detail (two dates)                 0.19 ms   [0.18-0.38]
+  progress (one patient)                 1.41 ms   [1.07-2.20]
+  consecutive_below (all patients)       1.52 ms   [0.83-2.49]
+  trace (one event)                      0.06 ms   [0.05-0.11]
+  integrity (all patients)               3.12 ms   [1.59-4.55]
+  end_to_end_nl_question                 1.44 ms   [0.20-7.19]
+model usage         the pipeline is fully deterministic: no model is called at any point in ingest, reconcile or query.
 
 wrote out/benchmark.json
 
@@ -362,7 +361,7 @@ $ python -m backbone ask Did Rowan meet the minute goal in the week of January 1
 =============================================================
 $ python -m backbone ask Which patients had two consecutive weeks below the plan requirement?
 -------------------------------------------------------------
-[consecutive_below(mrn=None, n=2, start=None, end=None)  3 ms  router=rules]
+[consecutive_below(mrn=None, n=2, start=None, end=None)  4 ms  router=rules]
 
 **Patients with 2 or more consecutive weeks below the plan requirement**
 
@@ -424,7 +423,7 @@ Wall-clock check: no two counted contacts overlap in time.
 =============================================================
 $ python -m backbone ask How did the care change before and after a treatment-plan change?
 -------------------------------------------------------------
-[plan_change_comparison(mrn='HG-M042', change_date=None)  2 ms  router=rules]
+[plan_change_comparison(mrn='HG-M042', change_date=None)  3 ms  router=rules]
 
 WARNING: the question does not name a patient; answered for the only patient in the collection (HG-M042)
 
@@ -482,7 +481,7 @@ $ python -m backbone add out/tmpdup/faxed_copy.txt
 =============================================================
 $ python -m backbone ask How many therapy minutes did Rowan receive in total?
 -------------------------------------------------------------
-[minutes(mrn='HG-M042', start='2026-01-05', end='2026-01-30')  4 ms  router=rules]
+[minutes(mrn='HG-M042', start='2026-01-05', end='2026-01-30')  3 ms  router=rules]
 
 **Total patient-present therapy: 585-595 minutes (9.75-9.92 hours).**
 Weeks are mon–sun.
@@ -542,11 +541,11 @@ Weeks are mon–sun.
 =============================================================
 $ python -m backbone ask which duplicate documents were detected?
 -------------------------------------------------------------
-[duplicates()  2 ms  router=rules]
+[duplicates()  3 ms  router=rules]
 
 | file | resolved to | kind |
 |---|---|---|
 | out\tmpdup\faxed_copy.txt | BH-D102 | normalized_duplicate |
 | out\tmpdup\resent_copy.txt | BH-D102 | exact_duplicate |
 
-finished     2026-10-03T18:37:02-05:00
+finished     2026-10-03T23:45:28-05:00

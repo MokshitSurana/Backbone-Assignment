@@ -339,14 +339,3 @@ class Store:
 
     def episode(self, mrn: str):
         return self.q1("SELECT * FROM episodes WHERE patient_mrn=? ORDER BY start_date", (mrn,))
-
-    # -- llm cache ---------------------------------------------------------
-    def cache_get(self, key: str):
-        return self.q1("SELECT * FROM llm_cache WHERE cache_key=?", (key,))
-
-    def cache_put(self, key: str, model: str, prompt_ver: str, response: str,
-                  in_tok: int | None, out_tok: int | None, usd: float | None) -> None:
-        self.db.execute(
-            "INSERT OR REPLACE INTO llm_cache(cache_key,model,prompt_ver,response,"
-            "in_tokens,out_tokens,usd,created_at) VALUES (?,?,?,?,?,?,?,?)",
-            (key, model, prompt_ver, response, in_tok, out_tok, usd, now()))

@@ -926,14 +926,33 @@ evidence span in every answer** — and `cli.cmd_export`.
 
 It is the audit story. Without it, a claim that lost would simply be absent, and
 a reviewer could not distinguish "we never saw that document" from "we saw it and
-rejected it". With it, `trace` prints:
+rejected it".
+
+`trace` prints one line per attached claim, in this shape:
 
 ```
-(correction,    correction)          BH-D103  "Correction: Patient departure ... is 11:15 ..."
-(primary,       attendance_register) BH-D102  "Patient arrival: 10:00 | Patient departure: 11:30 ..."
-(superseded,    retransmission)      BH-D104  "Patient arrival: 10:00 | Patient departure: 11:30 ..."
-(corroborating, clinical_note)       BH-D101  "Group encounter: HG-E110 | Facilitator: ..."
+(role, document-type)  DOC-ID  [char offsets]  "the sentence"
 ```
+
+The two slots are **independent**: the first is what the claim *did for this
+event* (this table's `role`), the second is what kind of paper it came from
+(`claims.authority_class`). Verbatim, for `HG-M042|HG-E110`:
+
+```
+(correction,    correction)          BH-D103 [223:320] "Correction: Patient departure for HG-E110 is 11:15, replacing the original roster value of 11:30."
+(corroborating, correction)          BH-D103 [156:221] "Applies to group encounter HG-E110, service date January 19, 2026"
+(corroborating, clinical_note)       BH-D101 [114:169] "Group encounter: HG-E110 | Facilitator: Leah Chen, LCSW"
+(primary,       attendance_register) BH-D102 [296:364] "Patient arrival: 10:00 | Patient departure: 11:30 | Status: Attended"
+(superseded,    retransmission)      BH-D104 [789:857] "Patient arrival: 10:00 | Patient departure: 11:30 | Status: Attended"
+```
+
+Two things to read off it. `(correction, correction)` repeats the word only
+because "correction" is both a role and a document class — the first says this
+claim changed a field, the second says it arrived on a correction document.
+And **BH-D103 appears twice with different roles**: one sentence corrects the
+departure time, another merely states which encounter the document applies to.
+Same paper, two sentences, two jobs — which is why the role lives on the *link*
+and not on the claim or the document.
 
 `BH-D104` is visibly *present and superseded*. That is the difference between an
 auditable system and one that merely got the right answer. Roles are assigned by

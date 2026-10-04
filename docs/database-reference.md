@@ -481,20 +481,88 @@ exist they corroborate; where only a number exists it is all there is.
 `minutes_basis` records which kind it was, so `reconcile` knows how much to
 trust it — `stated_patient` outranks `stated_total`.
 
-### Why `presence` *and* `presence_basis`
+### Why `presence` *and* `presence_basis` — and which one actually decides
 
-`presence` is what the document claims; `presence_basis` is **how it knows**:
+`presence` is what the document claims. `presence_basis` records **what kind of
+evidence the sentence was**:
 
 - `attested` — a signed attendance record
 - `narrative` — a clinician wrote it in prose
-- `scheduled` — it is a booking view (never proof of delivery)
+- `scheduled` — it is a booking view
 - `platform_log` — a connection export
-- `derived` — inferred from cues
+- `derived` — inferred from surrounding wording
 
-`reconcile.RULE-PRES-02` turns on this distinction: a positive presence claim
-can only establish delivery if its class permits it. Without the basis column
-the January 27 draft note ("Patient attended the full session") would be
-indistinguishable from a signed register.
+**`presence_basis` is written and never read.** `rules.py` sets it at four
+sites; no decision logic consults it. The admissibility rule that stops a draft
+note from establishing delivery keys off **`authority_class`**, not the basis —
+`reconcile.py` references `authority_class` 16 times and `presence_basis` not
+once.
+
+The corpus contains the case that proves the basis column is not doing the work:
+
+| document | `presence_basis` | `authority_class` | outcome |
+|---|---|---|---|
+| BH-D102, Jan 19 roster | `derived` | `attendance_register` | qualifies |
+| BH-D112, Jan 27 draft | `derived` | `draft_note` | rejected |
+
+Same basis, opposite outcomes. Drop `presence_basis` and no answer changes;
+drop `authority_class` and the two become indistinguishable.
+
+So the honest account is: `presence_basis` is descriptive. It is useful when
+reading `claims` by hand, and it is the column to reach for if the system ever
+needs to separate "a register asserted this" from "we inferred it from wording"
+*within* one authority class — a real distinction, since BH-D102 is `derived`
+and BH-D108 is `attested` and both are registers. Today nothing uses it, and it
+is the one column in this schema I would defend as documentation rather than as
+machinery.
+
+### What `authority_class` does instead: RULE-PRES-02
+
+`taxonomy.ESTABLISHES_DELIVERY` (taxonomy.py:108) is a flat map from authority
+class to whether a *positive* claim from that class can establish that care was
+delivered. `clinical_note`, `attendance_register` and `correction` are true;
+`draft_note`, `billing`, `schedule_export`, `platform_log`, `retransmission`,
+`admin_log`, `measure` and `treatment_plan` are false.
+
+January 27, encounter `HG-E116`, is the case it exists for. Two documents
+contradict each other outright:
+
+```
+BH-D108  (final attendance register)
+  "January 27 | HG-E116 | Skills group | 10:00-11:30 | - | - |
+   No show; patient did not attend"
+
+BH-D112  (draft note and charge extract)
+  "Template attendance text: Patient attended the full session and
+   participated in the skills discussion."
+```
+
+The second is boilerplate — it labels itself "Template attendance text" — in an
+unsigned draft, and the same document carries a **posted charge** (`CH-116`, one
+group session). The billing system already believes care happened. Counting
+sentences, or preferring the later document, bills for a session the patient did
+not attend.
+
+`reconcile._presence` (reconcile.py:385) instead never admits the positive claim
+to the qualifying pool, and logs the rejection:
+
+```
+[RULE-PRES-02] rejected_presence = present
+    draft_note cannot establish that care was delivered (BH-D112)
+[RULE-PRES-03] occurred = no
+    final disposition records absent (BH-D108: no show)
+```
+
+**This is a veto, not a ranking**, and the distinction is the whole point. Under
+a ranking ("register beats draft"), a missing register would let the draft win
+by default. Under a veto, a draft note *alone* leaves nothing that can establish
+delivery and `occurred` stays `unknown` — which is the correct answer rather
+than an inconvenient one. A ranking cannot express "none of these qualify".
+
+Note that negative claims use a **different, wider** list (reconcile.py:391):
+`attendance_register`, `schedule_export`, `admin_log`, `clinical_note`,
+`correction`. The asymmetry is deliberate — a schedule export cannot prove a
+session happened, but it is adequate evidence that one was cancelled.
 
 ### Why `authority_class` is on the claim, not just the document
 
